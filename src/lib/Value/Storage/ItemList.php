@@ -11,7 +11,7 @@ namespace Ibexa\PersonalizationClient\Value\Storage;
 use ArrayIterator;
 use Closure;
 use eZ\Publish\API\Repository\Exceptions\OutOfBoundsException;
-use EzSystems\EzRecommendationClient\Exception\ItemNotFoundException;
+use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
 use IteratorAggregate;

@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Strategy\Storage;
 
-use EzSystems\EzRecommendationClient\Strategy\Storage\GroupByItemTypeAndLanguageStrategy;
-use EzSystems\EzRecommendationClient\Strategy\Storage\GroupItemStrategyInterface;
+use Ibexa\PersonalizationClient\Strategy\Storage\GroupByItemTypeAndLanguageStrategy;
+use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Tests\PersonalizationClient\Creator\DataSourceTestItemCreator;
 use Ibexa\Tests\PersonalizationClient\Storage\AbstractDataSourceTestCase;

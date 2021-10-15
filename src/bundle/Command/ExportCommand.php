@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace Ibexa\Bundle\PersonalizationClient\Command;
 
 use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
-use EzSystems\EzRecommendationClient\Http\HttpEnvironmentInterface;
-use EzSystems\EzRecommendationClient\Service\ExportServiceInterface;
+use Ibexa\PersonalizationClient\Http\HttpEnvironmentInterface;
+use Ibexa\PersonalizationClient\Service\ExportServiceInterface;
 use Ibexa\PersonalizationClient\Export\Input\CommandInputResolverInterface;
 use Ibexa\PersonalizationClient\Factory\Export\ParametersFactoryInterface;
 use Psr\Log\LoggerInterface;
