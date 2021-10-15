@@ -23,7 +23,7 @@ class IbexaPersonalizationClientBundle extends Bundle
      */
     public function getContainerExtension()
     {
-        return $this->extension ?? new EzRecommendationClientExtension();
+        return $this->extension ?? new IbexaPersonalizationClientExtension();
     }
 
     public function build(ContainerBuilder $container)
