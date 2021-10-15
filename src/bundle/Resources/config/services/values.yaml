@@ -4,6 +4,6 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Value\ContentDataVisitor:
+    Ibexa\PersonalizationClient\Value\ContentDataVisitor:
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzRecommendationClient\Value\ContentData }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\PersonalizationClient\Value\ContentData }

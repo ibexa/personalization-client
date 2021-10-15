@@ -4,5 +4,5 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Generator\:
+    Ibexa\PersonalizationClient\Generator\:
         resource: '../../../../src/lib/Generator/*'

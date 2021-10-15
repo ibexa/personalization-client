@@ -3,10 +3,10 @@ services:
         autowire: true
         autoconfigure: true
 
-    EzSystems\EzRecommendationClientBundle\Templating\:
+    Ibexa\Bundle\PersonalizationClient\Templating\:
         resource: '../../../Templating/*'
 
-    EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions\Recommendation:
+    Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions\Recommendation:
         public: true
         arguments:
-            $credentialsResolver: '@EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver'
+            $credentialsResolver: '@Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver'
