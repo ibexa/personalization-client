@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
 use eZ\Publish\Core\Repository\Values\Content\Content as CoreContent;
-use EzSystems\EzRecommendationClient\SPI\Content;
-use EzSystems\EzRecommendationClient\SPI\Content as ContentOptions;
-use EzSystems\EzRecommendationClient\Value\ExportParameters;
+use Ibexa\PersonalizationClient\SPI\Content;
+use Ibexa\PersonalizationClient\SPI\Content as ContentOptions;
+use Ibexa\PersonalizationClient\Value\ExportParameters;
 use Symfony\Component\Console\Output\OutputInterface;
 
 interface ContentServiceInterface
@@ -27,3 +27,5 @@ interface ContentServiceInterface
 
     public function setContent(CoreContent $content, ContentOptions $options): array;
 }
+
+class_alias(ContentServiceInterface::class, 'EzSystems\EzRecommendationClient\Service\ContentServiceInterface');

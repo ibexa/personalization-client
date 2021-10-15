@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Events\ObjectState\SetContentStateEvent;
-use EzSystems\EzRecommendationClient\Value\EventNotification;
+use Ibexa\PersonalizationClient\Value\EventNotification;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class ObjectStateEventSubscriber extends AbstractCoreEventSubscriber implements EventSubscriberInterface
@@ -35,3 +35,5 @@ final class ObjectStateEventSubscriber extends AbstractCoreEventSubscriber imple
         );
     }
 }
+
+class_alias(ObjectStateEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\ObjectStateEventSubscriber');

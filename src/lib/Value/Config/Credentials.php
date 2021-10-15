@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value\Config;
+namespace Ibexa\PersonalizationClient\Value\Config;
 
 abstract class Credentials
 {
 }
+
+class_alias(Credentials::class, 'EzSystems\EzRecommendationClient\Value\Config\Credentials');

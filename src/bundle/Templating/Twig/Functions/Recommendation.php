@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions;
+namespace Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions;
 
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Twig\Extension\RuntimeExtensionInterface;
 
 final class Recommendation implements RuntimeExtensionInterface
@@ -27,3 +27,5 @@ final class Recommendation implements RuntimeExtensionInterface
         return $this->credentialsResolver->hasCredentials();
     }
 }
+
+class_alias(Recommendation::class, 'EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions\Recommendation');

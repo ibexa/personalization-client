@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Controller;
+namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
 use eZ\Publish\API\Repository\Repository;
 use eZ\Publish\API\Repository\SearchService as SearchServiceInterface;
@@ -14,12 +14,12 @@ use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use EzSystems\EzPlatformRest\Server\Exceptions\AuthenticationFailedException;
-use EzSystems\EzRecommendationClient\Authentication\AuthenticatorInterface;
-use EzSystems\EzRecommendationClient\Helper\ParamsConverterHelper;
-use EzSystems\EzRecommendationClient\Service\ContentServiceInterface;
-use EzSystems\EzRecommendationClient\Value\Content;
-use EzSystems\EzRecommendationClient\Value\ContentData;
-use EzSystems\EzRecommendationClient\Value\IdList;
+use Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface;
+use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
+use Ibexa\PersonalizationClient\Service\ContentServiceInterface;
+use Ibexa\PersonalizationClient\Value\Content;
+use Ibexa\PersonalizationClient\Value\ContentData;
+use Ibexa\PersonalizationClient\Value\IdList;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
@@ -104,3 +104,5 @@ final class ContentController extends RestController
         return $query;
     }
 }
+
+class_alias(ContentController::class, 'EzSystems\EzRecommendationClientBundle\Controller\ContentController');

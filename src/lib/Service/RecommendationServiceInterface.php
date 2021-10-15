@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\SPI\RecommendationRequest;
-use EzSystems\EzRecommendationClient\Value\RecommendationItem;
+use Ibexa\PersonalizationClient\SPI\RecommendationRequest;
+use Ibexa\PersonalizationClient\Value\RecommendationItem;
 use Psr\Http\Message\ResponseInterface;
 
 interface RecommendationServiceInterface
@@ -23,3 +23,5 @@ interface RecommendationServiceInterface
      */
     public function getRecommendationItems(array $recommendationItems): array;
 }
+
+class_alias(RecommendationServiceInterface::class, 'EzSystems\EzRecommendationClient\Service\RecommendationServiceInterface');

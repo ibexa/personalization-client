@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Serializer\Normalizer;
+namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer;
 
-use EzSystems\EzRecommendationClient\Value\Output\User;
+use Ibexa\PersonalizationClient\Value\Output\User;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
@@ -68,3 +68,5 @@ final class UserNormalizer implements NormalizerInterface, NormalizerAwareInterf
         return $normalizedAttributes;
     }
 }
+
+class_alias(UserNormalizer::class, 'EzSystems\EzRecommendationClientBundle\Serializer\Normalizer\UserNormalizer');

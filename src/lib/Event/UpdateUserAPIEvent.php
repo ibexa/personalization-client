@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event;
+namespace Ibexa\PersonalizationClient\Event;
 
 final class UpdateUserAPIEvent extends UserAPIEvent
 {
 }
+
+class_alias(UpdateUserAPIEvent::class, 'EzSystems\EzRecommendationClient\Event\UpdateUserAPIEvent');

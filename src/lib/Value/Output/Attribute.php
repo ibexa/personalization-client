@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value\Output;
+namespace Ibexa\PersonalizationClient\Value\Output;
 
 use Webmozart\Assert\Assert;
 
@@ -62,3 +62,5 @@ class Attribute
         return $this->type;
     }
 }
+
+class_alias(Attribute::class, 'EzSystems\EzRecommendationClient\Value\Output\Attribute');

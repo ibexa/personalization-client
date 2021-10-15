@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Client;
+namespace Ibexa\PersonalizationClient\Client;
 
-use EzSystems\EzRecommendationClient\API\AbstractAPI;
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Exception\BadAPICallException;
-use EzSystems\EzRecommendationClient\Exception\BadResponseException;
-use EzSystems\EzRecommendationClient\Exception\CredentialsNotFoundException;
-use EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Exception\BadAPICallException;
+use Ibexa\PersonalizationClient\Exception\BadResponseException;
+use Ibexa\PersonalizationClient\Exception\CredentialsNotFoundException;
+use Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\BadResponseException as GuzzleBadResponseException;
 use GuzzleHttp\HandlerStack;
@@ -249,3 +249,5 @@ final class EzRecommendationClient implements EzRecommendationClientInterface
         return $message;
     }
 }
+
+class_alias(EzRecommendationClient::class, 'EzSystems\EzRecommendationClient\Client\EzRecommendationClient');

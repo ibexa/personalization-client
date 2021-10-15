@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Client;
+namespace Ibexa\Tests\PersonalizationClient\Client;
 
-use EzSystems\EzRecommendationClient\API\AbstractAPI;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClient;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Exception\CredentialsNotFoundException;
-use EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory;
-use EzSystems\EzRecommendationClient\Tests\API\APIEndPointClassTest;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClient;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Exception\CredentialsNotFoundException;
+use Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory;
+use Ibexa\Tests\PersonalizationClient\API\APIEndPointClassTest;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Uri;
@@ -129,3 +129,5 @@ class EzRecommendationClientTest extends TestCase
         );
     }
 }
+
+class_alias(EzRecommendationClientTest::class, 'EzSystems\EzRecommendationClient\Tests\Client\EzRecommendationClientTest');

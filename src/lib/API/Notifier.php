@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\API;
+namespace Ibexa\PersonalizationClient\API;
 
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\SPI\Notification;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\SPI\Notification;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,3 +50,5 @@ final class Notifier extends AbstractAPI
         ]);
     }
 }
+
+class_alias(Notifier::class, 'EzSystems\EzRecommendationClient\API\Notifier');

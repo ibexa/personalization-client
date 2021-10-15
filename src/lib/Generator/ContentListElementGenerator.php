@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Generator;
+namespace Ibexa\PersonalizationClient\Generator;
 
 use EzSystems\EzPlatformRest\Output\Generator;
 
@@ -68,3 +68,5 @@ final class ContentListElementGenerator
         return $generator;
     }
 }
+
+class_alias(ContentListElementGenerator::class, 'EzSystems\EzRecommendationClient\Generator\ContentListElementGenerator');

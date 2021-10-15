@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use InvalidArgumentException;
 
@@ -52,3 +52,5 @@ final class ParamsConverterHelper
         return [$string];
     }
 }
+
+class_alias(ParamsConverterHelper::class, 'EzSystems\EzRecommendationClient\Helper\ParamsConverterHelper');

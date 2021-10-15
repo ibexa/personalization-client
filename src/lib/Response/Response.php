@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Response;
+namespace Ibexa\PersonalizationClient\Response;
 
-use EzSystems\EzRecommendationClient\Generator\ContentListElementGenerator;
+use Ibexa\PersonalizationClient\Generator\ContentListElementGenerator;
 
 abstract class Response implements ResponseInterface
 {
@@ -20,3 +20,5 @@ abstract class Response implements ResponseInterface
         $this->contentListElementGenerator = $contentListElementGenerator;
     }
 }
+
+class_alias(Response::class, 'EzSystems\EzRecommendationClient\Response\Response');

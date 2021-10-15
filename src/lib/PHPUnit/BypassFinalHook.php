@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\PHPUnit;
+namespace Ibexa\PersonalizationClient\PHPUnit;
 
 use DG\BypassFinals;
 use PHPUnit\Runner\BeforeTestHook;
@@ -18,3 +18,5 @@ final class BypassFinalHook implements BeforeTestHook
         BypassFinals::enable();
     }
 }
+
+class_alias(BypassFinalHook::class, 'EzSystems\EzRecommendationClient\PHPUnit\BypassFinalHook');

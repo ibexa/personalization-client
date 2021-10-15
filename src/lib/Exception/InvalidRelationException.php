@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 class InvalidRelationException extends InvalidArgumentException
 {
@@ -15,3 +15,5 @@ class InvalidRelationException extends InvalidArgumentException
         parent::__construct($message, 0, $previous);
     }
 }
+
+class_alias(InvalidRelationException::class, 'EzSystems\EzRecommendationClient\Exception\InvalidRelationException');
