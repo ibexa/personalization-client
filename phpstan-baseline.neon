@@ -506,21 +506,6 @@ parameters:
 			path: src/lib/Exception/InvalidRelationException.php
 
 		-
-			message: "#^Access to an undefined property Ibexa\\\\PersonalizationClient\\\\Value\\\\Export\\\\Parameters\\:\\:\\$lang\\.$#"
-			count: 3
-			path: src/lib/Exporter/Exporter.php
-
-		-
-			message: "#^Access to an undefined property Ibexa\\\\PersonalizationClient\\\\Value\\\\Export\\\\Parameters\\:\\:\\$page\\.$#"
-			count: 2
-			path: src/lib/Exporter/Exporter.php
-
-		-
-			message: "#^Call to an undefined method Ibexa\\\\PersonalizationClient\\\\Value\\\\Export\\\\Parameters\\:\\:getProperties\\(\\)\\.$#"
-			count: 1
-			path: src/lib/Exporter/Exporter.php
-
-		-
 			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Exporter\\\\Exporter\\:\\:generateUrlList\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/Exporter/Exporter.php
@@ -646,16 +631,6 @@ parameters:
 			path: src/lib/Field/Value.php
 
 		-
-			message: "#^Method Ibexa\\\\PersonalizationClient\\\\File\\\\ExportFileGenerator\\:\\:generateFile\\(\\) has parameter \\$content with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/File/ExportFileGenerator.php
-
-		-
-			message: "#^Method Ibexa\\\\PersonalizationClient\\\\File\\\\ExportFileGenerator\\:\\:generateFile\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/File/ExportFileGenerator.php
-
-		-
 			message: "#^Method Ibexa\\\\PersonalizationClient\\\\File\\\\FileManager\\:\\:load\\(\\) should return string\\|null but returns string\\|false\\.$#"
 			count: 1
 			path: src/lib/File/FileManager.php
@@ -669,11 +644,6 @@ parameters:
 			message: "#^Method Ibexa\\\\PersonalizationClient\\\\File\\\\FileManagerInterface\\:\\:secureDir\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/File/FileManagerInterface.php
-
-		-
-			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Generator\\\\ContentListElementGenerator\\:\\:generateElement\\(\\) has parameter \\$contentList with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/lib/Generator/ContentListElementGenerator.php
 
 		-
 			message: "#^Cannot access property \\$contentInfo on Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Content\\|null\\.$#"
@@ -889,21 +859,6 @@ parameters:
 			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Request\\\\UserMetadataRequest\\:\\:getRequestAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/lib/Request/UserMetadataRequest.php
-
-		-
-			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Response\\\\HttpResponse\\:\\:render\\(\\) has parameter \\$data with no typehint specified\\.$#"
-			count: 1
-			path: src/lib/Response/HttpResponse.php
-
-		-
-			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Response\\\\ResponseInterface\\:\\:render\\(\\) has parameter \\$data with no typehint specified\\.$#"
-			count: 1
-			path: src/lib/Response/ResponseInterface.php
-
-		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\$data\\)\\: Unexpected token \"\\$data\", expected type at offset 18$#"
-			count: 1
-			path: src/lib/Response/ResponseInterface.php
 
 		-
 			message: "#^Method Ibexa\\\\PersonalizationClient\\\\SPI\\\\Content\\:\\:getProperties\\(\\) has parameter \\$dynamicProperties with no value type specified in iterable type array\\.$#"

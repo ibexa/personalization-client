@@ -4,11 +4,8 @@ services:
         autoconfigure: true
         public: false
 
-    Ibexa\PersonalizationClient\File\:
-        resource: '../../../../src/lib/File/*'
-
-    Ibexa\PersonalizationClient\File\ExportFileGenerator:
-        $outputGenerator: '@ezpublish_rest.output.generator.json'
-
     Ibexa\PersonalizationClient\File\FileManager:
         $exportDocumentRoot: '%ezrecommendation.default.export.document_root%'
+
+    Ibexa\PersonalizationClient\File\FileManagerInterface:
+        '@Ibexa\PersonalizationClient\File\FileManager'
