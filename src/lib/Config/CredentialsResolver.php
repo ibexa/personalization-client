@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Config;
+namespace Ibexa\PersonalizationClient\Config;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 
@@ -38,3 +38,5 @@ abstract class CredentialsResolver implements CredentialsResolverInterface
         return true;
     }
 }
+
+class_alias(CredentialsResolver::class, 'EzSystems\EzRecommendationClient\Config\CredentialsResolver');

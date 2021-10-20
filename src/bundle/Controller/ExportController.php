@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Controller;
+namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
 use EzSystems\EzPlatformRest\Server\Controller;
-use EzSystems\EzRecommendationClient\Authentication\AuthenticatorInterface;
-use EzSystems\EzRecommendationClient\Exception\ExportInProgressException;
-use EzSystems\EzRecommendationClient\File\FileManagerInterface;
-use EzSystems\EzRecommendationClient\Helper\ExportProcessRunnerHelper;
-use EzSystems\EzRecommendationClient\Value\ExportRequest;
+use Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface;
+use Ibexa\PersonalizationClient\Exception\ExportInProgressException;
+use Ibexa\PersonalizationClient\File\FileManagerInterface;
+use Ibexa\PersonalizationClient\Helper\ExportProcessRunnerHelper;
+use Ibexa\PersonalizationClient\Value\ExportRequest;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -97,3 +97,5 @@ final class ExportController extends Controller
         )]);
     }
 }
+
+class_alias(ExportController::class, 'EzSystems\EzRecommendationClientBundle\Controller\ExportController');

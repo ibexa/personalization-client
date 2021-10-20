@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 use Ibexa\PersonalizationClient\Factory\Export\ParametersFactoryInterface;
 use Throwable;
@@ -38,3 +38,5 @@ final class MissingExportParameterException extends ExportException
         );
     }
 }
+
+class_alias(MissingExportParameterException::class, 'EzSystems\EzRecommendationClient\Exception\MissingExportParameterException');

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\DependencyInjection\Compiler;
+namespace Ibexa\Bundle\PersonalizationClient\DependencyInjection\Compiler;
 
-use EzSystems\EzRecommendationClient\Value\ContentDataVisitor;
+use Ibexa\PersonalizationClient\Value\ContentDataVisitor;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -31,3 +31,5 @@ final class RestResponsePass implements CompilerPassInterface
         $visitor->addMethodCall('setResponseRenderers', [$responseRenderers]);
     }
 }
+
+class_alias(RestResponsePass::class, 'EzSystems\EzRecommendationClientBundle\DependencyInjection\Compiler\RestResponsePass');

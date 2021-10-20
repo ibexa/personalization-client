@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\Request\ExportNotifierRequest;
-use EzSystems\EzRecommendationClient\SPI\Notification;
-use EzSystems\EzRecommendationClient\Value\ExportNotification;
+use Ibexa\PersonalizationClient\Request\ExportNotifierRequest;
+use Ibexa\PersonalizationClient\SPI\Notification;
+use Ibexa\PersonalizationClient\Value\ExportNotification;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -95,3 +95,5 @@ final class ExportNotificationService extends NotificationService
         return $notifications;
     }
 }
+
+class_alias(ExportNotificationService::class, 'EzSystems\EzRecommendationClient\Service\ExportNotificationService');

@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Event\Subscriber;
+namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Events\ObjectState\SetContentStateEvent;
-use EzSystems\EzRecommendationClient\Event\Subscriber\ObjectStateEventSubscriber;
+use Ibexa\PersonalizationClient\Event\Subscriber\ObjectStateEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ObjectStateEventSubscriberTest extends AbstractCoreEventSubscriberTest
@@ -52,3 +52,5 @@ class ObjectStateEventSubscriberTest extends AbstractCoreEventSubscriberTest
         $this->objectStateEventSubscriber->onSetContentState($event);
     }
 }
+
+class_alias(ObjectStateEventSubscriberTest::class, 'EzSystems\EzRecommendationClient\Tests\Event\Subscriber\ObjectStateEventSubscriberTest');

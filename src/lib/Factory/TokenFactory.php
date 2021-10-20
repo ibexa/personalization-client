@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Factory;
+namespace Ibexa\PersonalizationClient\Factory;
 
 use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
 
@@ -21,3 +21,5 @@ class TokenFactory implements TokenFactoryInterface
         );
     }
 }
+
+class_alias(TokenFactory::class, 'EzSystems\EzRecommendationClient\Factory\TokenFactory');

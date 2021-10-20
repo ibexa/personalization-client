@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Strategy\Storage;
+namespace Ibexa\PersonalizationClient\Strategy\Storage;
 
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
@@ -64,3 +64,5 @@ final class GroupByItemTypeAndLanguageStrategy implements GroupItemStrategyInter
         return new ItemList($extractedItems);
     }
 }
+
+class_alias(GroupByItemTypeAndLanguageStrategy::class, 'EzSystems\EzRecommendationClient\Strategy\Storage\GroupByItemTypeAndLanguageStrategy');

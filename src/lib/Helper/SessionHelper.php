@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -31,3 +31,5 @@ final class SessionHelper
         return $sessionId;
     }
 }
+
+class_alias(SessionHelper::class, 'EzSystems\EzRecommendationClient\Helper\SessionHelper');

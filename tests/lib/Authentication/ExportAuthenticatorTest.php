@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Authentication;
+namespace Ibexa\Tests\PersonalizationClient\Authentication;
 
-use EzSystems\EzRecommendationClient\Authentication\ExportAuthenticator;
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\File\FileManager;
-use EzSystems\EzRecommendationClient\File\FileManagerInterface;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Authentication\ExportAuthenticator;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\File\FileManager;
+use Ibexa\PersonalizationClient\File\FileManagerInterface;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem as BaseFilesystem;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -264,3 +264,5 @@ class ExportAuthenticatorTest extends TestCase
         ]);
     }
 }
+
+class_alias(ExportAuthenticatorTest::class, 'EzSystems\EzRecommendationClient\Tests\Authentication\ExportAuthenticatorTest');

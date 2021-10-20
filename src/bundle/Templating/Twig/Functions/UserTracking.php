@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions;
+namespace Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface;
-use EzSystems\EzRecommendationClient\Helper\ContentTypeHelper;
-use EzSystems\EzRecommendationClient\Service\UserServiceInterface;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Helper\ContentTypeHelper;
+use Ibexa\PersonalizationClient\Service\UserServiceInterface;
+use Ibexa\PersonalizationClient\Value\Parameters;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Twig\Environment as TwigEnvironment;
 use Twig\Extension\RuntimeExtensionInterface;
@@ -98,3 +98,5 @@ final class UserTracking extends AbstractFunction implements RuntimeExtensionInt
         return $consumeTimout * 1000;
     }
 }
+
+class_alias(UserTracking::class, 'EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions\UserTracking');

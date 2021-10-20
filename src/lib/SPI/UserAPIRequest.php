@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\SPI;
+namespace Ibexa\PersonalizationClient\SPI;
 
 abstract class UserAPIRequest extends Request
 {
@@ -16,3 +16,5 @@ abstract class UserAPIRequest extends Request
     /** @var string */
     public $xmlBody = '';
 }
+
+class_alias(UserAPIRequest::class, 'EzSystems\EzRecommendationClient\SPI\UserAPIRequest');

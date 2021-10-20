@@ -10,11 +10,11 @@ namespace Ibexa\PersonalizationClient\Factory\Export;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
-use EzSystems\EzRecommendationClient\API\Notifier;
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Exception\CredentialsNotFoundException;
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
-use EzSystems\EzRecommendationClient\Exception\MissingExportParameterException;
+use Ibexa\PersonalizationClient\API\Notifier;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Exception\CredentialsNotFoundException;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Exception\MissingExportParameterException;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 
 final class ParametersFactory implements ParametersFactoryInterface

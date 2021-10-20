@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\API;
+namespace Ibexa\PersonalizationClient\API;
 
 final class AllowedAPI
 {
@@ -20,3 +20,5 @@ final class AllowedAPI
         ];
     }
 }
+
+class_alias(AllowedAPI::class, 'EzSystems\EzRecommendationClient\API\AllowedAPI');

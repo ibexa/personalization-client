@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event;
+namespace Ibexa\PersonalizationClient\Event;
 
-use EzSystems\EzRecommendationClient\Value\Output\UserCollection;
+use Ibexa\PersonalizationClient\Value\Output\UserCollection;
 use Symfony\Contracts\EventDispatcher\Event;
 use Webmozart\Assert\Assert;
 
@@ -46,3 +46,5 @@ final class GenerateUserCollectionDataEvent extends Event
         return \strlen($this->userCollectionName) > 0;
     }
 }
+
+class_alias(GenerateUserCollectionDataEvent::class, 'EzSystems\EzRecommendationClient\Event\GenerateUserCollectionDataEvent');

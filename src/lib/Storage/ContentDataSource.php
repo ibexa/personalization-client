@@ -15,7 +15,7 @@ use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\API\Repository\SearchService;
 use eZ\Publish\API\Repository\Values\Content\Content;
 use eZ\Publish\Core\QueryType\QueryType;
-use EzSystems\EzRecommendationClient\Exception\ItemNotFoundException;
+use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemInterface;

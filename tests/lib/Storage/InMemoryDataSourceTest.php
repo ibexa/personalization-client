@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Storage;
 
-use EzSystems\EzRecommendationClient\Storage\InMemoryDataSource;
+use Ibexa\PersonalizationClient\Storage\InMemoryDataSource;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
 

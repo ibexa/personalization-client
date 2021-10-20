@@ -4,15 +4,15 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Field\:
+    Ibexa\PersonalizationClient\Field\:
         resource: '../../../../src/lib/Field/*'
 
-    EzSystems\EzRecommendationClient\Field\Value:
+    Ibexa\PersonalizationClient\Field\Value:
         arguments:
             $parameters: {fieldIdentifiers: "%ezrecommendation.default.field.identifiers%"}
         tags:
             - { name: monolog.logger, channel: ezrecommendation }
 
-    EzSystems\EzRecommendationClient\Field\TypeValue:
+    Ibexa\PersonalizationClient\Field\TypeValue:
         arguments:
             $richHtml5Converter: '@ezrichtext.converter.output.xhtml5'

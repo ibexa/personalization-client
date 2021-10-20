@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Strategy\Storage;
+namespace Ibexa\PersonalizationClient\Strategy\Storage;
 
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
@@ -20,3 +20,5 @@ interface GroupItemStrategyDispatcherInterface
         string $groupBy
     ): ItemGroupListInterface;
 }
+
+class_alias(GroupItemStrategyDispatcherInterface::class, 'EzSystems\EzRecommendationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface');

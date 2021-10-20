@@ -6,12 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
-use EzSystems\EzRecommendationClient\SPI\Notification;
+use Ibexa\PersonalizationClient\SPI\Notification;
 
 class EventNotification extends Notification
 {
     public const ACTION_UPDATE = 'UPDATE';
     public const ACTION_DELETE = 'DELETE';
 }
+
+class_alias(EventNotification::class, 'EzSystems\EzRecommendationClient\Value\EventNotification');

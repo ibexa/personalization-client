@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Strategy\Storage;
+namespace Ibexa\PersonalizationClient\Strategy\Storage;
 
-use EzSystems\EzRecommendationClient\Exception\UnsupportedGroupItemStrategy;
+use Ibexa\PersonalizationClient\Exception\UnsupportedGroupItemStrategy;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemGroupListInterface;
@@ -46,3 +46,5 @@ final class GroupItemStrategyDispatcher implements GroupItemStrategyDispatcherIn
         return $strategies[$groupBy]->getGroupList($source, $criteria);
     }
 }
+
+class_alias(GroupItemStrategyDispatcher::class, 'EzSystems\EzRecommendationClient\Strategy\Storage\GroupItemStrategyDispatcher');

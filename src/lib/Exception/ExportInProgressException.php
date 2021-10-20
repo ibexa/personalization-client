@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 class ExportInProgressException extends ExportException
 {
 }
+
+class_alias(ExportInProgressException::class, 'EzSystems\EzRecommendationClient\Exception\ExportInProgressException');
