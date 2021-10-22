@@ -8,6 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Client;
 
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Uri;
 use Ibexa\PersonalizationClient\API\AbstractAPI;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClient;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
@@ -15,9 +18,6 @@ use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Ibexa\PersonalizationClient\Exception\CredentialsNotFoundException;
 use Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory;
 use Ibexa\Tests\PersonalizationClient\API\APIEndPointClassTest;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;

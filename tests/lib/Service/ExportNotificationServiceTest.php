@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Service;
 
+use GuzzleHttp\Psr7\Response;
 use Ibexa\PersonalizationClient\API\Notifier;
 use Ibexa\PersonalizationClient\Service\ExportNotificationService;
-use Ibexa\PersonalizationClient\Value\ExportNotification;
-use GuzzleHttp\Psr7\Response;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
+use Ibexa\PersonalizationClient\Value\ExportNotification;
 
 class ExportNotificationServiceTest extends NotificationServiceTest
 {

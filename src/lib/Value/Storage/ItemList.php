@@ -11,9 +11,9 @@ namespace Ibexa\PersonalizationClient\Value\Storage;
 use ArrayIterator;
 use Closure;
 use eZ\Publish\API\Repository\Exceptions\OutOfBoundsException;
-use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
+use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
 use IteratorAggregate;
 use Traversable;
 

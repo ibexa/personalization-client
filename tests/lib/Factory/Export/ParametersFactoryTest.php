@@ -13,9 +13,9 @@ use eZ\Publish\Core\MVC\Symfony\SiteAccess;
 use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
 use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
-use Ibexa\PersonalizationClient\Value\Config\EzRecommendationClientCredentials;
 use Ibexa\PersonalizationClient\Factory\Export\ParametersFactory;
 use Ibexa\PersonalizationClient\Factory\Export\ParametersFactoryInterface;
+use Ibexa\PersonalizationClient\Value\Config\EzRecommendationClientCredentials;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 use PHPUnit\Framework\TestCase;
 

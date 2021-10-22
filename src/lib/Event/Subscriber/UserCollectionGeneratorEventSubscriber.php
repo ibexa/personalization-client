@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use Ibexa\PersonalizationClient\Event\GenerateUserCollectionDataEvent;
-use Ibexa\PersonalizationClient\Event\UpdateUserAPIEvent;
-use Ibexa\PersonalizationClient\Value\Output\UserCollection;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\AttributeNormalizer;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\UserCollectionNormalizer;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\UserNormalizer;
+use Ibexa\PersonalizationClient\Event\GenerateUserCollectionDataEvent;
+use Ibexa\PersonalizationClient\Event\UpdateUserAPIEvent;
+use Ibexa\PersonalizationClient\Value\Output\UserCollection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;

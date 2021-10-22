@@ -10,10 +10,10 @@ namespace Ibexa\PersonalizationClient\Event\Listener;
 
 use eZ\Publish\API\Repository\UserService as UserServiceInterface;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use GuzzleHttp\Exception\RequestException;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 use Ibexa\PersonalizationClient\Value\Session as RecommendationSession;
-use GuzzleHttp\Exception\RequestException;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;

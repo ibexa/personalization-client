@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Service;
 
+use GuzzleHttp\Exception\RequestException;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\SPI\Notification;
-use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;

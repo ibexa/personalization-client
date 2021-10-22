@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Strategy\Storage;
 
+use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\PersonalizationClient\Exception\UnsupportedGroupItemStrategy;
 use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcher;
 use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface;
 use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyInterface;
-use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\PersonalizationClient\Strategy\Storage\SupportedGroupItemStrategy;
 use Ibexa\Tests\PersonalizationClient\Creator\DataSourceTestItemCreator;
 use Ibexa\Tests\PersonalizationClient\Storage\AbstractDataSourceTestCase;

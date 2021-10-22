@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Strategy\Storage;
 
-use Ibexa\PersonalizationClient\Exception\UnsupportedGroupItemStrategy;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemGroupListInterface;
+use Ibexa\PersonalizationClient\Exception\UnsupportedGroupItemStrategy;
 use Traversable;
 
 final class GroupItemStrategyDispatcher implements GroupItemStrategyDispatcherInterface

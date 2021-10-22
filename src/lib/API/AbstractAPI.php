@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\API;
 
+use GuzzleHttp\Psr7\Uri;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\SPI\Request;
-use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\UriInterface;
 
 abstract class AbstractAPI

@@ -10,9 +10,9 @@ namespace Ibexa\Tests\PersonalizationClient\Event\Listener;
 
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use GuzzleHttp\Client;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Event\Listener\LoginListener;
-use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
