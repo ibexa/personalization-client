@@ -1,0 +1,16 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Ibexa\PersonalizationClient\Config\ExportCredentialsResolver: ~
+
+    Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver: ~
+
+    Ibexa\PersonalizationClient\Config\ItemType\IncludedItemTypeResolver:
+        tags:
+            - { name: monolog.logger, channel: ibexa-recommendation }
+
+    Ibexa\PersonalizationClient\Config\ItemType\IncludedItemTypeResolverInterface:
+        '@Ibexa\PersonalizationClient\Config\ItemType\IncludedItemTypeResolver'
