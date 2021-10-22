@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface;
-use EzSystems\EzRecommendationClient\Event\RecommendationResponseEvent;
-use EzSystems\EzRecommendationClient\Helper\ContentTypeHelper;
-use EzSystems\EzRecommendationClient\Helper\LocationHelper;
-use EzSystems\EzRecommendationClient\Request\BasicRecommendationRequest as Request;
-use EzSystems\EzRecommendationClient\Service\RecommendationServiceInterface;
-use EzSystems\EzRecommendationClient\SPI\RecommendationRequest;
+use Ibexa\PersonalizationClient\Event\RecommendationResponseEvent;
+use Ibexa\PersonalizationClient\Helper\ContentTypeHelper;
+use Ibexa\PersonalizationClient\Helper\LocationHelper;
+use Ibexa\PersonalizationClient\Request\BasicRecommendationRequest as Request;
+use Ibexa\PersonalizationClient\Service\RecommendationServiceInterface;
+use Ibexa\PersonalizationClient\SPI\RecommendationRequest;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -121,3 +121,5 @@ final class RecommendationEventSubscriber implements EventSubscriberInterface
         return $this->recommendationService->getRecommendationItems($recommendationItems['recommendationItems']);
     }
 }
+
+class_alias(RecommendationEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\RecommendationEventSubscriber');

@@ -1,25 +1,25 @@
 ez_recommendation.content_type.get_content:
     path: /ez_recommendation/v1/content/{idList}
     defaults:
-        _controller: 'EzSystems\EzRecommendationClientBundle\Controller\ContentController::getContentAction'
+        _controller: 'Ibexa\Bundle\PersonalizationClient\Controller\ContentController::getContentAction'
     methods: [GET]
 
 ez_recommendation.content_type.get_content_type:
     path: /ez_recommendation/v1/contenttypes/{idList}
     defaults:
-        _controller: 'EzSystems\EzRecommendationClientBundle\Controller\ContentTypeController::getContentTypeAction'
+        _controller: 'Ibexa\Bundle\PersonalizationClient\Controller\ContentTypeController::getContentTypeAction'
     methods: [GET]
 
 ez_recommendation.export.download:
     path: /ez_recommendation/v1/exportDownload/{filePath}
     defaults:
-        _controller: 'EzSystems\EzRecommendationClientBundle\Controller\ExportController::downloadAction'
+        _controller: 'Ibexa\Bundle\PersonalizationClient\Controller\ExportController::downloadAction'
     requirements:
         filePath: '[a-zA-Z0-9\_\-\/]+'
 
 ez_recommendation.export.export:
     path: /ez_recommendation/v1/runExport/{idList}
     defaults:
-        _controller: 'EzSystems\EzRecommendationClientBundle\Controller\ExportController::exportAction'
+        _controller: 'Ibexa\Bundle\PersonalizationClient\Controller\ExportController::exportAction'
     methods: [GET]
     prefix: '%ezpublish_rest.path_prefix%'

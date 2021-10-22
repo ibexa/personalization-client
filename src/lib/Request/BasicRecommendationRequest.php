@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Request;
+namespace Ibexa\PersonalizationClient\Request;
 
-use EzSystems\EzRecommendationClient\SPI\RecommendationRequest;
+use Ibexa\PersonalizationClient\SPI\RecommendationRequest;
 
 final class BasicRecommendationRequest extends RecommendationRequest
 {
@@ -89,3 +89,5 @@ final class BasicRecommendationRequest extends RecommendationRequest
         return $extractedFilters;
     }
 }
+
+class_alias(BasicRecommendationRequest::class, 'EzSystems\EzRecommendationClient\Request\BasicRecommendationRequest');

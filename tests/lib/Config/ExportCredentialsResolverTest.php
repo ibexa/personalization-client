@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Config;
+namespace Ibexa\Tests\PersonalizationClient\Config;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Config\ExportCredentialsResolver;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
 use PHPUnit\Framework\TestCase;
 
 class ExportCredentialsResolverTest extends TestCase
@@ -56,3 +56,5 @@ class ExportCredentialsResolverTest extends TestCase
         $this->assertNull($credentialsResolver->getCredentials());
     }
 }
+
+class_alias(ExportCredentialsResolverTest::class, 'EzSystems\EzRecommendationClient\Tests\Config\ExportCredentialsResolverTest');

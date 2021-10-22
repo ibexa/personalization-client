@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Request;
+namespace Ibexa\PersonalizationClient\Request;
 
-use EzSystems\EzRecommendationClient\SPI\Request;
+use Ibexa\PersonalizationClient\SPI\Request;
 
 class EventNotifierRequest extends Request
 {
@@ -62,3 +62,5 @@ class EventNotifierRequest extends Request
         ];
     }
 }
+
+class_alias(EventNotifierRequest::class, 'EzSystems\EzRecommendationClient\Request\EventNotifierRequest');

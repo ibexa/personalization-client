@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Http;
+namespace Ibexa\PersonalizationClient\Http;
 
-use EzSystems\EzRecommendationClient\Factory\RequestFactoryInterface;
-use EzSystems\EzRecommendationClient\Factory\TokenFactoryInterface;
+use Ibexa\PersonalizationClient\Factory\RequestFactoryInterface;
+use Ibexa\PersonalizationClient\Factory\TokenFactoryInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
@@ -45,3 +45,5 @@ class FakeHttpEnvironment implements HttpEnvironmentInterface
         $this->tokenStorage->setToken($this->tokenFactory->createAnonymousToken());
     }
 }
+
+class_alias(FakeHttpEnvironment::class, 'EzSystems\EzRecommendationClient\Http\FakeHttpEnvironment');

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\ParamConverter;
+namespace Ibexa\Bundle\PersonalizationClient\ParamConverter;
 
 use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
-use EzSystems\EzRecommendationClient\Helper\ParamsConverterHelper;
-use EzSystems\EzRecommendationClient\Value\IdList;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
+use Ibexa\PersonalizationClient\Value\IdList;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,3 +50,5 @@ final class ListParamConverter implements ParamConverterInterface
         return IdList::class === $configuration->getClass();
     }
 }
+
+class_alias(ListParamConverter::class, 'EzSystems\EzRecommendationClientBundle\ParamConverter\ListParamConverter');

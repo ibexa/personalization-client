@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Events\Location\CopySubtreeEvent;
 use eZ\Publish\API\Repository\Events\Location\CreateLocationEvent;
@@ -17,7 +17,7 @@ use eZ\Publish\API\Repository\Events\Location\UnhideLocationEvent;
 use eZ\Publish\API\Repository\Events\Location\UpdateLocationEvent;
 use eZ\Publish\API\Repository\Values\Content\Content;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzRecommendationClient\Value\EventNotification;
+use Ibexa\PersonalizationClient\Value\EventNotification;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber implements EventSubscriberInterface
@@ -200,3 +200,5 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
         }
     }
 }
+
+class_alias(LocationEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\LocationEventSubscriber');

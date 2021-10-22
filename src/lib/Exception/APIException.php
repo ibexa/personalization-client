@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 abstract class APIException extends \Exception implements EzRecommendationException
 {
 }
+
+class_alias(APIException::class, 'EzSystems\EzRecommendationClient\Exception\APIException');

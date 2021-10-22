@@ -6,12 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Factory;
+namespace Ibexa\PersonalizationClient\Factory;
 
-use EzSystems\EzRecommendationClient\API\AbstractAPI;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 
 abstract class AbstractEzRecommendationClientAPIFactory
 {
     abstract public function buildAPI(string $name, EzRecommendationClientInterface $client): AbstractAPI;
 }
+
+class_alias(AbstractEzRecommendationClientAPIFactory::class, 'EzSystems\EzRecommendationClient\Factory\AbstractEzRecommendationClientAPIFactory');

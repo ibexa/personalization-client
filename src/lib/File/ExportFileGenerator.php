@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\File;
+namespace Ibexa\PersonalizationClient\File;
 
 use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzRecommendationClient\Generator\ContentListElementGenerator;
-use EzSystems\EzRecommendationClient\Value\ContentData;
+use Ibexa\PersonalizationClient\Generator\ContentListElementGenerator;
+use Ibexa\PersonalizationClient\Value\ContentData;
 use Psr\Log\LoggerInterface;
 
 final class ExportFileGenerator
@@ -71,3 +71,5 @@ final class ExportFileGenerator
         unset($contents);
     }
 }
+
+class_alias(ExportFileGenerator::class, 'EzSystems\EzRecommendationClient\File\ExportFileGenerator');

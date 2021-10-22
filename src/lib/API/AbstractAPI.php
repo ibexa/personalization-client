@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\API;
+namespace Ibexa\PersonalizationClient\API;
 
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\SPI\Request;
 use GuzzleHttp\Psr7\Uri;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\SPI\Request;
 use Psr\Http\Message\UriInterface;
 
 abstract class AbstractAPI
@@ -78,3 +78,5 @@ abstract class AbstractAPI
         return $request->getRequestAttributes();
     }
 }
+
+class_alias(AbstractAPI::class, 'EzSystems\EzRecommendationClient\API\AbstractAPI');

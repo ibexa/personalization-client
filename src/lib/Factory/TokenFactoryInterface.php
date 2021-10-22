@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Factory;
+namespace Ibexa\PersonalizationClient\Factory;
 
 use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
 
@@ -14,3 +14,5 @@ interface TokenFactoryInterface
 {
     public function createAnonymousToken(?string $secret = null, ?string $user = null, array $roles = []): AnonymousToken;
 }
+
+class_alias(TokenFactoryInterface::class, 'EzSystems\EzRecommendationClient\Factory\TokenFactoryInterface');

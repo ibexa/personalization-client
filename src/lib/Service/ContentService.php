@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
 use eZ\Publish\API\Repository\ContentService as APIContentServiceInterface;
 use eZ\Publish\API\Repository\ContentTypeService as ContentTypeServiceInterface;
@@ -15,10 +15,10 @@ use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
 use eZ\Publish\API\Repository\Values\Content\Content as APIContent;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
 use eZ\Publish\Core\Repository\Values\Content\Content as CoreContent;
-use EzSystems\EzRecommendationClient\Field\Value;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\SPI\Content as ContentOptions;
-use EzSystems\EzRecommendationClient\Value\ExportParameters;
+use Ibexa\PersonalizationClient\Field\Value;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\SPI\Content as ContentOptions;
+use Ibexa\PersonalizationClient\Value\ExportParameters;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -242,3 +242,5 @@ final class ContentService implements ContentServiceInterface
         return $fields;
     }
 }
+
+class_alias(ContentService::class, 'EzSystems\EzRecommendationClient\Service\ContentService');
