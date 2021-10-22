@@ -10,8 +10,8 @@ namespace Ibexa\PersonalizationClient\Service;
 
 use Ibexa\PersonalizationClient\Request\ExportNotifierRequest;
 use Ibexa\PersonalizationClient\SPI\Notification;
-use Ibexa\PersonalizationClient\Value\ExportNotification;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
+use Ibexa\PersonalizationClient\Value\ExportNotification;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

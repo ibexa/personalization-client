@@ -8,16 +8,16 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Client;
 
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\BadResponseException as GuzzleBadResponseException;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use Ibexa\PersonalizationClient\API\AbstractAPI;
 use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Ibexa\PersonalizationClient\Exception\BadAPICallException;
 use Ibexa\PersonalizationClient\Exception\BadResponseException;
 use Ibexa\PersonalizationClient\Exception\CredentialsNotFoundException;
 use Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\BadResponseException as GuzzleBadResponseException;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;

@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Storage;
 
-use Ibexa\PersonalizationClient\Storage\InMemoryDataSource;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
+use Ibexa\PersonalizationClient\Storage\InMemoryDataSource;
 
 final class InMemoryDataSourceTest extends AbstractItemTestCase
 {

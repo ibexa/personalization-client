@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Client;
 
-use Ibexa\PersonalizationClient\API\AbstractAPI;
 use GuzzleHttp\ClientInterface;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 

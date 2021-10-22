@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Service\Storage;
 
-use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
-use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemGroupListInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
+use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
+use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface;
 use Ibexa\PersonalizationClient\Value\Storage\ItemGroupList;
 use Ibexa\PersonalizationClient\Value\Storage\ItemList;
 
