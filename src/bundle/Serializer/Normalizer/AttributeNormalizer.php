@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Serializer\Normalizer;
+namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer;
 
-use EzSystems\EzRecommendationClient\Value\Output\Attribute;
+use Ibexa\PersonalizationClient\Value\Output\Attribute;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 final class AttributeNormalizer implements NormalizerInterface
@@ -36,3 +36,5 @@ final class AttributeNormalizer implements NormalizerInterface
         return $data instanceof Attribute;
     }
 }
+
+class_alias(AttributeNormalizer::class, 'EzSystems\EzRecommendationClientBundle\Serializer\Normalizer\AttributeNormalizer');

@@ -1,8 +1,11 @@
 {
-    "name": "ezsystems/ezrecommendation-client",
+    "name": "ibexa/personalization-client",
     "description": "HTTP Communication Client between Recommendation engine and Ibexa DXP",
     "license": "(GPL-2.0-only or proprietary)",
     "type": "ibexa-bundle",
+    "replace": {
+        "ezsystems/ezrecommendation-client": "*"
+    },
     "authors": [
         {
             "name": "Ibexa AS",
@@ -61,7 +64,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0.x-dev"
+            "dev-main": "4.0.x-dev"
         }
     },
     "config": {

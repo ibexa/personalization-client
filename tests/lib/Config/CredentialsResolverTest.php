@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Config;
+namespace Ibexa\Tests\PersonalizationClient\Config;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\Config\CredentialsResolver;
+use Ibexa\PersonalizationClient\Config\CredentialsResolver;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -79,3 +79,5 @@ class CredentialsResolverTest extends TestCase
         $this->assertFalse($this->credentialsResolverMock->hasCredentials());
     }
 }
+
+class_alias(CredentialsResolverTest::class, 'EzSystems\EzRecommendationClient\Tests\Config\CredentialsResolverTest');

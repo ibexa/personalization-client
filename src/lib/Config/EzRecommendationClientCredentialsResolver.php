@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Config;
+namespace Ibexa\PersonalizationClient\Config;
 
-use EzSystems\EzRecommendationClient\Value\Config\EzRecommendationClientCredentials;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Value\Config\EzRecommendationClientCredentials;
+use Ibexa\PersonalizationClient\Value\Parameters;
 
 final class EzRecommendationClientCredentialsResolver extends CredentialsResolver
 {
@@ -44,3 +44,5 @@ final class EzRecommendationClientCredentialsResolver extends CredentialsResolve
         ];
     }
 }
+
+class_alias(EzRecommendationClientCredentialsResolver::class, 'EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver');

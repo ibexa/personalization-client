@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Config;
+namespace Ibexa\PersonalizationClient\Config;
 
-use EzSystems\EzRecommendationClient\Value\Config\Credentials;
+use Ibexa\PersonalizationClient\Value\Config\Credentials;
 
 interface CredentialsResolverInterface
 {
@@ -19,3 +19,5 @@ interface CredentialsResolverInterface
 
     public function hasCredentials(?string $siteAccess = null): bool;
 }
+
+class_alias(CredentialsResolverInterface::class, 'EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface');

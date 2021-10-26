@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Event\Subscriber;
+namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Events\Content\CopyContentEvent;
 use eZ\Publish\API\Repository\Events\Content\DeleteContentEvent;
@@ -14,7 +14,7 @@ use eZ\Publish\API\Repository\Events\Content\HideContentEvent;
 use eZ\Publish\API\Repository\Events\Content\PublishVersionEvent;
 use eZ\Publish\API\Repository\Events\Content\RevealContentEvent;
 use eZ\Publish\API\Repository\Events\Content\UpdateContentMetadataEvent;
-use EzSystems\EzRecommendationClient\Event\Subscriber\ContentEventSubscriber;
+use Ibexa\PersonalizationClient\Event\Subscriber\ContentEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ContentEventSubscriberTest extends AbstractCoreEventSubscriberTest
@@ -117,3 +117,5 @@ class ContentEventSubscriberTest extends AbstractCoreEventSubscriberTest
         $this->contentEventSubscriber->onPublishVersion($event);
     }
 }
+
+class_alias(ContentEventSubscriberTest::class, 'EzSystems\EzRecommendationClient\Tests\Event\Subscriber\ContentEventSubscriberTest');

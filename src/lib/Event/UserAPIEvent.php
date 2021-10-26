@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event;
+namespace Ibexa\PersonalizationClient\Event;
 
-use EzSystems\EzRecommendationClient\SPI\UserAPIRequest;
+use Ibexa\PersonalizationClient\SPI\UserAPIRequest;
 use Symfony\Contracts\EventDispatcher\Event;
 
 abstract class UserAPIEvent extends Event
@@ -26,3 +26,5 @@ abstract class UserAPIEvent extends Event
         $this->request = $request;
     }
 }
+
+class_alias(UserAPIEvent::class, 'EzSystems\EzRecommendationClient\Event\UserAPIEvent');

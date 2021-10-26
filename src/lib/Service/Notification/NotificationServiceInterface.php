@@ -6,12 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service\Notification;
+namespace Ibexa\PersonalizationClient\Service\Notification;
 
-use EzSystems\EzRecommendationClient\SPI\Notification;
+use Ibexa\PersonalizationClient\SPI\Notification;
 use Psr\Http\Message\ResponseInterface;
 
 interface NotificationServiceInterface
 {
     public function send(Notification $notification, string $action): ?ResponseInterface;
 }
+
+class_alias(NotificationServiceInterface::class, 'EzSystems\EzRecommendationClient\Service\Notification\NotificationServiceInterface');

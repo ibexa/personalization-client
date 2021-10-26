@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\SPI;
+namespace Ibexa\PersonalizationClient\SPI;
 
 abstract class Notification
 {
@@ -23,3 +23,5 @@ abstract class Notification
     /** @var string */
     public $licenseKey;
 }
+
+class_alias(Notification::class, 'EzSystems\EzRecommendationClient\SPI\Notification');

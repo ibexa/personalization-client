@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Process\PhpExecutableFinder;
@@ -87,3 +87,5 @@ final class ExportProcessRunnerHelper
         return $this->phpPath;
     }
 }
+
+class_alias(ExportProcessRunnerHelper::class, 'EzSystems\EzRecommendationClient\Helper\ExportProcessRunnerHelper');

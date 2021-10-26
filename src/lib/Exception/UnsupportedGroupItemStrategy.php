@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 use RuntimeException;
 use Throwable;
@@ -29,3 +29,5 @@ final class UnsupportedGroupItemStrategy extends RuntimeException implements EzR
         );
     }
 }
+
+class_alias(UnsupportedGroupItemStrategy::class, 'EzSystems\EzRecommendationClient\Exception\UnsupportedGroupItemStrategy');

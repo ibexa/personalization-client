@@ -6,14 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Strategy\Storage;
+namespace Ibexa\PersonalizationClient\Strategy\Storage;
 
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemGroupListInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
 use Ibexa\PersonalizationClient\Criteria\Criteria;
-use Ibexa\PersonalizationClient\Strategy\Storage\SupportedGroupItemStrategy;
 use Ibexa\PersonalizationClient\Value\Storage\ItemGroup;
 use Ibexa\PersonalizationClient\Value\Storage\ItemGroupList;
 use Ibexa\PersonalizationClient\Value\Storage\ItemList;
@@ -64,3 +63,5 @@ final class GroupByItemTypeAndLanguageStrategy implements GroupItemStrategyInter
         return new ItemList($extractedItems);
     }
 }
+
+class_alias(GroupByItemTypeAndLanguageStrategy::class, 'EzSystems\EzRecommendationClient\Strategy\Storage\GroupByItemTypeAndLanguageStrategy');

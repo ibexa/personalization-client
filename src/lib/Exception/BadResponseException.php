@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
@@ -55,3 +55,5 @@ class BadResponseException extends TransferException
         return $this->handlerContext;
     }
 }
+
+class_alias(BadResponseException::class, 'EzSystems\EzRecommendationClient\Exception\BadResponseException');

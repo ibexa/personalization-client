@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Authentication;
+namespace Ibexa\PersonalizationClient\Authentication;
 
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\File\FileManagerInterface;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\File\FileManagerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -82,3 +82,5 @@ final class ExportAuthenticator implements FileAuthenticatorInterface
         return $user == $auth['user'] && $pass == $auth['pass'];
     }
 }
+
+class_alias(ExportAuthenticator::class, 'EzSystems\EzRecommendationClient\Authentication\ExportAuthenticator');

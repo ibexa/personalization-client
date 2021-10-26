@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Request;
+namespace Ibexa\PersonalizationClient\Request;
 
-use EzSystems\EzRecommendationClient\SPI\Request;
+use Ibexa\PersonalizationClient\SPI\Request;
 
 class ExportNotifierRequest extends Request
 {
@@ -62,3 +62,5 @@ class ExportNotifierRequest extends Request
         ];
     }
 }
+
+class_alias(ExportNotifierRequest::class, 'EzSystems\EzRecommendationClient\Request\ExportNotifierRequest');

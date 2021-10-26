@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
-use EzSystems\EzRecommendationClient\SPI\Content;
+use Ibexa\PersonalizationClient\SPI\Content;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class ExportParameters extends Content
@@ -107,3 +107,5 @@ class ExportParameters extends Content
      */
     public $languages;
 }
+
+class_alias(ExportParameters::class, 'EzSystems\EzRecommendationClient\Value\ExportParameters');

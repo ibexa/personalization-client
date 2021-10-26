@@ -6,9 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Http;
+namespace Ibexa\PersonalizationClient\Http;
 
 interface HttpEnvironmentInterface
 {
     public function prepare(): void;
 }
+
+class_alias(HttpEnvironmentInterface::class, 'EzSystems\EzRecommendationClient\Http\HttpEnvironmentInterface');

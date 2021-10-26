@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 class ExportRequest extends ExportParameters
 {
@@ -18,3 +18,5 @@ class ExportRequest extends ExportParameters
         return get_object_vars($this);
     }
 }
+
+class_alias(ExportRequest::class, 'EzSystems\EzRecommendationClient\Value\ExportRequest');
