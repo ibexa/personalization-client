@@ -11,6 +11,7 @@ namespace Ibexa\PersonalizationClient\Service;
 use Ibexa\PersonalizationClient\Helper\SessionHelper;
 use Ibexa\PersonalizationClient\Helper\UserHelper;
 use Ibexa\PersonalizationClient\Value\Session;
+use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
 
 final class UserService implements UserServiceInterface
 {
@@ -31,13 +32,22 @@ final class UserService implements UserServiceInterface
      */
     public function getUserIdentifier(): string
     {
-        $userIdentifier = $this->userHelper->getCurrentUser();
+        try {
+            $userIdentifier = $this->userHelper->getCurrentUser();
 
-        if (!$userIdentifier) {
-            $userIdentifier = $this->sessionHelper->getAnonymousSessionId(Session::RECOMMENDATION_SESSION_KEY);
+            if (!$userIdentifier) {
+                $userIdentifier = $this->getAnonymousSessionId();
+            }
+        } catch (AuthenticationCredentialsNotFoundException $e) {
+            $userIdentifier = $this->getAnonymousSessionId();
         }
 
-        return (string)$userIdentifier;
+        return $userIdentifier;
+    }
+
+    private function getAnonymousSessionId(): string
+    {
+        return $this->sessionHelper->getAnonymousSessionId(Session::RECOMMENDATION_SESSION_KEY);
     }
 }
 
