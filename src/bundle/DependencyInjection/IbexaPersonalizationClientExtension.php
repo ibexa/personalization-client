@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\DependencyInjection;
+namespace Ibexa\Bundle\PersonalizationClient\DependencyInjection;
 
 use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class EzRecommendationClientExtension extends Extension
+final class IbexaPersonalizationClientExtension extends Extension
 {
     public const DATA_SOURCE_SERVICE_TAG = 'ibexa.personalization.data_source';
 
@@ -47,3 +47,5 @@ final class EzRecommendationClientExtension extends Extension
         return 'ezrecommendation';
     }
 }
+
+class_alias(IbexaPersonalizationClientExtension::class, 'EzSystems\EzRecommendationClientBundle\DependencyInjection\EzRecommendationClientExtension');

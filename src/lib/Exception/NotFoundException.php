@@ -6,10 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 use RuntimeException;
 
 abstract class NotFoundException extends RuntimeException implements EzRecommendationException
 {
 }
+
+class_alias(NotFoundException::class, 'EzSystems\EzRecommendationClient\Exception\NotFoundException');

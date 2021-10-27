@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\SPI\RecommendationRequest;
-use EzSystems\EzRecommendationClient\Value\RecommendationItem;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\SPI\RecommendationRequest;
+use Ibexa\PersonalizationClient\Value\RecommendationItem;
 use Psr\Http\Message\ResponseInterface;
 
 class RecommendationService implements RecommendationServiceInterface
@@ -92,3 +92,5 @@ class RecommendationService implements RecommendationServiceInterface
         return $recommendationCollection;
     }
 }
+
+class_alias(RecommendationService::class, 'EzSystems\EzRecommendationClient\Service\RecommendationService');

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 class RecommendationItem
 {
@@ -41,3 +41,5 @@ class RecommendationItem
     {
     }
 }
+
+class_alias(RecommendationItem::class, 'EzSystems\EzRecommendationClient\Value\RecommendationItem');

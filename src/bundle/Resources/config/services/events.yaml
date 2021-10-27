@@ -4,12 +4,12 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Event\:
+    Ibexa\PersonalizationClient\Event\:
         resource: '../../../../src/lib/Event/*'
 
-    EzSystems\EzRecommendationClient\Event\Listener\LoginListener:
+    Ibexa\PersonalizationClient\Event\Listener\LoginListener:
         tags:
             - { name: kernel.event_listener, event: security.interactive_login, priority: 255 }
             - { name: monolog.logger, channel: ezrecommendation }
 
-    EzSystems\EzRecommendationClient\Service\NotificationService: '@EzSystems\EzRecommendationClient\Service\EventNotificationService'
+    Ibexa\PersonalizationClient\Service\NotificationService: '@Ibexa\PersonalizationClient\Service\EventNotificationService'

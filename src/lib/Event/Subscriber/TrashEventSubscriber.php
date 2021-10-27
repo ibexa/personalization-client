@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 use eZ\Publish\API\Repository\Events\Trash\RecoverEvent;
@@ -14,10 +14,10 @@ use eZ\Publish\API\Repository\Events\Trash\TrashEvent;
 use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
 use eZ\Publish\API\Repository\Repository;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\Helper\LocationHelper;
-use EzSystems\EzRecommendationClient\Service\NotificationService;
-use EzSystems\EzRecommendationClient\Value\EventNotification;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\Helper\LocationHelper;
+use Ibexa\PersonalizationClient\Service\NotificationService;
+use Ibexa\PersonalizationClient\Value\EventNotification;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class TrashEventSubscriber extends AbstractRepositoryEventSubscriber implements EventSubscriberInterface
@@ -113,3 +113,5 @@ final class TrashEventSubscriber extends AbstractRepositoryEventSubscriber imple
         }
     }
 }
+
+class_alias(TrashEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\TrashEventSubscriber');

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event;
+namespace Ibexa\PersonalizationClient\Event;
 
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Contracts\EventDispatcher\Event;
@@ -42,3 +42,5 @@ final class RecommendationResponseEvent extends Event
         return $this->recommendationItems;
     }
 }
+
+class_alias(RecommendationResponseEvent::class, 'EzSystems\EzRecommendationClient\Event\RecommendationResponseEvent');

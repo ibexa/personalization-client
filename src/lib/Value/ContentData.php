@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 /**
  * This class holds ContentDataVisitor structure used by Recommendation engine.
@@ -25,3 +25,5 @@ class ContentData
         $this->options = $options;
     }
 }
+
+class_alias(ContentData::class, 'EzSystems\EzRecommendationClient\Value\ContentData');

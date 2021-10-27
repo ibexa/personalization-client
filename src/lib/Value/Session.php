@@ -6,9 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 class Session
 {
     const RECOMMENDATION_SESSION_KEY = 'recommendation-session-id';
 }
+
+class_alias(Session::class, 'EzSystems\EzRecommendationClient\Value\Session');

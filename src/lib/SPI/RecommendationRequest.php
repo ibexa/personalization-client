@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\SPI;
+namespace Ibexa\PersonalizationClient\SPI;
 
 /**
  * Class allow sends own Request object parameters to recommendation engine.
@@ -18,3 +18,5 @@ abstract class RecommendationRequest extends Request
     /** @var string */
     public $scenario;
 }
+
+class_alias(RecommendationRequest::class, 'EzSystems\EzRecommendationClient\SPI\RecommendationRequest');

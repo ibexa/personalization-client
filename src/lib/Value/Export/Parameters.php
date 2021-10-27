@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Value\Export;
 
-use EzSystems\EzRecommendationClient\Helper\ParamsConverterHelper;
+use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
 
 final class Parameters
 {

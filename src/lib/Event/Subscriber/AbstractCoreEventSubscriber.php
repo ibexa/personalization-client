@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use EzSystems\EzRecommendationClient\Service\NotificationService;
+use Ibexa\PersonalizationClient\Service\NotificationService;
 
 abstract class AbstractCoreEventSubscriber
 {
@@ -22,3 +22,5 @@ abstract class AbstractCoreEventSubscriber
         $this->notificationService = $notificationService;
     }
 }
+
+class_alias(AbstractCoreEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\AbstractCoreEventSubscriber');

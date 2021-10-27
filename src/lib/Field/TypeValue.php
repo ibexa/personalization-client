@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Field;
+namespace Ibexa\PersonalizationClient\Field;
 
 use eZ\Publish\API\Repository\Values\Content\Content;
 use eZ\Publish\API\Repository\Values\Content\Field;
 use EzSystems\EzPlatformRichText\eZ\RichText\Converter as RichTextConverterInterface;
 use EzSystems\EzPlatformRichTextBundle\eZ\RichText\Converter\Html5 as XmlHtml5;
-use EzSystems\EzRecommendationClient\Helper\ImageHelper;
+use Ibexa\PersonalizationClient\Helper\ImageHelper;
 use LogicException;
 
 final class TypeValue
@@ -111,3 +111,5 @@ final class TypeValue
         return '';
     }
 }
+
+class_alias(TypeValue::class, 'EzSystems\EzRecommendationClient\Field\TypeValue');

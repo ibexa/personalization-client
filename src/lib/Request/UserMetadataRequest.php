@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Request;
+namespace Ibexa\PersonalizationClient\Request;
 
-use EzSystems\EzRecommendationClient\SPI\UserAPIRequest;
+use Ibexa\PersonalizationClient\SPI\UserAPIRequest;
 
 final class UserMetadataRequest extends UserAPIRequest
 {
@@ -30,3 +30,5 @@ final class UserMetadataRequest extends UserAPIRequest
         ];
     }
 }
+
+class_alias(UserMetadataRequest::class, 'EzSystems\EzRecommendationClient\Request\UserMetadataRequest');

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Command;
+namespace Ibexa\Bundle\PersonalizationClient\Command;
 
 use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\Event\UpdateUserAPIEvent;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Event\UpdateUserAPIEvent;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -90,3 +90,5 @@ final class UserAttributesUpdateCommand extends Command implements BackwardCompa
         return ['ezrecommendation:user:update'];
     }
 }
+
+class_alias(UserAttributesUpdateCommand::class, 'EzSystems\EzRecommendationClientBundle\Command\UserAttributesUpdateCommand');

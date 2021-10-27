@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\File;
+namespace Ibexa\Tests\PersonalizationClient\File;
 
-use EzSystems\EzRecommendationClient\Exception\FileNotFoundException;
-use EzSystems\EzRecommendationClient\File\FileManager;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Exception\FileNotFoundException;
+use Ibexa\PersonalizationClient\File\FileManager;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
@@ -300,3 +300,5 @@ class FileManagerTest extends TestCase
         ]);
     }
 }
+
+class_alias(FileManagerTest::class, 'EzSystems\EzRecommendationClient\Tests\File\FileManagerTest');

@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
-use EzSystems\EzRecommendationClient\SPI\Notification;
+use Ibexa\PersonalizationClient\SPI\Notification;
 
 class ExportNotification extends Notification
 {
@@ -21,3 +21,5 @@ class ExportNotification extends Notification
     /** @var string */
     public $endPointUri;
 }
+
+class_alias(ExportNotification::class, 'EzSystems\EzRecommendationClient\Value\ExportNotification');
