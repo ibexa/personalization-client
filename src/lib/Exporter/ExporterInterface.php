@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exporter;
+namespace Ibexa\PersonalizationClient\Exporter;
 
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,3 +15,5 @@ interface ExporterInterface
 {
     public function run(Parameters $parameters, string $chunkDir, OutputInterface $output): array;
 }
+
+class_alias(ExporterInterface::class, 'EzSystems\EzRecommendationClient\Exporter\ExporterInterface');

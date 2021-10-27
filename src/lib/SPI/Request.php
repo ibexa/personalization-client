@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\SPI;
+namespace Ibexa\PersonalizationClient\SPI;
 
 abstract class Request
 {
@@ -39,3 +39,5 @@ abstract class Request
         return $extractedAttributes;
     }
 }
+
+class_alias(Request::class, 'EzSystems\EzRecommendationClient\SPI\Request');

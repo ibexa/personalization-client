@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Listener;
+namespace Ibexa\PersonalizationClient\Event\Listener;
 
 use eZ\Publish\API\Repository\UserService as UserServiceInterface;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\Value\Parameters;
-use EzSystems\EzRecommendationClient\Value\Session as RecommendationSession;
 use GuzzleHttp\Exception\RequestException;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Value\Session as RecommendationSession;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -132,3 +132,5 @@ final class LoginListener
         return (string) $authenticationToken->getUsername();
     }
 }
+
+class_alias(LoginListener::class, 'EzSystems\EzRecommendationClient\Event\Listener\LoginListener');

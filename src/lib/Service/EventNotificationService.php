@@ -6,17 +6,17 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\Helper\ContentTypeHelper;
-use EzSystems\EzRecommendationClient\Request\EventNotifierRequest;
-use EzSystems\EzRecommendationClient\SPI\Notification;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
-use EzSystems\EzRecommendationClient\Value\EventNotification;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\Helper\ContentTypeHelper;
+use Ibexa\PersonalizationClient\Request\EventNotifierRequest;
+use Ibexa\PersonalizationClient\SPI\Notification;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Value\EventNotification;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -124,3 +124,5 @@ final class EventNotificationService extends NotificationService
         return $events;
     }
 }
+
+class_alias(EventNotificationService::class, 'EzSystems\EzRecommendationClient\Service\EventNotificationService');

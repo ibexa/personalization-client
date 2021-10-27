@@ -4,9 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Authentication\:
+    Ibexa\PersonalizationClient\Authentication\:
         resource: '../../../../src/lib/Authentication/*'
 
-    EzSystems\EzRecommendationClient\Authentication\ExportAuthenticator:
+    Ibexa\PersonalizationClient\Authentication\ExportAuthenticator:
         arguments:
-            $credentialsResolver: '@EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver'
+            $credentialsResolver: '@Ibexa\PersonalizationClient\Config\ExportCredentialsResolver'

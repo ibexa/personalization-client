@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions;
+namespace Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions;
 
 use Twig\Environment as TwigEnvironment;
 
@@ -20,3 +20,5 @@ abstract class AbstractFunction
         $this->twig = $twig;
     }
 }
+
+class_alias(AbstractFunction::class, 'EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions\AbstractFunction');

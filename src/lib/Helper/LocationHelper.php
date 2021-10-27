@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
@@ -59,3 +59,5 @@ final class LocationHelper
         return $parentLocation->pathString;
     }
 }
+
+class_alias(LocationHelper::class, 'EzSystems\EzRecommendationClient\Helper\LocationHelper');

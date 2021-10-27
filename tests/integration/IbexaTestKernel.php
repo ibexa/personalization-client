@@ -17,9 +17,9 @@ use EzSystems\DoctrineSchema\Database\DbPlatform\SqliteDbPlatform;
 use EzSystems\EzPlatformCoreBundle\EzPlatformCoreBundle;
 use EzSystems\EzPlatformRestBundle\EzPlatformRestBundle;
 use EzSystems\EzPlatformRichTextBundle\EzPlatformRichTextBundle;
-use EzSystems\EzRecommendationClientBundle\EzRecommendationClientBundle;
 use FOS\JsRoutingBundle\FOSJsRoutingBundle;
 use Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle;
+use Ibexa\Bundle\PersonalizationClient\IbexaPersonalizationClientBundle;
 use JMS\TranslationBundle\JMSTranslationBundle;
 use Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle;
 use Liip\ImagineBundle\LiipImagineBundle;
@@ -42,7 +42,7 @@ final class IbexaTestKernel extends Kernel
     {
         return [
             new DoctrineBundle(),
-            new EzRecommendationClientBundle(),
+            new IbexaPersonalizationClientBundle(),
             new EzPlatformCoreBundle(),
             new EzPlatformRestBundle(),
             new EzPlatformRichTextBundle(),

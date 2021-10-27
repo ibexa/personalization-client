@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\DependencyInjection;
+namespace Ibexa\Bundle\PersonalizationClient\DependencyInjection;
 
 use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\Configuration as SiteAccessConfiguration;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -197,3 +197,5 @@ class Configuration extends SiteAccessConfiguration
         return $treeBuilder;
     }
 }
+
+class_alias(Configuration::class, 'EzSystems\EzRecommendationClientBundle\DependencyInjection\Configuration');

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzRecommendationClient\Exception\ResponseClassNotImplementedException;
+use Ibexa\PersonalizationClient\Exception\ResponseClassNotImplementedException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -59,3 +59,5 @@ class ContentDataVisitor extends ValueObjectVisitor
         return $this->responseRenderers[$data->options['responseType']]->render($generator, $data);
     }
 }
+
+class_alias(ContentDataVisitor::class, 'EzSystems\EzRecommendationClient\Value\ContentDataVisitor');

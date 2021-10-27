@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Service;
+namespace Ibexa\Tests\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 
@@ -34,3 +34,5 @@ abstract class NotificationServiceTest extends TestCase
         ];
     }
 }
+
+class_alias(NotificationServiceTest::class, 'EzSystems\EzRecommendationClient\Tests\Service\NotificationServiceTest');

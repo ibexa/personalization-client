@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\ParamConverter;
+namespace Ibexa\Bundle\PersonalizationClient\ParamConverter;
 
 use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
-use EzSystems\EzRecommendationClient\Mapper\ExportRequestMapper;
-use EzSystems\EzRecommendationClient\Value\ExportRequest;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Mapper\ExportRequestMapper;
+use Ibexa\PersonalizationClient\Value\ExportRequest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -52,3 +52,5 @@ final class ExportRequestParamConverter implements ParamConverterInterface
         return ExportRequest::class === $configuration->getClass();
     }
 }
+
+class_alias(ExportRequestParamConverter::class, 'EzSystems\EzRecommendationClientBundle\ParamConverter\ExportRequestParamConverter');

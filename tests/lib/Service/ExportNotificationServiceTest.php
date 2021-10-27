@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Service;
+namespace Ibexa\Tests\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\API\Notifier;
-use EzSystems\EzRecommendationClient\Service\ExportNotificationService;
-use EzSystems\EzRecommendationClient\Value\ExportNotification;
 use GuzzleHttp\Psr7\Response;
+use Ibexa\PersonalizationClient\API\Notifier;
+use Ibexa\PersonalizationClient\Service\ExportNotificationService;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
+use Ibexa\PersonalizationClient\Value\ExportNotification;
 
 class ExportNotificationServiceTest extends NotificationServiceTest
 {
@@ -119,3 +119,5 @@ class ExportNotificationServiceTest extends NotificationServiceTest
         );
     }
 }
+
+class_alias(ExportNotificationServiceTest::class, 'EzSystems\EzRecommendationClient\Tests\Service\ExportNotificationServiceTest');

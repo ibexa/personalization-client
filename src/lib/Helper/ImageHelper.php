@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use eZ\Publish\API\Repository\Values\Content\Content;
 use eZ\Publish\API\Repository\Values\Content\Field;
@@ -54,3 +54,5 @@ final class ImageHelper
         return parse_url($uri, PHP_URL_PATH);
     }
 }
+
+class_alias(ImageHelper::class, 'EzSystems\EzRecommendationClient\Helper\ImageHelper');

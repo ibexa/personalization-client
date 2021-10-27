@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Event\Subscriber;
+namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\LocationService;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\Helper\LocationHelper;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\Helper\LocationHelper;
 
 abstract class AbstractRepositoryEventSubscriberTest extends AbstractCoreEventSubscriberTest
 {
@@ -37,3 +37,5 @@ abstract class AbstractRepositoryEventSubscriberTest extends AbstractCoreEventSu
         $this->contentHelperMock = $this->createMock(ContentHelper::class);
     }
 }
+
+class_alias(AbstractRepositoryEventSubscriberTest::class, 'EzSystems\EzRecommendationClient\Tests\Event\Subscriber\AbstractRepositoryEventSubscriberTest');

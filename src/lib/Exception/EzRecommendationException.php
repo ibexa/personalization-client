@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 interface EzRecommendationException extends \Throwable
 {
 }
+
+class_alias(EzRecommendationException::class, 'EzSystems\EzRecommendationClient\Exception\EzRecommendationException');

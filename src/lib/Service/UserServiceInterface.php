@@ -6,9 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
 interface UserServiceInterface
 {
     public function getUserIdentifier(): string;
 }
+
+class_alias(UserServiceInterface::class, 'EzSystems\EzRecommendationClient\Service\UserServiceInterface');

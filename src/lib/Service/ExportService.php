@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Exporter\ExporterInterface;
-use EzSystems\EzRecommendationClient\File\FileManagerInterface;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Exporter\ExporterInterface;
+use Ibexa\PersonalizationClient\File\FileManagerInterface;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -80,3 +80,5 @@ final class ExportService implements ExportServiceInterface
         return $this->fileManager->secureDir($chunkDir, $credentials);
     }
 }
+
+class_alias(ExportService::class, 'EzSystems\EzRecommendationClient\Service\ExportService');

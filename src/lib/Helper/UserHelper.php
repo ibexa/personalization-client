@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -50,3 +50,5 @@ final class UserHelper
         return (string) $authenticationToken->getUsername();
     }
 }
+
+class_alias(UserHelper::class, 'EzSystems\EzRecommendationClient\Helper\UserHelper');
