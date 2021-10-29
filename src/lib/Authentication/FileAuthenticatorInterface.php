@@ -6,9 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Authentication;
+namespace Ibexa\PersonalizationClient\Authentication;
 
 interface FileAuthenticatorInterface extends AuthenticatorInterface
 {
     public function authenticateByFile(string $filePath): bool;
 }
+
+class_alias(FileAuthenticatorInterface::class, 'EzSystems\EzRecommendationClient\Authentication\FileAuthenticatorInterface');

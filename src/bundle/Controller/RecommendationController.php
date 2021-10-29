@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Controller;
+namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Event\RecommendationResponseEvent;
-use EzSystems\EzRecommendationClient\Request\BasicRecommendationRequest;
-use EzSystems\EzRecommendationClient\Service\RecommendationServiceInterface;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Event\RecommendationResponseEvent;
+use Ibexa\PersonalizationClient\Request\BasicRecommendationRequest;
+use Ibexa\PersonalizationClient\Service\RecommendationServiceInterface;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -97,3 +97,5 @@ class RecommendationController
         return $this->twig()->getLoader()->exists($template) ? $template : self::DEFAULT_TEMPLATE;
     }
 }
+
+class_alias(RecommendationController::class, 'EzSystems\EzRecommendationClientBundle\Controller\RecommendationController');

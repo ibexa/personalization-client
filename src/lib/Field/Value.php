@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Field;
+namespace Ibexa\PersonalizationClient\Field;
 
 use Exception;
 use eZ\Publish\API\Repository\ContentService;
@@ -14,8 +14,8 @@ use eZ\Publish\API\Repository\ContentTypeService;
 use eZ\Publish\API\Repository\Values\Content\Content;
 use eZ\Publish\API\Repository\Values\Content\Field;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use EzSystems\EzRecommendationClient\Exception\InvalidRelationException;
-use EzSystems\EzRecommendationClient\Mapper\RelationMapper;
+use Ibexa\PersonalizationClient\Exception\InvalidRelationException;
+use Ibexa\PersonalizationClient\Mapper\RelationMapper;
 use Psr\Log\LoggerInterface;
 
 final class Value
@@ -246,3 +246,5 @@ final class Value
         }
     }
 }
+
+class_alias(Value::class, 'EzSystems\EzRecommendationClient\Field\Value');

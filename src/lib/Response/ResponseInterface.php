@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Response;
+namespace Ibexa\PersonalizationClient\Response;
 
 use EzSystems\EzPlatformRest\Output\Generator;
 
@@ -17,3 +17,5 @@ interface ResponseInterface
      */
     public function render(Generator $generator, $data): Generator;
 }
+
+class_alias(ResponseInterface::class, 'EzSystems\EzRecommendationClient\Response\ResponseInterface');

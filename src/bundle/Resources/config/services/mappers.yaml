@@ -4,9 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Mapper\:
+    Ibexa\PersonalizationClient\Mapper\:
         resource: '../../../../src/lib/Mapper/*'
 
-    EzSystems\EzRecommendationClient\Mapper\RelationMapper:
+    Ibexa\PersonalizationClient\Mapper\RelationMapper:
         arguments:
             $fieldMappings: "%ezrecommendation.default.field.relations%"

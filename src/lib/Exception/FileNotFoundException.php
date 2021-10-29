@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 class FileNotFoundException extends NotFoundException
 {
@@ -15,3 +15,5 @@ class FileNotFoundException extends NotFoundException
         parent::__construct($message, $code, $previous);
     }
 }
+
+class_alias(FileNotFoundException::class, 'EzSystems\EzRecommendationClient\Exception\FileNotFoundException');

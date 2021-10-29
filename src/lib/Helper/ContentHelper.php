@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
@@ -17,7 +17,7 @@ use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Value\Parameters;
 use Psr\Log\LoggerInterface;
 
 final class ContentHelper
@@ -187,3 +187,5 @@ final class ContentHelper
         return new Criterion\LogicalOr($subtreeCriteria);
     }
 }
+
+class_alias(ContentHelper::class, 'EzSystems\EzRecommendationClient\Helper\ContentHelper');

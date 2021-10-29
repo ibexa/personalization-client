@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 class InvalidArgumentException extends \Exception implements EzRecommendationException
 {
@@ -15,3 +15,5 @@ class InvalidArgumentException extends \Exception implements EzRecommendationExc
         parent::__construct($message, 0, $previous);
     }
 }
+
+class_alias(InvalidArgumentException::class, 'EzSystems\EzRecommendationClient\Exception\InvalidArgumentException');

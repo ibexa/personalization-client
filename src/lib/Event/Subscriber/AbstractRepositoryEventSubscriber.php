@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\Helper\LocationHelper;
-use EzSystems\EzRecommendationClient\Service\NotificationService;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\Helper\LocationHelper;
+use Ibexa\PersonalizationClient\Service\NotificationService;
 
 abstract class AbstractRepositoryEventSubscriber extends AbstractCoreEventSubscriber
 {
@@ -59,3 +59,5 @@ abstract class AbstractRepositoryEventSubscriber extends AbstractCoreEventSubscr
         }
     }
 }
+
+class_alias(AbstractRepositoryEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\AbstractRepositoryEventSubscriber');

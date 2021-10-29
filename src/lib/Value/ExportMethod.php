@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 class ExportMethod
 {
@@ -14,3 +14,5 @@ class ExportMethod
     const USER = 'user';
     const NONE = 'none';
 }
+
+class_alias(ExportMethod::class, 'EzSystems\EzRecommendationClient\Value\ExportMethod');

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Event\Subscriber;
+namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Events\Trash\RecoverEvent;
 use eZ\Publish\API\Repository\Events\Trash\TrashEvent;
@@ -15,7 +15,7 @@ use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\API\Repository\Values\Content\LocationList;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\Core\Repository\Values\Content\Relation;
-use EzSystems\EzRecommendationClient\Event\Subscriber\TrashEventSubscriber;
+use Ibexa\PersonalizationClient\Event\Subscriber\TrashEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class TrashEventSubscriberTest extends AbstractRepositoryEventSubscriberTest
@@ -162,3 +162,5 @@ final class TrashEventSubscriberTest extends AbstractRepositoryEventSubscriberTe
         ]);
     }
 }
+
+class_alias(TrashEventSubscriberTest::class, 'EzSystems\EzRecommendationClient\Tests\Event\Subscriber\TrashEventSubscriberTest');

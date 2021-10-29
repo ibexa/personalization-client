@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\DependencyInjection;
+namespace Ibexa\Bundle\PersonalizationClient\DependencyInjection;
 
 use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ContextualizerInterface;
 use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\HookableConfigurationMapperInterface;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Value\Parameters;
 
 class ConfigurationMapper implements HookableConfigurationMapperInterface
 {
@@ -126,3 +126,5 @@ class ConfigurationMapper implements HookableConfigurationMapperInterface
         }
     }
 }
+
+class_alias(ConfigurationMapper::class, 'EzSystems\EzRecommendationClientBundle\DependencyInjection\ConfigurationMapper');

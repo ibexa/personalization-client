@@ -4,38 +4,38 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Service\ExportService:
+    Ibexa\PersonalizationClient\Service\ExportService:
         arguments:
-            $credentialsResolver: '@EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver'
-            $notificationService: '@EzSystems\EzRecommendationClient\Service\ExportNotificationService'
+            $credentialsResolver: '@Ibexa\PersonalizationClient\Config\ExportCredentialsResolver'
+            $notificationService: '@Ibexa\PersonalizationClient\Service\ExportNotificationService'
 
-    EzSystems\EzRecommendationClient\Service\ExportServiceInterface:
-        '@EzSystems\EzRecommendationClient\Service\ExportService'
+    Ibexa\PersonalizationClient\Service\ExportServiceInterface:
+        '@Ibexa\PersonalizationClient\Service\ExportService'
 
-    EzSystems\EzRecommendationClient\Service\ExportNotificationService: ~
+    Ibexa\PersonalizationClient\Service\ExportNotificationService: ~
 
-    EzSystems\EzRecommendationClient\Service\ContentService:
+    Ibexa\PersonalizationClient\Service\ContentService:
         arguments:
             $defaultAuthorId: '%ezrecommendation.default.author_id%'
             $defaultSiteAccess: '%ezpublish.siteaccess.default%'
 
-    EzSystems\EzRecommendationClient\Service\ContentServiceInterface:
-        '@EzSystems\EzRecommendationClient\Service\ContentService'
+    Ibexa\PersonalizationClient\Service\ContentServiceInterface:
+        '@Ibexa\PersonalizationClient\Service\ContentService'
 
-    EzSystems\EzRecommendationClient\Service\RecommendationService: ~
+    Ibexa\PersonalizationClient\Service\RecommendationService: ~
 
-    EzSystems\EzRecommendationClient\Service\RecommendationServiceInterface:
-        '@EzSystems\EzRecommendationClient\Service\RecommendationService'
+    Ibexa\PersonalizationClient\Service\RecommendationServiceInterface:
+        '@Ibexa\PersonalizationClient\Service\RecommendationService'
 
-    EzSystems\EzRecommendationClient\Service\UserService: ~
+    Ibexa\PersonalizationClient\Service\UserService: ~
 
-    EzSystems\EzRecommendationClient\Service\UserServiceInterface:
-        '@EzSystems\EzRecommendationClient\Service\UserService'
+    Ibexa\PersonalizationClient\Service\UserServiceInterface:
+        '@Ibexa\PersonalizationClient\Service\UserService'
 
-    EzSystems\EzRecommendationClient\Service\EventNotificationService:
+    Ibexa\PersonalizationClient\Service\EventNotificationService:
         arguments:
-            $clientCredentials: '@EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver'
-            $exportCredentials: '@EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver'
+            $clientCredentials: '@Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver'
+            $exportCredentials: '@Ibexa\PersonalizationClient\Config\ExportCredentialsResolver'
 
     Ibexa\PersonalizationClient\Service\Storage\DataSourceService:
         arguments:

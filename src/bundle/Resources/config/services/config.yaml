@@ -4,9 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver: ~
+    Ibexa\PersonalizationClient\Config\ExportCredentialsResolver: ~
 
-    EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver: ~
+    Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver: ~
 
     Ibexa\PersonalizationClient\Config\ItemType\IncludedItemTypeResolver:
         tags:

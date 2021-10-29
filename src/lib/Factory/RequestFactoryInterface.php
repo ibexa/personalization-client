@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Factory;
+namespace Ibexa\PersonalizationClient\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -14,3 +14,5 @@ interface RequestFactoryInterface
 {
     public function createRequest(): Request;
 }
+
+class_alias(RequestFactoryInterface::class, 'EzSystems\EzRecommendationClient\Factory\RequestFactoryInterface');

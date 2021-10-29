@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 abstract class ExportException extends \Exception implements EzRecommendationException
 {
 }
+
+class_alias(ExportException::class, 'EzSystems\EzRecommendationClient\Exception\ExportException');

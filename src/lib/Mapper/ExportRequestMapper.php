@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Mapper;
+namespace Ibexa\PersonalizationClient\Mapper;
 
-use EzSystems\EzRecommendationClient\Helper\ParamsConverterHelper;
-use EzSystems\EzRecommendationClient\Value\ExportRequest;
+use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
+use Ibexa\PersonalizationClient\Value\ExportRequest;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -105,3 +105,5 @@ final class ExportRequestMapper
         return preg_replace('/[^a-zA-Z0-9_-]+/', '', $parameterBag->get('lang'));
     }
 }
+
+class_alias(ExportRequestMapper::class, 'EzSystems\EzRecommendationClient\Mapper\ExportRequestMapper');

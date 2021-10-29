@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Response;
+namespace Ibexa\PersonalizationClient\Response;
 
 use EzSystems\EzPlatformRest\Output\Generator;
 
@@ -28,3 +28,5 @@ final class HttpResponse extends Response
         return $this->contentListElementGenerator->generateElement($generator, $contents);
     }
 }
+
+class_alias(HttpResponse::class, 'EzSystems\EzRecommendationClient\Response\HttpResponse');

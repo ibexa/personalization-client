@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Factory;
+namespace Ibexa\PersonalizationClient\Factory;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -33,3 +33,5 @@ class FakeRequestFactory implements RequestFactoryInterface
         return $request;
     }
 }
+
+class_alias(FakeRequestFactory::class, 'EzSystems\EzRecommendationClient\Factory\FakeRequestFactory');

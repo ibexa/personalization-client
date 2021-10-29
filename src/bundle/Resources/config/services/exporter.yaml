@@ -4,10 +4,10 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Exporter\:
+    Ibexa\PersonalizationClient\Exporter\:
         resource: '../../../../src/lib/Exporter/*'
 
-    EzSystems\EzRecommendationClient\Exporter\Exporter:
+    Ibexa\PersonalizationClient\Exporter\Exporter:
         arguments:
             $repository: '@ezpublish.api.repository'
         tags:

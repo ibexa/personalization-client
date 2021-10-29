@@ -6,11 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\API;
+namespace Ibexa\Tests\PersonalizationClient\API;
 
-use EzSystems\EzRecommendationClient\API\AbstractAPI;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
 
 class APIEndPointClassTest extends AbstractAPI
 {
     const API_NAME = 'api-test';
 }
+
+class_alias(APIEndPointClassTest::class, 'EzSystems\EzRecommendationClient\Tests\API\APIEndPointClassTest');
