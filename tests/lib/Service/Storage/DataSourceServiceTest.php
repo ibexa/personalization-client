@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Service\Storage;
 
-use EzSystems\EzRecommendationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
 use Ibexa\PersonalizationClient\Service\Storage\DataSourceService;
+use Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface;
 use Ibexa\PersonalizationClient\Strategy\Storage\SupportedGroupItemStrategy;
 use Ibexa\Tests\PersonalizationClient\Creator\DataSourceTestItemCreator;
 use Ibexa\Tests\PersonalizationClient\Storage\AbstractDataSourceTestCase;

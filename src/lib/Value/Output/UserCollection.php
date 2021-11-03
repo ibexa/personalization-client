@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value\Output;
+namespace Ibexa\PersonalizationClient\Value\Output;
 
 use Webmozart\Assert\Assert;
 
@@ -37,3 +37,5 @@ class UserCollection
         return 0 === \count($this->users);
     }
 }
+
+class_alias(UserCollection::class, 'EzSystems\EzRecommendationClient\Value\Output\UserCollection');

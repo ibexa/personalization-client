@@ -6,18 +6,18 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Service;
+namespace Ibexa\Tests\PersonalizationClient\Service;
 
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use EzSystems\EzRecommendationClient\API\Notifier;
-use EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver;
-use EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\Helper\ContentTypeHelper;
-use EzSystems\EzRecommendationClient\Service\EventNotificationService;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
-use EzSystems\EzRecommendationClient\Value\Config\EzRecommendationClientCredentials;
-use EzSystems\EzRecommendationClient\Value\EventNotification;
+use Ibexa\PersonalizationClient\API\Notifier;
+use Ibexa\PersonalizationClient\Config\ExportCredentialsResolver;
+use Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\Helper\ContentTypeHelper;
+use Ibexa\PersonalizationClient\Service\EventNotificationService;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Value\Config\EzRecommendationClientCredentials;
+use Ibexa\PersonalizationClient\Value\EventNotification;
 
 class EventNotificationServiceTest extends NotificationServiceTest
 {
@@ -105,3 +105,5 @@ class EventNotificationServiceTest extends NotificationServiceTest
         );
     }
 }
+
+class_alias(EventNotificationServiceTest::class, 'EzSystems\EzRecommendationClient\Tests\Service\EventNotificationServiceTest');

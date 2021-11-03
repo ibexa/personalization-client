@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Mapper;
+namespace Ibexa\PersonalizationClient\Mapper;
 
 final class RelationMapper
 {
@@ -39,3 +39,5 @@ final class RelationMapper
         ];
     }
 }
+
+class_alias(RelationMapper::class, 'EzSystems\EzRecommendationClient\Mapper\RelationMapper');

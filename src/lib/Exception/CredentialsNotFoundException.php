@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 use Throwable;
 
@@ -27,3 +27,5 @@ final class CredentialsNotFoundException extends NotFoundException
         );
     }
 }
+
+class_alias(CredentialsNotFoundException::class, 'EzSystems\EzRecommendationClient\Exception\CredentialsNotFoundException');

@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 abstract class TransferException extends \Exception implements EzRecommendationException
 {
 }
+
+class_alias(TransferException::class, 'EzSystems\EzRecommendationClient\Exception\TransferException');

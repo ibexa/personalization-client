@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,3 +15,5 @@ interface ExportServiceInterface
 {
     public function runExport(Parameters $parameters, OutputInterface $output): void;
 }
+
+class_alias(ExportServiceInterface::class, 'EzSystems\EzRecommendationClient\Service\ExportServiceInterface');

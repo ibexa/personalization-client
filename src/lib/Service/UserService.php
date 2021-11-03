@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Service;
+namespace Ibexa\PersonalizationClient\Service;
 
-use EzSystems\EzRecommendationClient\Helper\SessionHelper;
-use EzSystems\EzRecommendationClient\Helper\UserHelper;
-use EzSystems\EzRecommendationClient\Value\Session;
+use Ibexa\PersonalizationClient\Helper\SessionHelper;
+use Ibexa\PersonalizationClient\Helper\UserHelper;
+use Ibexa\PersonalizationClient\Value\Session;
 use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
 
 final class UserService implements UserServiceInterface
@@ -50,3 +50,5 @@ final class UserService implements UserServiceInterface
         return $this->sessionHelper->getAnonymousSessionId(Session::RECOMMENDATION_SESSION_KEY);
     }
 }
+
+class_alias(UserService::class, 'EzSystems\EzRecommendationClient\Service\UserService');

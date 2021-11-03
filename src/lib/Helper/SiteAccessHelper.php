@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Helper;
+namespace Ibexa\PersonalizationClient\Helper;
 
 use eZ\Publish\Core\Base\Exceptions\NotFoundException;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
@@ -197,3 +197,5 @@ final class SiteAccessHelper
             && (int)$this->siteAccessConfig[$this->defaultSiteAccessName]['authentication']['customer_id'] === $customerId;
     }
 }
+
+class_alias(SiteAccessHelper::class, 'EzSystems\EzRecommendationClient\Helper\SiteAccessHelper');

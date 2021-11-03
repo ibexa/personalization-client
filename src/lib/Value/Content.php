@@ -6,10 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
-use EzSystems\EzRecommendationClient\SPI\Content as ContentOptions;
+use Ibexa\PersonalizationClient\SPI\Content as ContentOptions;
 
 class Content extends ContentOptions
 {
 }
+
+class_alias(Content::class, 'EzSystems\EzRecommendationClient\Value\Content');

@@ -9,4 +9,4 @@ services:
     Ibexa\PersonalizationClient\Generator\UniqueStringGeneratorInterface:
         '@Ibexa\PersonalizationClient\Generator\SecureUniqueStringGenerator'
 
-    EzSystems\EzRecommendationClient\Generator\ContentListElementGenerator: ~
+    Ibexa\PersonalizationClient\Generator\ContentListElementGenerator: ~

@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Generator;
 
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
 
 final class SecureUniqueStringGenerator implements UniqueStringGeneratorInterface
 {
@@ -25,7 +25,7 @@ final class SecureUniqueStringGenerator implements UniqueStringGeneratorInterfac
     }
 
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\InvalidArgumentException
+     * @throws \Ibexa\PersonalizationClient\Exception\InvalidArgumentException
      * @throws \Exception
      */
     public function generate(int $length): string

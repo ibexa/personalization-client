@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle\Templating\Twig;
+namespace Ibexa\Bundle\PersonalizationClient\Templating\Twig;
 
-use EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions\Recommendation;
-use EzSystems\EzRecommendationClientBundle\Templating\Twig\Functions\UserTracking;
+use Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions\Recommendation;
+use Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions\UserTracking;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -36,3 +36,5 @@ final class RecommendationExtension extends AbstractExtension
         ];
     }
 }
+
+class_alias(RecommendationExtension::class, 'EzSystems\EzRecommendationClientBundle\Templating\Twig\RecommendationExtension');

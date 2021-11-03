@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\File;
+namespace Ibexa\PersonalizationClient\File;
 
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
 
 interface FileManagerInterface
 {
@@ -54,3 +54,5 @@ interface FileManagerInterface
      */
     public function secureDir(string $chunkDir, ExportCredentials $credentials): array;
 }
+
+class_alias(FileManagerInterface::class, 'EzSystems\EzRecommendationClient\File\FileManagerInterface');

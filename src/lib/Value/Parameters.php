@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 class Parameters
 {
@@ -14,3 +14,5 @@ class Parameters
     const API_SCOPE = 'api';
     const FIELD_SCOPE = 'field';
 }
+
+class_alias(Parameters::class, 'EzSystems\EzRecommendationClient\Value\Parameters');

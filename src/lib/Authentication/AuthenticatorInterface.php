@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Authentication;
+namespace Ibexa\PersonalizationClient\Authentication;
 
 /**
  * This interface is to be implemented by authenticator classes.
@@ -16,3 +16,5 @@ interface AuthenticatorInterface
 {
     public function authenticate(): bool;
 }
+
+class_alias(AuthenticatorInterface::class, 'EzSystems\EzRecommendationClient\Authentication\AuthenticatorInterface');

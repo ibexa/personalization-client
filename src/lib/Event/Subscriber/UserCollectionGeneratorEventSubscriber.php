@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use EzSystems\EzRecommendationClient\Event\GenerateUserCollectionDataEvent;
-use EzSystems\EzRecommendationClient\Event\UpdateUserAPIEvent;
-use EzSystems\EzRecommendationClient\Value\Output\UserCollection;
-use EzSystems\EzRecommendationClientBundle\Serializer\Normalizer\AttributeNormalizer;
-use EzSystems\EzRecommendationClientBundle\Serializer\Normalizer\UserCollectionNormalizer;
-use EzSystems\EzRecommendationClientBundle\Serializer\Normalizer\UserNormalizer;
+use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\AttributeNormalizer;
+use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\UserCollectionNormalizer;
+use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\UserNormalizer;
+use Ibexa\PersonalizationClient\Event\GenerateUserCollectionDataEvent;
+use Ibexa\PersonalizationClient\Event\UpdateUserAPIEvent;
+use Ibexa\PersonalizationClient\Value\Output\UserCollection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
@@ -83,3 +83,5 @@ final class UserCollectionGeneratorEventSubscriber implements EventSubscriberInt
         );
     }
 }
+
+class_alias(UserCollectionGeneratorEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\UserCollectionGeneratorEventSubscriber');

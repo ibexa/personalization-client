@@ -9,7 +9,7 @@ services:
             - { name: console.command }
             - { name: monolog.logger, channel: ibexa-recommendation }
 
-    EzSystems\EzRecommendationClientBundle\Command\UserAttributesUpdateCommand:
+    Ibexa\Bundle\PersonalizationClient\Command\UserAttributesUpdateCommand:
         tags:
             - { name: console.command }
             - { name: monolog.logger, channel: ibexa-recommendation }

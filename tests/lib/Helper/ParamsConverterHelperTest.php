@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Helper;
+namespace Ibexa\Tests\PersonalizationClient\Helper;
 
-use EzSystems\EzRecommendationClient\Helper\ParamsConverterHelper;
+use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
 use PHPUnit\Framework\TestCase;
 
 class ParamsConverterHelperTest extends TestCase
@@ -71,3 +71,5 @@ class ParamsConverterHelperTest extends TestCase
         $this->assertIsArray($result);
     }
 }
+
+class_alias(ParamsConverterHelperTest::class, 'EzSystems\EzRecommendationClient\Tests\Helper\ParamsConverterHelperTest');

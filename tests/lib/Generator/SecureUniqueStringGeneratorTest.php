@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Generator;
 
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
 use Ibexa\PersonalizationClient\Generator\SecureUniqueStringGenerator;
 use Ibexa\PersonalizationClient\Generator\UniqueStringGeneratorInterface;
 use PHPUnit\Framework\TestCase;
@@ -34,7 +34,7 @@ final class SecureUniqueStringGeneratorTest extends TestCase
     }
 
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\InvalidArgumentException
+     * @throws \Ibexa\PersonalizationClient\Exception\InvalidArgumentException
      */
     public function testGenerate(): void
     {

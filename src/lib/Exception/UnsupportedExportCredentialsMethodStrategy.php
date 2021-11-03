@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Exception;
 
-use EzSystems\EzRecommendationClient\Exception\EzRecommendationException;
 use RuntimeException;
 use Throwable;
 

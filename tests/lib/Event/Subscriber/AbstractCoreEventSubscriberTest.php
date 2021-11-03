@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Event\Subscriber;
+namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\Core\Repository\Values\Content\Content;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\Core\Repository\Values\Content\VersionInfo;
-use EzSystems\EzRecommendationClient\Service\EventNotificationService;
+use Ibexa\PersonalizationClient\Service\EventNotificationService;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -61,3 +61,5 @@ abstract class AbstractCoreEventSubscriberTest extends TestCase
 
     abstract public function subscribedEventsDataProvider(): array;
 }
+
+class_alias(AbstractCoreEventSubscriberTest::class, 'EzSystems\EzRecommendationClient\Tests\Event\Subscriber\AbstractCoreEventSubscriberTest');

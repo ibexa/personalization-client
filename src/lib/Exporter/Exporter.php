@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exporter;
+namespace Ibexa\PersonalizationClient\Exporter;
 
 use eZ\Publish\API\Repository\ContentTypeService as ContentTypeServiceInterface;
 use eZ\Publish\API\Repository\Repository;
-use EzSystems\EzRecommendationClient\File\ExportFileGenerator;
-use EzSystems\EzRecommendationClient\Helper\ContentHelper;
-use EzSystems\EzRecommendationClient\Service\ContentServiceInterface;
+use Ibexa\PersonalizationClient\File\ExportFileGenerator;
+use Ibexa\PersonalizationClient\Helper\ContentHelper;
+use Ibexa\PersonalizationClient\Service\ContentServiceInterface;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -177,3 +177,5 @@ final class Exporter implements ExporterInterface
         ];
     }
 }
+
+class_alias(Exporter::class, 'EzSystems\EzRecommendationClient\Exporter\Exporter');

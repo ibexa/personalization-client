@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\SPI;
+namespace Ibexa\PersonalizationClient\SPI;
 
 use eZ\Publish\API\Repository\Values\ValueObject;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -35,3 +35,5 @@ abstract class Content extends ValueObject
         return get_object_vars($this);
     }
 }
+
+class_alias(Content::class, 'EzSystems\EzRecommendationClient\SPI\Content');

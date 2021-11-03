@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
@@ -18,11 +18,11 @@ use eZ\Publish\Core\FieldType\TextLine\Value as TextLineValue;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\SPI\FieldType\Value;
 use EzSystems\EzPlatformRichText\eZ\FieldType\RichText\Value as RichTextValue;
-use EzSystems\EzRecommendationClient\Event\RecommendationResponseEvent;
-use EzSystems\EzRecommendationClient\Helper\ImageHelper;
-use EzSystems\EzRecommendationClient\Request\BasicRecommendationRequest;
-use EzSystems\EzRecommendationClient\Value\Parameters;
-use EzSystems\EzRecommendationClient\Value\RecommendationItem;
+use Ibexa\PersonalizationClient\Event\RecommendationResponseEvent;
+use Ibexa\PersonalizationClient\Helper\ImageHelper;
+use Ibexa\PersonalizationClient\Request\BasicRecommendationRequest;
+use Ibexa\PersonalizationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Value\RecommendationItem;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -187,3 +187,5 @@ final class RecommendationRandomContentEventSubscriber implements EventSubscribe
             $content->getFieldValue($fieldName);
     }
 }
+
+class_alias(RecommendationRandomContentEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\RecommendationRandomContentEventSubscriber');

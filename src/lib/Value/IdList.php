@@ -6,10 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 class IdList
 {
     /** @var array */
     public $list;
 }
+
+class_alias(IdList::class, 'EzSystems\EzRecommendationClient\Value\IdList');

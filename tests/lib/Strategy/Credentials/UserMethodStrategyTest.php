@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Strategy\Credentials;
 
-use EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
 use Ibexa\PersonalizationClient\Strategy\Credentials\ExportCredentialsStrategyInterface;
 use Ibexa\PersonalizationClient\Strategy\Credentials\UserMethodStrategy;
 use Ibexa\PersonalizationClient\Value\Export\Credentials;
@@ -22,7 +22,9 @@ final class UserMethodStrategyTest extends TestCase
 {
     private ExportCredentialsStrategyInterface $credentialsStrategy;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /**
+     * @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface|\PHPUnit\Framework\MockObject\MockObject
+     */
     private CredentialsResolverInterface $credentialsResolver;
 
     protected function setUp(): void

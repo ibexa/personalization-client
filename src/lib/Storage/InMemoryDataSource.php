@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Storage;
+namespace Ibexa\PersonalizationClient\Storage;
 
 use Closure;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
@@ -49,3 +49,5 @@ final class InMemoryDataSource implements DataSourceInterface
         };
     }
 }
+
+class_alias(InMemoryDataSource::class, 'EzSystems\EzRecommendationClient\Storage\InMemoryDataSource');
