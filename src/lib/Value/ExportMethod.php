@@ -8,11 +8,15 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Value;
 
-class ExportMethod
+use Ibexa\PersonalizationClient\Strategy\Credentials\BasicMethodStrategy;
+use Ibexa\PersonalizationClient\Strategy\Credentials\NoneMethodStrategy;
+use Ibexa\PersonalizationClient\Strategy\Credentials\UserMethodStrategy;
+
+final class ExportMethod
 {
-    const BASIC = 'basic';
-    const USER = 'user';
-    const NONE = 'none';
+    public const BASIC = BasicMethodStrategy::EXPORT_AUTH_METHOD_TYPE;
+    public const USER = UserMethodStrategy::EXPORT_AUTH_METHOD_TYPE;
+    public const NONE = NoneMethodStrategy::EXPORT_AUTH_METHOD_TYPE;
 }
 
 class_alias(ExportMethod::class, 'EzSystems\EzRecommendationClient\Value\ExportMethod');

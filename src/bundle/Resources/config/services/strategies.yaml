@@ -8,6 +8,10 @@ services:
         Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyInterface:
             tags:
                 - { name: ibexa.personalization.group_item.strategy }
+                -
+        Ibexa\PersonalizationClient\Strategy\Credentials\ExportCredentialsStrategyInterface:
+            tags:
+                - { name: ibexa.personalization.export_credentials.strategy }
 
     Ibexa\PersonalizationClient\Strategy\Storage\GroupByItemTypeAndLanguageStrategy: ~
 
@@ -20,3 +24,21 @@ services:
 
     Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface:
         '@Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcher'
+
+    Ibexa\PersonalizationClient\Strategy\Credentials\BasicMethodStrategy: ~
+
+    Ibexa\PersonalizationClient\Strategy\Credentials\UserMethodStrategy:
+        arguments:
+            $credentialsResolver: '@Ibexa\PersonalizationClient\Config\ExportCredentialsResolver'
+
+    Ibexa\PersonalizationClient\Strategy\Credentials\NoneMethodStrategy: ~
+
+    Ibexa\PersonalizationClient\Strategy\Credentials\ExportCredentialsStrategyDispatcher:
+        arguments:
+            $credentialMethodStrategies: !tagged_iterator
+                tag: ibexa.personalization.export_credentials.strategy
+                default_index_method: getIndex
+                index_by: key
+
+    Ibexa\PersonalizationClient\Strategy\Credentials\ExportCredentialsStrategyDispatcherInterface:
+        '@Ibexa\PersonalizationClient\Strategy\Credentials\ExportCredentialsStrategyDispatcher'
