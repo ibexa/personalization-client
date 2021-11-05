@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Factory;
+namespace Ibexa\PersonalizationClient\Factory;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\API\AbstractAPI;
-use EzSystems\EzRecommendationClient\API\AllowedAPI;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\Exception\BadAPICallException;
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
+use Ibexa\PersonalizationClient\API\AllowedAPI;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Exception\BadAPICallException;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Value\Parameters;
 
 final class EzRecommendationClientAPIFactory extends AbstractEzRecommendationClientAPIFactory
 {
@@ -68,3 +68,5 @@ final class EzRecommendationClientAPIFactory extends AbstractEzRecommendationCli
         return ltrim(strtolower(preg_replace('/[A-Z]([A-Z](?![a-z]))*/', '_$0', $apiName)), '_');
     }
 }
+
+class_alias(EzRecommendationClientAPIFactory::class, 'EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory');

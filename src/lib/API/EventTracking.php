@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\API;
+namespace Ibexa\PersonalizationClient\API;
 
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 final class EventTracking extends AbstractAPI
@@ -34,3 +34,5 @@ final class EventTracking extends AbstractAPI
         $this->client->sendRequest(Request::METHOD_GET, $endPointUri);
     }
 }
+
+class_alias(EventTracking::class, 'EzSystems\EzRecommendationClient\API\EventTracking');

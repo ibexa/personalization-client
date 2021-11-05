@@ -6,10 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Client;
+namespace Ibexa\PersonalizationClient\Client;
 
-use EzSystems\EzRecommendationClient\API\AbstractAPI;
 use GuzzleHttp\ClientInterface;
+use Ibexa\PersonalizationClient\API\AbstractAPI;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
@@ -51,3 +51,5 @@ interface EzRecommendationClientInterface
 
     public function __call(string $name, array $arguments): AbstractAPI;
 }
+
+class_alias(EzRecommendationClientInterface::class, 'EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface');

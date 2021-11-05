@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\File;
+namespace Ibexa\PersonalizationClient\File;
 
-use EzSystems\EzRecommendationClient\Exception\FileNotFoundException;
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
-use EzSystems\EzRecommendationClient\Value\ExportMethod;
+use Ibexa\PersonalizationClient\Exception\FileNotFoundException;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Value\ExportMethod;
 use Symfony\Component\Filesystem\Filesystem as BaseFilesystem;
 
 final class FileManager implements FileManagerInterface
@@ -136,3 +136,5 @@ final class FileManager implements FileManagerInterface
         ];
     }
 }
+
+class_alias(FileManager::class, 'EzSystems\EzRecommendationClient\File\FileManager');

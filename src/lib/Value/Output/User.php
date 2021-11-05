@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value\Output;
+namespace Ibexa\PersonalizationClient\Value\Output;
 
 use Webmozart\Assert\Assert;
 
@@ -42,3 +42,5 @@ class User
         return $this->userId;
     }
 }
+
+class_alias(User::class, 'EzSystems\EzRecommendationClient\Value\Output\User');

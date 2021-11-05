@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Event\Subscriber;
+namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\API\Repository\Events\Location\CopySubtreeEvent;
 use eZ\Publish\API\Repository\Events\Location\CreateLocationEvent;
@@ -20,7 +20,7 @@ use eZ\Publish\API\Repository\Values\Content\LocationList;
 use eZ\Publish\Core\Repository\Values\Content\Content;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\Core\Repository\Values\Content\VersionInfo;
-use EzSystems\EzRecommendationClient\Event\Subscriber\LocationEventSubscriber;
+use Ibexa\PersonalizationClient\Event\Subscriber\LocationEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class LocationEventSubscriberTest extends AbstractRepositoryEventSubscriberTest
@@ -341,3 +341,5 @@ class LocationEventSubscriberTest extends AbstractRepositoryEventSubscriberTest
         ];
     }
 }
+
+class_alias(LocationEventSubscriberTest::class, 'EzSystems\EzRecommendationClient\Tests\Event\Subscriber\LocationEventSubscriberTest');

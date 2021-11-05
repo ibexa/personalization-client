@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Helper;
+namespace Ibexa\Tests\PersonalizationClient\Helper;
 
 use eZ\Publish\Core\Base\Exceptions\NotFoundException;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\SiteAccess;
 use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
-use EzSystems\EzRecommendationClient\Helper\SiteAccessHelper;
+use Ibexa\PersonalizationClient\Helper\SiteAccessHelper;
 use PHPUnit\Framework\TestCase;
 
 class SiteAccessHelperTest extends TestCase
@@ -459,3 +459,5 @@ class SiteAccessHelperTest extends TestCase
         $siteAccessHelper->getSiteAccesses(123, null);
     }
 }
+
+class_alias(SiteAccessHelperTest::class, 'EzSystems\EzRecommendationClient\Tests\Helper\SiteAccessHelperTest');

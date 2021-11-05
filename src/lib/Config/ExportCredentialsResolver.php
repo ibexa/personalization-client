@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Config;
+namespace Ibexa\PersonalizationClient\Config;
 
-use EzSystems\EzRecommendationClient\Value\Config\ExportCredentials;
-use EzSystems\EzRecommendationClient\Value\ExportMethod;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Value\Config\ExportCredentials;
+use Ibexa\PersonalizationClient\Value\ExportMethod;
+use Ibexa\PersonalizationClient\Value\Parameters;
 
 final class ExportCredentialsResolver extends CredentialsResolver
 {
@@ -56,3 +56,5 @@ final class ExportCredentialsResolver extends CredentialsResolver
         ];
     }
 }
+
+class_alias(ExportCredentialsResolver::class, 'EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver');

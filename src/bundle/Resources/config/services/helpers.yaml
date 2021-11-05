@@ -4,20 +4,20 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Helper\:
+    Ibexa\PersonalizationClient\Helper\:
         resource: '../../../../src/lib/Helper/*'
 
-    EzSystems\EzRecommendationClient\Helper\SiteAccessHelper:
+    Ibexa\PersonalizationClient\Helper\SiteAccessHelper:
         arguments:
             $siteAccessConfig: '%ezrecommendation.siteaccess_config%'
             $defaultSiteAccessName: '%ezpublish.siteaccess.default%'
 
-    EzSystems\EzRecommendationClient\Helper\ExportProcessRunnerHelper:
+    Ibexa\PersonalizationClient\Helper\ExportProcessRunnerHelper:
         arguments:
             $kernelEnvironment: '%kernel.environment%'
         tags:
             - { name: monolog.logger, channel: ezrecommendation }
 
-    EzSystems\EzRecommendationClient\Helper\ImageHelper:
+    Ibexa\PersonalizationClient\Helper\ImageHelper:
         arguments:
             $imageVariationService: '@ezpublish.fieldType.ezimage.variation_service'

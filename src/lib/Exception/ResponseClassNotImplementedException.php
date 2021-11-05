@@ -6,8 +6,10 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 class ResponseClassNotImplementedException extends TransferException
 {
 }
+
+class_alias(ResponseClassNotImplementedException::class, 'EzSystems\EzRecommendationClient\Exception\ResponseClassNotImplementedException');

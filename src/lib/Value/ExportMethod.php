@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value;
+namespace Ibexa\PersonalizationClient\Value;
 
 use Ibexa\PersonalizationClient\Strategy\Credentials\BasicMethodStrategy;
 use Ibexa\PersonalizationClient\Strategy\Credentials\NoneMethodStrategy;
@@ -18,3 +18,5 @@ final class ExportMethod
     public const USER = UserMethodStrategy::EXPORT_AUTH_METHOD_TYPE;
     public const NONE = NoneMethodStrategy::EXPORT_AUTH_METHOD_TYPE;
 }
+
+class_alias(ExportMethod::class, 'EzSystems\EzRecommendationClient\Value\ExportMethod');

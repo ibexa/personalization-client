@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Event\Subscriber;
+namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\Event\UpdateUserAPIEvent;
-use EzSystems\EzRecommendationClient\Request\UserMetadataRequest;
-use EzSystems\EzRecommendationClient\Value\Parameters;
+use Ibexa\PersonalizationClient\Event\UpdateUserAPIEvent;
+use Ibexa\PersonalizationClient\Request\UserMetadataRequest;
+use Ibexa\PersonalizationClient\Value\Parameters;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class UserAPIRequestDefaultSourceEventSubscriber implements EventSubscriberInterface
@@ -45,3 +45,5 @@ final class UserAPIRequestDefaultSourceEventSubscriber implements EventSubscribe
         ]));
     }
 }
+
+class_alias(UserAPIRequestDefaultSourceEventSubscriber::class, 'EzSystems\EzRecommendationClient\Event\Subscriber\UserAPIRequestDefaultSourceEventSubscriber');

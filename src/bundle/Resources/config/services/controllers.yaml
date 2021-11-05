@@ -4,28 +4,28 @@ services:
         autoconfigure: true
         public: true
 
-    EzSystems\EzRecommendationClientBundle\Controller\:
+    Ibexa\Bundle\PersonalizationClient\Controller\:
         resource: '../../../Controller/*'
 
-    EzSystems\EzRecommendationClientBundle\Controller\RecommendationController:
+    Ibexa\Bundle\PersonalizationClient\Controller\RecommendationController:
         public: true
         arguments:
-            $credentialsResolver: '@EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver'
+            $credentialsResolver: '@Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver'
 
     ez_recommendation:
-        alias: EzSystems\EzRecommendationClientBundle\Controller\RecommendationController
+        alias: Ibexa\Bundle\PersonalizationClient\Controller\RecommendationController
         public: true
 
-    EzSystems\EzRecommendationClientBundle\Controller\ContentController:
+    Ibexa\Bundle\PersonalizationClient\Controller\ContentController:
         arguments:
-            $authenticator: '@EzSystems\EzRecommendationClient\Authentication\ExportAuthenticator'
+            $authenticator: '@Ibexa\PersonalizationClient\Authentication\ExportAuthenticator'
 
-    EzSystems\EzRecommendationClientBundle\Controller\ContentTypeController:
+    Ibexa\Bundle\PersonalizationClient\Controller\ContentTypeController:
         arguments:
-            $authenticator: '@EzSystems\EzRecommendationClient\Authentication\ExportAuthenticator'
+            $authenticator: '@Ibexa\PersonalizationClient\Authentication\ExportAuthenticator'
 
-    EzSystems\EzRecommendationClientBundle\Controller\ExportController:
+    Ibexa\Bundle\PersonalizationClient\Controller\ExportController:
         arguments:
-            $authenticator: '@EzSystems\EzRecommendationClient\Authentication\ExportAuthenticator'
+            $authenticator: '@Ibexa\PersonalizationClient\Authentication\ExportAuthenticator'
         tags:
             - { name: monolog.logger, channel: ezrecommendation }

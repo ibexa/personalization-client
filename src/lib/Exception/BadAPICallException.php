@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 class BadAPICallException extends APIException
 {
@@ -17,3 +17,5 @@ class BadAPICallException extends APIException
         parent::__construct($message, 0, $previous);
     }
 }
+
+class_alias(BadAPICallException::class, 'EzSystems\EzRecommendationClient\Exception\BadAPICallException');

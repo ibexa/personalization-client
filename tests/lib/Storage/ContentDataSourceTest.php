@@ -10,9 +10,9 @@ namespace Ibexa\Tests\PersonalizationClient\Storage;
 
 use eZ\Publish\API\Repository\Values\Content\Content as ApiContent;
 use eZ\Publish\Core\Base\Exceptions\NotFoundException;
-use EzSystems\EzRecommendationClient\Exception\ItemNotFoundException;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
+use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
 use Ibexa\PersonalizationClient\Value\Storage\ItemList;
 use Ibexa\Tests\PersonalizationClient\Creator\DataSourceTestItemCreator;
 

@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Value\Config;
+namespace Ibexa\PersonalizationClient\Value\Config;
 
 final class ExportCredentials extends Credentials
 {
@@ -61,3 +61,5 @@ final class ExportCredentials extends Credentials
         );
     }
 }
+
+class_alias(ExportCredentials::class, 'EzSystems\EzRecommendationClient\Value\Config\ExportCredentials');

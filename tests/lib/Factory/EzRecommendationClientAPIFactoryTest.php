@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Tests\Factory;
+namespace Ibexa\Tests\PersonalizationClient\Factory;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\API\AllowedAPI;
-use EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface;
-use EzSystems\EzRecommendationClient\Exception\BadAPICallException;
-use EzSystems\EzRecommendationClient\Exception\InvalidArgumentException;
-use EzSystems\EzRecommendationClient\Factory\AbstractEzRecommendationClientAPIFactory;
-use EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory;
-use EzSystems\EzRecommendationClient\Tests\API\APIEndPointClassTest;
+use Ibexa\PersonalizationClient\API\AllowedAPI;
+use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
+use Ibexa\PersonalizationClient\Exception\BadAPICallException;
+use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
+use Ibexa\PersonalizationClient\Factory\AbstractEzRecommendationClientAPIFactory;
+use Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory;
+use Ibexa\Tests\PersonalizationClient\API\APIEndPointClassTest;
 use PHPUnit\Framework\TestCase;
 
 class EzRecommendationClientAPIFactoryTest extends TestCase
@@ -103,3 +103,5 @@ class EzRecommendationClientAPIFactoryTest extends TestCase
         ];
     }
 }
+
+class_alias(EzRecommendationClientAPIFactoryTest::class, 'EzSystems\EzRecommendationClient\Tests\Factory\EzRecommendationClientAPIFactoryTest');

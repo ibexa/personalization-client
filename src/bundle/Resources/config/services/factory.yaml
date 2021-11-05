@@ -4,22 +4,22 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory: ~
+    Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory: ~
 
-    EzSystems\EzRecommendationClient\Factory\FakeRequestFactory: ~
+    Ibexa\PersonalizationClient\Factory\FakeRequestFactory: ~
 
-    EzSystems\EzRecommendationClient\Factory\RequestFactoryInterface:
-        '@EzSystems\EzRecommendationClient\Factory\FakeRequestFactory'
+    Ibexa\PersonalizationClient\Factory\RequestFactoryInterface:
+        '@Ibexa\PersonalizationClient\Factory\FakeRequestFactory'
 
-    EzSystems\EzRecommendationClient\Factory\TokenFactory: ~
+    Ibexa\PersonalizationClient\Factory\TokenFactory: ~
 
-    EzSystems\EzRecommendationClient\Factory\TokenFactoryInterface:
-        '@EzSystems\EzRecommendationClient\Factory\TokenFactory'
+    Ibexa\PersonalizationClient\Factory\TokenFactoryInterface:
+        '@Ibexa\PersonalizationClient\Factory\TokenFactory'
 
     Ibexa\PersonalizationClient\Factory\Export\ParametersFactory:
         arguments:
             $siteAccessService: '@ezpublish.siteaccess_service'
-            $credentialsResolver: '@EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver'
+            $credentialsResolver: '@Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver'
 
     Ibexa\PersonalizationClient\Factory\Export\ParametersFactoryInterface:
         '@Ibexa\PersonalizationClient\Factory\Export\ParametersFactory'

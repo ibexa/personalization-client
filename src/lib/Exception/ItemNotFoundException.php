@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClient\Exception;
+namespace Ibexa\PersonalizationClient\Exception;
 
 use Throwable;
 
@@ -21,3 +21,5 @@ final class ItemNotFoundException extends NotFoundException
         );
     }
 }
+
+class_alias(ItemNotFoundException::class, 'EzSystems\EzRecommendationClient\Exception\ItemNotFoundException');

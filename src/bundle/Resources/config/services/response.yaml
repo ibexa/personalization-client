@@ -4,9 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    EzSystems\EzRecommendationClient\Response\:
+    Ibexa\PersonalizationClient\Response\:
         resource: '../../../../src/lib/Response/*'
 
-    EzSystems\EzRecommendationClient\Response\HttpResponse:
+    Ibexa\PersonalizationClient\Response\HttpResponse:
         tags:
             - { name: ezrecommendation.rest.response_type, type: http }

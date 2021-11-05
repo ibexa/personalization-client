@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzRecommendationClientBundle;
+namespace Ibexa\Bundle\PersonalizationClient;
 
-use EzSystems\EzRecommendationClientBundle\DependencyInjection\Compiler\RestResponsePass;
-use EzSystems\EzRecommendationClientBundle\DependencyInjection\EzRecommendationClientExtension;
+use Ibexa\Bundle\PersonalizationClient\DependencyInjection\Compiler\RestResponsePass;
+use Ibexa\Bundle\PersonalizationClient\DependencyInjection\IbexaPersonalizationClientExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class EzRecommendationClientBundle extends Bundle
+class IbexaPersonalizationClientBundle extends Bundle
 {
     /** @var \EzSystems\EzRecommendationClientBundle\DependencyInjection\EzRecommendationClientExtension */
     protected $extension;
@@ -23,7 +23,7 @@ class EzRecommendationClientBundle extends Bundle
      */
     public function getContainerExtension()
     {
-        return $this->extension ?? new EzRecommendationClientExtension();
+        return $this->extension ?? new IbexaPersonalizationClientExtension();
     }
 
     public function build(ContainerBuilder $container)
@@ -33,3 +33,5 @@ class EzRecommendationClientBundle extends Bundle
         $container->addCompilerPass(new RestResponsePass());
     }
 }
+
+class_alias(IbexaPersonalizationClientBundle::class, 'EzSystems\EzRecommendationClientBundle\EzRecommendationClientBundle');
