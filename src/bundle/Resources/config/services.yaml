@@ -17,6 +17,7 @@ imports:
     - { resource: services/helpers.yaml }
     - { resource: services/http.yaml }
     - { resource: services/mappers.yaml }
+    - { resource: services/normalizers.yaml }
     - { resource: services/query_types.yaml }
     - { resource: services/response.yaml }
     - { resource: services/services.yaml }
