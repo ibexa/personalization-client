@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\Keyword\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\KeywordNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\KeywordNormalizer
+ */
 final class KeywordNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

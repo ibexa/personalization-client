@@ -19,6 +19,9 @@ use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher
 use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcherInterface;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher
+ */
 final class DestinationContentNormalizerDispatcherTest extends TestCase
 {
     private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher;

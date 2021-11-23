@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\Image\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\ImageNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\ImageNormalizer
+ */
 final class ImageNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

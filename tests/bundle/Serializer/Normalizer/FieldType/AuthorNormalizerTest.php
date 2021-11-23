@@ -13,6 +13,9 @@ use eZ\Publish\Core\FieldType\Author\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\AuthorNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\AuthorNormalizer
+ */
 final class AuthorNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

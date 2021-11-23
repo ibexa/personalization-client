@@ -14,6 +14,9 @@ use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer
+ */
 final class RichTextNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /** @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter|mixed|\PHPUnit\Framework\MockObject\MockObject */

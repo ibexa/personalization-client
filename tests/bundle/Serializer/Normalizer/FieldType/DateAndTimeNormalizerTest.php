@@ -13,6 +13,9 @@ use eZ\Publish\Core\FieldType\DateAndTime\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer
+ */
 final class DateAndTimeNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

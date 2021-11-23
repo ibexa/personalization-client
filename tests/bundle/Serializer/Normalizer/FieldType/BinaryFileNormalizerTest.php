@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\BinaryFile\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\BinaryFileNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\BinaryFileNormalizer
+ */
 final class BinaryFileNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

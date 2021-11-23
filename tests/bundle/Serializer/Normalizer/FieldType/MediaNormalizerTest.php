@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\Media\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\MediaNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\MediaNormalizer
+ */
 final class MediaNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

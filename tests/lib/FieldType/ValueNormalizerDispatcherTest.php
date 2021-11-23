@@ -16,6 +16,9 @@ use Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcher;
 use Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcherInterface;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcher
+ */
 final class ValueNormalizerDispatcherTest extends TestCase
 {
     private ValueNormalizerDispatcherInterface $valueNormalizerDispatcher;

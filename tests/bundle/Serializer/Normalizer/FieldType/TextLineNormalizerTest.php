@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\TextBlock\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TextLineNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TextLineNormalizer
+ */
 final class TextLineNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

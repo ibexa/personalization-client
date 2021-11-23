@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\Integer\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\IntegerNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\IntegerNormalizer
+ */
 final class IntegerNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\Float\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\FloatNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\FloatNormalizer
+ */
 final class FloatNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**

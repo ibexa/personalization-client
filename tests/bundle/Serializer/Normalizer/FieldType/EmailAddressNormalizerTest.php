@@ -12,6 +12,9 @@ use eZ\Publish\Core\FieldType\EmailAddress\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\EmailAddressNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
+/**
+ * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\EmailAddressNormalizer
+ */
 final class EmailAddressNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**
