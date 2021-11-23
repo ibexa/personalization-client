@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\FieldType\Media\Value as MediaFileValue;
+use eZ\Publish\Core\FieldType\Media\Value as MediaValue;
 use eZ\Publish\SPI\Exception\InvalidArgumentType;
 use eZ\Publish\SPI\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
@@ -17,8 +17,8 @@ final class MediaNormalizer implements ValueNormalizerInterface
 {
     public function normalize(Value $value): ?string
     {
-        if (!$value instanceof MediaFileValue) {
-            throw new InvalidArgumentType('$value', MediaFileValue::class);
+        if (!$value instanceof MediaValue) {
+            throw new InvalidArgumentType('$value', MediaValue::class);
         }
 
         return $value->uri;
@@ -26,6 +26,6 @@ final class MediaNormalizer implements ValueNormalizerInterface
 
     public function supportsValue(Value $value): bool
     {
-        return $value instanceof MediaFileValue;
+        return $value instanceof MediaValue;
     }
 }
