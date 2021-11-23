@@ -37,8 +37,8 @@ final class ValueNormalizerDispatcher implements ValueNormalizerDispatcherInterf
 
     public function supportsNormalizer(Value $value): bool
     {
-        foreach ($this->normalizers as $parser) {
-            if ($parser->supportsValue($value)) {
+        foreach ($this->normalizers as $normalizer) {
+            if ($normalizer->supportsValue($value)) {
                 return true;
             }
         }
