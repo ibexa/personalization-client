@@ -22,7 +22,6 @@ final class AuthorNormalizerTest extends AbstractValueNormalizerTestCase
      * @dataProvider provideDataForTestNormalize
      *
      * @param array<string> $expected
-
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
      */

@@ -19,7 +19,6 @@ final class MediaNormalizerTest extends AbstractValueNormalizerTestCase
 {
     /**
      * @dataProvider provideDataForTestNormalize
-
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
      */
