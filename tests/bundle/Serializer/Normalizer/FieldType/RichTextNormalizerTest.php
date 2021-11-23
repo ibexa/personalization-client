@@ -19,7 +19,7 @@ use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerI
  */
 final class RichTextNormalizerTest extends AbstractValueNormalizerTestCase
 {
-    /** @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter|mixed|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter|\PHPUnit\Framework\MockObject\MockObject */
     private Converter $converter;
 
     protected function setUp(): void
