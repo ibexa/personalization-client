@@ -51,10 +51,6 @@ final class DestinationContentNormalizerDispatcher implements DestinationContent
 
     private function getContent(int $contentId): Content
     {
-        return $this->repository->sudo(
-            function () use ($contentId): Content {
-                return $this->contentService->loadContent($contentId);
-            }
-        );
+        return $this->repository->sudo(fn() => $this->contentService->loadContent($contentId));
     }
 }
