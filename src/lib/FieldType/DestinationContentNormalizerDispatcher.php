@@ -25,13 +25,13 @@ final class DestinationContentNormalizerDispatcher implements DestinationContent
      * @param iterable<\Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\DestinationValueAwareInterface> $normalizers
      */
     public function __construct(
-        iterable $normalizers,
         ContentService $contentService,
-        Repository $repository
+        Repository $repository,
+        iterable $normalizers
     ) {
-        $this->normalizers = $normalizers;
         $this->contentService = $contentService;
         $this->repository = $repository;
+        $this->normalizers = $normalizers;
     }
 
     public function dispatch(int $destinationContentId)
