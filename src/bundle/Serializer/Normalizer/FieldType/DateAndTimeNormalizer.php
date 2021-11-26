@@ -21,9 +21,8 @@ final class DateAndTimeNormalizer implements ValueNormalizerInterface
             throw new InvalidArgumentType('$value', DateAndTimeValue::class);
         }
 
-        $dateTime = $value->value;
-        if (null !== $dateTime) {
-            return $dateTime->format($value->stringFormat);
+        if (null !== $value->value) {
+            return (string) $value;
         }
 
         return null;

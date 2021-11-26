@@ -21,9 +21,8 @@ final class DateNormalizer implements ValueNormalizerInterface
             throw new InvalidArgumentType('$value', DateValue::class);
         }
 
-        $date = $value->date;
-        if (null !== $date) {
-            return $date->format($value->stringFormat);
+        if (null !== $value->date) {
+            return (string) $value;
         }
 
         return null;

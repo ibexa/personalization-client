@@ -22,11 +22,8 @@ final class TimeNormalizer implements ValueNormalizerInterface
             throw new InvalidArgumentType('$value', TimeValue::class);
         }
 
-        $time = $value->time;
-        if (null !== $time) {
-            $dateTime = new DateTime("@{$time}");
-
-            return $dateTime->format($value->stringFormat);
+        if (null !== $value->time) {
+            return (string) $value;
         }
 
         return null;
