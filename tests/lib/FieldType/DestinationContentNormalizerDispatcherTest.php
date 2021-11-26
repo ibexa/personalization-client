@@ -41,11 +41,11 @@ final class DestinationContentNormalizerDispatcherTest extends TestCase
         $this->repository = $this->createMock(Repository::class);
         $this->valueNormalizer = $this->createMock(DestinationValueAwareInterface::class);
         $this->destinationContentNormalizerDispatcher = new DestinationContentNormalizerDispatcher(
+            $this->contentService,
+            $this->repository,
             [
                 $this->valueNormalizer,
             ],
-            $this->contentService,
-            $this->repository
         );
     }
 
