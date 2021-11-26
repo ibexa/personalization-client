@@ -1,0 +1,78 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    _instanceof:
+        Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface:
+            tags:
+                - { name: 'ibexa.personalization.field_type.value.normalizer', priority: -100 }
+
+        Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\DestinationValueAwareInterface:
+            tags:
+                - { name: 'ibexa.personalization.field_type.destination.value.normalizer', priority: -100 }
+
+    Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher:
+        arguments:
+            $normalizers: !tagged_iterator
+                tag: 'ibexa.personalization.field_type.destination.value.normalizer'
+
+    Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcherInterface:
+        '@Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher'
+
+    Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcher:
+        arguments:
+            $normalizers: !tagged_iterator
+                tag: 'ibexa.personalization.field_type.value.normalizer'
+
+    Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcherInterface:
+        '@Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcher'
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\AuthorNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\BinaryFileNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\CheckboxNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\CountryNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\EmailAddressNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\FloatNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\ImageNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\ImageAssetNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\IntegerNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\ISBNNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\KeywordNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\MapLocationNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\MediaNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RelationNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RelationListNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer:
+        tags:
+            - { name: monolog.logger, channel: ibexa-recommendation }
+        arguments:
+            $richHtml5Converter: '@ezrichtext.converter.output.xhtml5'
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TextBlockNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TextLineNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TimeNormalizer: ~
+
+    Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\UrlNormalizer: ~
