@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
+use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\Core\FieldType\Null\Value as NullValue;
-use eZ\Publish\SPI\Exception\InvalidArgumentType;
 use eZ\Publish\SPI\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 use PHPUnit\Framework\TestCase;

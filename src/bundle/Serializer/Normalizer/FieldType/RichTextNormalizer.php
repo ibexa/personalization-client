@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\SPI\Exception\InvalidArgumentType;
+use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\SPI\FieldType\Value;
 use EzSystems\EzPlatformRichText\eZ\FieldType\RichText\Value as RichTextValue;
 use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
