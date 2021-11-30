@@ -16,14 +16,6 @@ use Twig\TwigFunction;
 final class RecommendationExtension extends AbstractExtension
 {
     /**
-     * Returns the name of the extension.
-     */
-    public function getName(): string
-    {
-        return 'ez_recommendation_extension';
-    }
-
-    /**
      * Returns a list of functions to add to the existing list.
      */
     public function getFunctions(): array
