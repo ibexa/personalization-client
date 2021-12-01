@@ -17,6 +17,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 final class IbexaPersonalizationClientExtension extends Extension
 {
+    public const EXTENSION_NAME = 'ibexa_personalization_client';
     public const DATA_SOURCE_SERVICE_TAG = 'ibexa.personalization.data_source';
 
     /**
@@ -44,7 +45,7 @@ final class IbexaPersonalizationClientExtension extends Extension
      */
     public function getAlias(): string
     {
-        return 'ezrecommendation';
+        return self::EXTENSION_NAME;
     }
 }
 
