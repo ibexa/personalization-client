@@ -30,7 +30,6 @@
         "behat/behat": "^3.7",
         "dg/bypass-finals": "^1.1",
         "ibexa/code-style": "^1.0",
-        "ibexa/core-extensions": "^4.0@dev",
         "ibexa/http-cache": "^4.0@dev",
         "friends-of-behat/mink-extension": "^2.4",
         "friendsofsymfony/jsrouting-bundle": "^2.7",
