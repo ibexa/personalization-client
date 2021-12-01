@@ -153,7 +153,9 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
         }
 
         $this->notificationService->sendNotification(
-            __METHOD__, EventNotification::ACTION_DELETE, $content->contentInfo
+            __METHOD__,
+            EventNotification::ACTION_DELETE,
+            $content->contentInfo
         );
     }
 
@@ -179,7 +181,9 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
         }
 
         $this->notificationService->sendNotification(
-            $method, $action, $content->contentInfo
+            $method,
+            $action,
+            $content->contentInfo
         );
     }
 

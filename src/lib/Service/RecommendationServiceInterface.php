@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Ibexa\PersonalizationClient\Service;
 
 use Ibexa\PersonalizationClient\SPI\RecommendationRequest;
-use Ibexa\PersonalizationClient\Value\RecommendationItem;
 use Psr\Http\Message\ResponseInterface;
 
 interface RecommendationServiceInterface

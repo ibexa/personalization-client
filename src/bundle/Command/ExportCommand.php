@@ -80,7 +80,8 @@ final class ExportCommand extends Command implements BackwardCompatibleCommand
             $this->exportService->runExport(
                 $this->exportParametersFactory->create(
                     $this->inputResolver->resolve(
-                        $input, $this->getApplication()
+                        $input,
+                        $this->getApplication()
                     ),
                     ParametersFactoryInterface::COMMAND_TYPE
                 ),

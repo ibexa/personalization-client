@@ -13,7 +13,7 @@ namespace Ibexa\PersonalizationClient\SPI;
  */
 abstract class RecommendationRequest extends Request
 {
-    const SCENARIO = 'scenario';
+    public const SCENARIO = 'scenario';
 
     /** @var string */
     public $scenario;

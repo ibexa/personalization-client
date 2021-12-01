@@ -10,9 +10,9 @@ namespace Ibexa\PersonalizationClient\Value;
 
 class Parameters
 {
-    const NAMESPACE = 'ezrecommendation';
-    const API_SCOPE = 'api';
-    const FIELD_SCOPE = 'field';
+    public const NAMESPACE = 'ezrecommendation';
+    public const API_SCOPE = 'api';
+    public const FIELD_SCOPE = 'field';
 }
 
 class_alias(Parameters::class, 'EzSystems\EzRecommendationClient\Value\Parameters');

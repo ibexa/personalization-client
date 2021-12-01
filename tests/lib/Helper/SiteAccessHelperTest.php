@@ -145,7 +145,8 @@ class SiteAccessHelperTest extends TestCase
         $result = $siteAccessHelper->getLanguages(1542, 'foo');
 
         $this->assertEquals(
-            ['eng-GB'], $result
+            ['eng-GB'],
+            $result
         );
     }
 

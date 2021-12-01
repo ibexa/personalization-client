@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace Ibexa\Tests\PersonalizationClient\Storage;
 
 use Ibexa\Contracts\Core\Repository\Values\Content\Content as ApiContent;
-use Ibexa\Core\Base\Exceptions\NotFoundException;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
+use Ibexa\Core\Base\Exceptions\NotFoundException;
 use Ibexa\PersonalizationClient\Exception\ItemNotFoundException;
 use Ibexa\PersonalizationClient\Value\Storage\ItemList;
 use Ibexa\Tests\PersonalizationClient\Creator\DataSourceTestItemCreator;

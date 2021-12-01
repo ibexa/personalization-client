@@ -12,13 +12,13 @@ use Ibexa\PersonalizationClient\SPI\Request;
 
 class EventNotifierRequest extends Request
 {
-    const ACTION_KEY = 'action';
-    const FORMAT_KEY = 'format';
-    const URI_KEY = 'uri';
-    const ITEM_ID_KEY = 'itemId';
-    const CONTENT_TYPE_ID_KEY = 'contentTypeId';
-    const LANG_KEY = 'lang';
-    const CREDENTIALS_KEY = 'credentials';
+    public const ACTION_KEY = 'action';
+    public const FORMAT_KEY = 'format';
+    public const URI_KEY = 'uri';
+    public const ITEM_ID_KEY = 'itemId';
+    public const CONTENT_TYPE_ID_KEY = 'contentTypeId';
+    public const LANG_KEY = 'lang';
+    public const CREDENTIALS_KEY = 'credentials';
 
     /** @var string */
     public $action;

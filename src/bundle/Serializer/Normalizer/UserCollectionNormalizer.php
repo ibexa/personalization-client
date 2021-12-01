@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 final class UserCollectionNormalizer implements NormalizerInterface, NormalizerAwareInterface
 {
-    const ATTR_NAME = 'user';
+    public const ATTR_NAME = 'user';
 
     /** @var \Symfony\Component\Serializer\Normalizer\NormalizerInterface */
     private $owningNormalizer;

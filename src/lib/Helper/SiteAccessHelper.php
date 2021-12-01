@@ -18,7 +18,7 @@ use Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
  */
 final class SiteAccessHelper
 {
-    const SYSTEM_DEFAULT_SITE_ACCESS_NAME = 'default';
+    public const SYSTEM_DEFAULT_SITE_ACCESS_NAME = 'default';
 
     /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
@@ -145,8 +145,10 @@ final class SiteAccessHelper
         $languages = [];
 
         foreach ($siteAccesses as $siteAccess) {
-            $language = current($this->getLanguageList(
-                !$this->isSiteAccessSameAsSystemDefault($siteAccess) ? $siteAccess : null)
+            $language = current(
+                $this->getLanguageList(
+                !$this->isSiteAccessSameAsSystemDefault($siteAccess) ? $siteAccess : null
+            )
             );
 
             if ($language) {

@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace Ibexa\PersonalizationClient\Event\Listener;
 
 use Ibexa\Core\MVC\Symfony\Security\UserInterface;
+use GuzzleHttp\Exception\RequestException;
 use Ibexa\Contracts\Core\Repository\UserService as UserServiceInterface;
 use Ibexa\Core\MVC\ConfigResolverInterface;
-use GuzzleHttp\Exception\RequestException;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 use Ibexa\PersonalizationClient\Value\Session as RecommendationSession;
@@ -82,7 +82,8 @@ final class LoginListener
             $event->getRequest()->cookies->set(RecommendationSession::RECOMMENDATION_SESSION_KEY, $this->session->getId());
         }
 
-        $notificationUri = sprintf($this->getNotificationEndpoint() . '%s/%s/%s',
+        $notificationUri = sprintf(
+            $this->getNotificationEndpoint() . '%s/%s/%s',
             'login',
             $event->getRequest()->cookies->get(RecommendationSession::RECOMMENDATION_SESSION_KEY),
             $this->getUser($event->getAuthenticationToken())

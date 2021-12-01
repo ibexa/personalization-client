@@ -10,8 +10,8 @@ namespace Ibexa\PersonalizationClient\Helper;
 
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\Content\Field;
-use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Contracts\Core\Variation\VariationHandler as ImageVariationServiceInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 
 final class ImageHelper
 {

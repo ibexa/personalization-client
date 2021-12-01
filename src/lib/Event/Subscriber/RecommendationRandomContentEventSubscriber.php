@@ -8,15 +8,14 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
+use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\Core\Repository\ContentService as ContentServiceInterface;
-use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 use Ibexa\Contracts\Core\Repository\SearchService as SearchServiceInterface;
 use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery;
 use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion;
 use Ibexa\Core\FieldType\TextLine\Value as TextLineValue;
 use Ibexa\Core\MVC\ConfigResolverInterface;
-use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\FieldTypeRichText\FieldType\RichText\Value as RichTextValue;
 use Ibexa\PersonalizationClient\Event\RecommendationResponseEvent;
 use Ibexa\PersonalizationClient\Helper\ImageHelper;

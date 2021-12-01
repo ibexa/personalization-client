@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\FieldType\TextBlock\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TextBlockNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\TextBlock\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\TextBlockNormalizer

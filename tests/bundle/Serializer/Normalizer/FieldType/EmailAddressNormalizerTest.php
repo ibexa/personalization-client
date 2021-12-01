@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\FieldType\EmailAddress\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\EmailAddressNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\EmailAddress\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\EmailAddressNormalizer

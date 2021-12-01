@@ -31,7 +31,9 @@ final class ObjectStateEventSubscriber extends AbstractCoreEventSubscriber imple
     public function onSetContentState(SetContentStateEvent $event): void
     {
         $this->notificationService->sendNotification(
-            __METHOD__, EventNotification::ACTION_UPDATE, $event->getContentInfo()
+            __METHOD__,
+            EventNotification::ACTION_UPDATE,
+            $event->getContentInfo()
         );
     }
 }

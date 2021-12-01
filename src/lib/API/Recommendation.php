@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class Recommendation extends AbstractAPI
 {
-    const API_NAME = 'recommendation';
+    public const API_NAME = 'recommendation';
 
     /**
      * {@inheritdoc}

@@ -54,7 +54,9 @@ abstract class AbstractRepositoryEventSubscriber extends AbstractCoreEventSubscr
         /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Location $content */
         foreach ($subtree as $content) {
             $this->notificationService->sendNotification(
-                $method, $action, $content->getContentInfo()
+                $method,
+                $action,
+                $content->getContentInfo()
             );
         }
     }

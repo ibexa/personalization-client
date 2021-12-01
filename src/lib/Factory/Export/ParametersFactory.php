@@ -293,10 +293,10 @@ final class ParametersFactory implements ParametersFactoryInterface
     private function getWebHook(int $customerId, string $siteAccess): string
     {
         return $this->configResolver->getParameter(
-                self::NOTIFIER_ENDPOINT_PARAMETER_NAME,
-                self::PARAMETERS_NAMESPACE,
-                $siteAccess
-            ) . sprintf(Notifier::ENDPOINT_PATH, $customerId);
+            self::NOTIFIER_ENDPOINT_PARAMETER_NAME,
+            self::PARAMETERS_NAMESPACE,
+            $siteAccess
+        ) . sprintf(Notifier::ENDPOINT_PATH, $customerId);
     }
 
     /**

@@ -156,8 +156,12 @@ final class EzRecommendationClient implements EzRecommendationClientInterface
             $this->logger->error(
                 sprintf(
                     self::ERROR_MESSAGE . 'Error while sending data: %s %s %s %s',
-                    $exception->getMessage(), $exception->getCode(), $exception->getFile(), $exception->getLine()
-                ));
+                    $exception->getMessage(),
+                    $exception->getCode(),
+                    $exception->getFile(),
+                    $exception->getLine()
+                )
+            );
 
             throw new BadResponseException(
                 $exception->getMessage(),

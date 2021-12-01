@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class EventTracking extends AbstractAPI
 {
-    const API_NAME = 'eventTracking';
+    public const API_NAME = 'eventTracking';
 
     /**
      * {@inheritdoc}

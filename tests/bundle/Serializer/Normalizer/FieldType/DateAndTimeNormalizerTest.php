@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
 use DateTime;
-use Ibexa\Core\FieldType\DateAndTime\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\DateAndTime\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer

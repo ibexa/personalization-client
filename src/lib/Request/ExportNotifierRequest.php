@@ -12,13 +12,13 @@ use Ibexa\PersonalizationClient\SPI\Request;
 
 class ExportNotifierRequest extends Request
 {
-    const ACTION_KEY = 'action';
-    const FORMAT_KEY = 'format';
-    const CONTENT_TYPE_ID_KEY = 'contentTypeId';
-    const CONTENT_TYPE_NAME_KEY = 'contentTypeName';
-    const LANG_KEY = 'lang';
-    const URI_KEY = 'uri';
-    const CREDENTIALS_KEY = 'credentials';
+    public const ACTION_KEY = 'action';
+    public const FORMAT_KEY = 'format';
+    public const CONTENT_TYPE_ID_KEY = 'contentTypeId';
+    public const CONTENT_TYPE_NAME_KEY = 'contentTypeName';
+    public const LANG_KEY = 'lang';
+    public const URI_KEY = 'uri';
+    public const CREDENTIALS_KEY = 'credentials';
 
     /** @var string */
     public $action;

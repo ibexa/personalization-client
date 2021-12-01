@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\ParamConverter;
 
-use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
 use Ibexa\PersonalizationClient\Mapper\ExportRequestMapper;
 use Ibexa\PersonalizationClient\Value\ExportRequest;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use Symfony\Component\HttpFoundation\Request;

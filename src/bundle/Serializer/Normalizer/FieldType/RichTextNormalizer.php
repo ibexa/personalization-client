@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
 use Ibexa\Contracts\Core\FieldType\Value;
-use Ibexa\FieldTypeRichText\FieldType\RichText\Value as RichTextValue;
 use Ibexa\Contracts\FieldTypeRichText\RichText\Converter;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\FieldTypeRichText\FieldType\RichText\Value as RichTextValue;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;

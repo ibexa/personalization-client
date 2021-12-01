@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Listener;
 
+use GuzzleHttp\Client;
 use Ibexa\Contracts\Core\Repository\UserService;
 use Ibexa\Core\MVC\ConfigResolverInterface;
-use GuzzleHttp\Client;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Event\Listener\LoginListener;
 use PHPUnit\Framework\TestCase;

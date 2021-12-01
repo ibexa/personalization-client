@@ -9,10 +9,10 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
 use DOMDocument;
-use Ibexa\FieldTypeRichText\FieldType\RichText\Value;
-use Ibexa\Contracts\FieldTypeRichText\RichText\Converter;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer;
+use Ibexa\Contracts\FieldTypeRichText\RichText\Converter;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\FieldTypeRichText\FieldType\RichText\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer

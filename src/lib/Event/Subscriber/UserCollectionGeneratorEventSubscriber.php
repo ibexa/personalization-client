@@ -77,7 +77,8 @@ final class UserCollectionGeneratorEventSubscriber implements EventSubscriberInt
 
         return $serializer->serialize(
             $userCollection,
-            'xml', [
+            'xml',
+            [
             'xml_root_node_name' => 'users',
             ]
         );

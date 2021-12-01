@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
-use Ibexa\Core\FieldType\Float\Value as FloatValue;
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Float\Value as FloatValue;
 
 final class FloatNormalizer implements ValueNormalizerInterface
 {

@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class User extends AbstractAPI
 {
-    const API_NAME = 'user';
+    public const API_NAME = 'user';
 
     /**
      * {@inheritdoc}

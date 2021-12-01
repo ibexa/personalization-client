@@ -88,7 +88,8 @@ final class Exporter implements ExporterInterface
         int $contentTypeId,
         string $chunkDir,
         Parameters $parameters,
-        OutputInterface $output): array
+        OutputInterface $output
+    ): array
     {
         $contents = [];
 
@@ -130,7 +131,8 @@ final class Exporter implements ExporterInterface
         int $contentTypeId,
         string $chunkPath,
         Parameters $parameters,
-        OutputInterface $output): void
+        OutputInterface $output
+    ): void
     {
         $content = $this->repository->sudo(
             function () use ($contentTypeId, $parameters, $output) {
@@ -154,7 +156,8 @@ final class Exporter implements ExporterInterface
     {
         $url = sprintf(
             self::API_ENDPOINT_URL,
-            $host, $chunkPath
+            $host,
+            $chunkPath
         );
 
         $info = sprintf('Generating url: %s', $url);

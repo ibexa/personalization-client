@@ -12,15 +12,15 @@ use Webmozart\Assert\Assert;
 
 class Attribute
 {
-    const TYPE_NUMERIC = 'NUMERIC';
-    const TYPE_NOMINAL = 'NOMINAL';
-    const TYPE_TEXT = 'TEXT';
-    const TYPE_DATE = 'DATE';
-    const TYPE_DATETIME = 'DATETIME';
+    public const TYPE_NUMERIC = 'NUMERIC';
+    public const TYPE_NOMINAL = 'NOMINAL';
+    public const TYPE_TEXT = 'TEXT';
+    public const TYPE_DATE = 'DATE';
+    public const TYPE_DATETIME = 'DATETIME';
 
-    const DEFAULT_TYPE = self::TYPE_NOMINAL;
+    public const DEFAULT_TYPE = self::TYPE_NOMINAL;
 
-    const TYPES = [
+    public const TYPES = [
         self::TYPE_NUMERIC,
         self::TYPE_NOMINAL,
         self::TYPE_TEXT,

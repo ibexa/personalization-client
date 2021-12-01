@@ -102,7 +102,7 @@ class ConfigurationMapper implements HookableConfigurationMapperInterface
             foreach ($settings as $settingKey => $settingValue) {
                 foreach ($settingValue as $parameterKey => $parameterValue) {
                     $contextualizer->setContextualParameter(
-                         Parameters::API_SCOPE . '.' . $settingKey . '.' . $parameterKey,
+                        Parameters::API_SCOPE . '.' . $settingKey . '.' . $parameterKey,
                         $currentScope,
                         $parameterValue
                     );

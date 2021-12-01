@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
-use Ibexa\Rest\Server\Controller;
 use Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface;
 use Ibexa\PersonalizationClient\Exception\ExportInProgressException;
 use Ibexa\PersonalizationClient\File\FileManagerInterface;
 use Ibexa\PersonalizationClient\Helper\ExportProcessRunnerHelper;
 use Ibexa\PersonalizationClient\Value\ExportRequest;
+use Ibexa\Rest\Server\Controller;
 use Psr\Log\LoggerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\JsonResponse;

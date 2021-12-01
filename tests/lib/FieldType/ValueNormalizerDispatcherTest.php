@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\FieldType;
 
+use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 use Ibexa\Core\FieldType\Null\Value as NullValue;
 use Ibexa\Core\FieldType\Value;
-use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 use Ibexa\PersonalizationClient\Exception\ValueNormalizerNotFoundException;
 use Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcher;
 use Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcherInterface;

@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
-use Ibexa\Core\FieldType\Null\Value as NullValue;
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Null\Value as NullValue;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractValueNormalizerTestCase extends TestCase

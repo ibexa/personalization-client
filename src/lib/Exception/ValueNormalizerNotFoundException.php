@@ -9,7 +9,6 @@ declare(strict_types=1);
 namespace Ibexa\PersonalizationClient\Exception;
 
 use Ibexa\Contracts\Core\FieldType\Value;
-use Ibexa\PersonalizationClient\Exception\EzRecommendationException;
 use RuntimeException;
 use Throwable;
 

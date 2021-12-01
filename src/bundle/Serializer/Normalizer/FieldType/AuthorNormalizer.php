@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
-use Ibexa\Core\FieldType\Author\Value as AuthorValue;
 use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Author\Value as AuthorValue;
 
 final class AuthorNormalizer implements ValueNormalizerInterface
 {

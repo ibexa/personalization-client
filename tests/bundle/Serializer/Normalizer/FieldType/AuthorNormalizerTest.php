@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use Ibexa\Core\FieldType\Author\Author as CoreAuthor;
-use Ibexa\Core\FieldType\Author\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\AuthorNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\Author\Author as CoreAuthor;
+use Ibexa\Core\FieldType\Author\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\AuthorNormalizer
