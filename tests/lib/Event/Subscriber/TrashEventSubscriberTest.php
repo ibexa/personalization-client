@@ -8,13 +8,13 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Events\Trash\RecoverEvent;
-use eZ\Publish\API\Repository\Events\Trash\TrashEvent;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\LocationList;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\Core\Repository\Values\Content\Relation;
+use Ibexa\Contracts\Core\Repository\Events\Trash\RecoverEvent;
+use Ibexa\Contracts\Core\Repository\Events\Trash\TrashEvent;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationList;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Core\Repository\Values\Content\Relation;
 use Ibexa\PersonalizationClient\Event\Subscriber\TrashEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -22,10 +22,10 @@ final class TrashEventSubscriberTest extends AbstractRepositoryEventSubscriberTe
 {
     private const CONTENT_ID = 123;
 
-    /** @var \EzSystems\EzRecommendationClient\Event\Subscriber\TrashEventSubscriber */
+    /** @var \Ibexa\PersonalizationClient\Event\Subscriber\TrashEventSubscriber */
     private $trashEventSubscriber;
 
-    /** @var \eZ\Publish\API\Repository\Repository|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\Repository|\PHPUnit\Framework\MockObject\MockObject */
     private $repositoryMock;
 
     public function setUp(): void

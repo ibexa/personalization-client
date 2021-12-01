@@ -26,7 +26,7 @@ final class ExportService implements ExportServiceInterface
 
     private FileManagerInterface $fileManager;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\ExportNotificationService */
+    /** @var \Ibexa\PersonalizationClient\Service\ExportNotificationService */
     private ExportNotificationService $notificationService;
 
     public function __construct(
@@ -74,7 +74,7 @@ final class ExportService implements ExportServiceInterface
      */
     private function getSecuredDirCredentials(string $chunkDir): array
     {
-        /** @var \EzSystems\EzRecommendationClient\Value\Config\ExportCredentials $credentials */
+        /** @var \Ibexa\PersonalizationClient\Value\Config\ExportCredentials $credentials */
         $credentials = $this->credentialsResolver->getCredentials();
 
         return $this->fileManager->secureDir($chunkDir, $credentials);

@@ -19,7 +19,7 @@ interface RecommendationServiceInterface
     public function sendDeliveryFeedback(string $outputContentType): void;
 
     /**
-     * @return RecommendationItem[]
+     * @return \Ibexa\PersonalizationClient\Value\RecommendationItem[]
      */
     public function getRecommendationItems(array $recommendationItems): array;
 }

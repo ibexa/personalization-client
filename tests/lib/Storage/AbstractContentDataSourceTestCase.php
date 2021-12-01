@@ -8,20 +8,20 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Storage;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\SearchService;
-use eZ\Publish\API\Repository\Values\Content\Content as ApiContent;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\Language;
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Search\SearchHit;
-use eZ\Publish\API\Repository\Values\Content\Search\SearchResult;
-use eZ\Publish\API\Repository\Values\Content\VersionInfo as ApiVersionInfo;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType as ApiContentType;
-use eZ\Publish\Core\QueryType\QueryType;
-use eZ\Publish\Core\Repository\Values\Content\Content;
-use eZ\Publish\Core\Repository\Values\Content\VersionInfo;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\SearchService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content as ApiContent;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\SearchHit;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\SearchResult;
+use Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo as ApiVersionInfo;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType as ApiContentType;
+use Ibexa\Core\QueryType\QueryType;
+use Ibexa\Core\Repository\Values\Content\Content;
+use Ibexa\Core\Repository\Values\Content\VersionInfo;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface;
 use Ibexa\PersonalizationClient\Content\DataResolverInterface;
@@ -40,13 +40,13 @@ abstract class AbstractContentDataSourceTestCase extends AbstractDataSourceTestC
 
     protected DataSourceInterface $contentDataSource;
 
-    /** @var \eZ\Publish\API\Repository\SearchService|mixed|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\SearchService|mixed|\PHPUnit\Framework\MockObject\MockObject */
     protected SearchService $searchService;
 
-    /** @var \eZ\Publish\API\Repository\ContentService|mixed|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService|mixed|\PHPUnit\Framework\MockObject\MockObject */
     protected ContentService $contentService;
 
-    /** @var \eZ\Publish\Core\QueryType\QueryType|mixed|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\QueryType\QueryType|mixed|\PHPUnit\Framework\MockObject\MockObject */
     protected QueryType $queryType;
 
     /** @var \Ibexa\PersonalizationClient\Content\DataResolverInterface|mixed|\PHPUnit\Framework\MockObject\MockObject */

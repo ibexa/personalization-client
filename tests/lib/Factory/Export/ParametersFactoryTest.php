@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Test\PersonalizationClient\Factory\Export;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\SiteAccess;
+use Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
 use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
 use Ibexa\PersonalizationClient\Factory\Export\ParametersFactory;
@@ -23,13 +23,13 @@ final class ParametersFactoryTest extends TestCase
 {
     private ParametersFactoryInterface $parametersFactory;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
     private CredentialsResolverInterface $credentialsResolver;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
     private ConfigResolverInterface $configResolver;
 
-    /** @var \eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface|\PHPUnit\Framework\MockObject\MockObject */
     private SiteAccessServiceInterface $siteAccessService;
 
     /**
@@ -69,7 +69,7 @@ final class ParametersFactoryTest extends TestCase
     }
 
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
      */
     public function testCreateFromAllOptions(): void
     {
@@ -202,7 +202,7 @@ final class ParametersFactoryTest extends TestCase
     }
 
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
      */
     public function testThrowExportCredentialsNotFoundException(): void
     {

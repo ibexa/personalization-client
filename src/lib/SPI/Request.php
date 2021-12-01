@@ -11,7 +11,7 @@ namespace Ibexa\PersonalizationClient\SPI;
 abstract class Request
 {
     /**
-     * @param \EzSystems\EzRecommendationClient\SPI\Request $instance
+     * @param \Ibexa\PersonalizationClient\SPI\Request $instance
      * @param string[] $parameters
      */
     public function __construct(self $instance, array $parameters = [])

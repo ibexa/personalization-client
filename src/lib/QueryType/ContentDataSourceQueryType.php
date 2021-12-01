@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\QueryType;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\Core\QueryType\OptionsResolverBasedQueryType;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Core\QueryType\OptionsResolverBasedQueryType;
 use Ibexa\Contracts\PersonalizationClient\Criteria\CriteriaInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

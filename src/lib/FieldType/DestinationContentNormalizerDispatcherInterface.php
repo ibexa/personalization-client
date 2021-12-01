@@ -16,7 +16,7 @@ interface DestinationContentNormalizerDispatcherInterface
     /**
      * @return array<scalar|null>|scalar|null
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function dispatch(int $destinationContentId);
 }

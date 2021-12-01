@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Events\ObjectState\SetContentStateEvent;
+use Ibexa\Contracts\Core\Repository\Events\ObjectState\SetContentStateEvent;
 use Ibexa\PersonalizationClient\Value\EventNotification;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -25,8 +25,8 @@ final class ObjectStateEventSubscriber extends AbstractCoreEventSubscriber imple
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onSetContentState(SetContentStateEvent $event): void
     {

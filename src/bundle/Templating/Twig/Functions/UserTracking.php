@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Templating\Twig\Functions;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\Locale\LocaleConverterInterface;
 use Ibexa\PersonalizationClient\Helper\ContentTypeHelper;
 use Ibexa\PersonalizationClient\Service\UserServiceInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
@@ -19,16 +19,16 @@ use Twig\Extension\RuntimeExtensionInterface;
 
 final class UserTracking extends AbstractFunction implements RuntimeExtensionInterface
 {
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
-    /** @var \eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface */
+    /** @var \Ibexa\Core\MVC\Symfony\Locale\LocaleConverterInterface */
     private $localeConverter;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\UserServiceInterface */
+    /** @var \Ibexa\PersonalizationClient\Service\UserServiceInterface */
     private $userService;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentTypeHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentTypeHelper */
     private $contentTypeHelper;
 
     /** @var \Symfony\Component\HttpFoundation\RequestStack */
@@ -57,8 +57,8 @@ final class UserTracking extends AbstractFunction implements RuntimeExtensionInt
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function trackUser(int $contentId): string
     {

@@ -20,7 +20,7 @@ use Ibexa\Tests\PersonalizationClient\Storage\AbstractDataSourceTestCase;
 
 final class DataSourceServiceTest extends AbstractDataSourceTestCase
 {
-    /** @var \EzSystems\EzRecommendationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyDispatcherInterface|\PHPUnit\Framework\MockObject\MockObject */
     private GroupItemStrategyDispatcherInterface $itemGroupStrategy;
 
     public function setUp(): void

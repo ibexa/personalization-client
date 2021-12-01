@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface;
+use Ibexa\Core\MVC\Symfony\Locale\LocaleConverterInterface;
 use Ibexa\PersonalizationClient\Event\RecommendationResponseEvent;
 use Ibexa\PersonalizationClient\Helper\ContentTypeHelper;
 use Ibexa\PersonalizationClient\Helper\LocationHelper;
@@ -26,19 +26,19 @@ final class RecommendationEventSubscriber implements EventSubscriberInterface
     private const LOCALE_REQUEST_KEY = '_locale';
     private const DEFAULT_LOCALE = 'eng-GB';
 
-    /** @var \EzSystems\EzRecommendationClient\Service\RecommendationServiceInterface */
+    /** @var \Ibexa\PersonalizationClient\Service\RecommendationServiceInterface */
     private $recommendationService;
 
-    /** @var \eZ\Publish\Core\MVC\Symfony\Locale\LocaleConverterInterface */
+    /** @var \Ibexa\Core\MVC\Symfony\Locale\LocaleConverterInterface */
     private $localeConverter;
 
     /** @var \Psr\Log\LoggerInterface */
     private $logger;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentTypeHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentTypeHelper */
     private $contentTypeHelper;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\LocationHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\LocationHelper */
     private $locationHelper;
 
     public function __construct(
@@ -66,8 +66,8 @@ final class RecommendationEventSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onRecommendationResponse(RecommendationResponseEvent $event): void
     {
@@ -83,8 +83,8 @@ final class RecommendationEventSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function getRecommendationRequest(ParameterBag $parameterBag): RecommendationRequest
     {

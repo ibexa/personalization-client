@@ -11,7 +11,7 @@ namespace Ibexa\PersonalizationClient\Value\Export;
 use ArrayAccess;
 use ArrayIterator;
 use BadMethodCallException;
-use eZ\Publish\API\Repository\Exceptions\OutOfBoundsException;
+use Ibexa\Contracts\Core\Repository\Exceptions\OutOfBoundsException;
 use IteratorAggregate;
 use Traversable;
 use Webmozart\Assert\Assert;

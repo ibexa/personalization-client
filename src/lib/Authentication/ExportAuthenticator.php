@@ -20,13 +20,13 @@ final class ExportAuthenticator implements FileAuthenticatorInterface
     private const PHP_AUTH_USER = 'PHP_AUTH_USER';
     private const PHP_AUTH_PW = 'PHP_AUTH_PW';
 
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface */
     private $credentialsResolver;
 
     /** @var \Symfony\Component\HttpFoundation\RequestStack */
     private $requestStack;
 
-    /** @var \EzSystems\EzRecommendationClient\File\FileManagerInterface */
+    /** @var \Ibexa\PersonalizationClient\File\FileManagerInterface */
     private $fileManager;
 
     public function __construct(
@@ -44,7 +44,7 @@ final class ExportAuthenticator implements FileAuthenticatorInterface
      */
     public function authenticate(): bool
     {
-        /** @var \EzSystems\EzRecommendationClient\Value\Config\ExportCredentials $credentials */
+        /** @var \Ibexa\PersonalizationClient\Value\Config\ExportCredentials $credentials */
         $credentials = $this->credentialsResolver->getCredentials();
         $server = $this->requestStack->getCurrentRequest()->server;
 

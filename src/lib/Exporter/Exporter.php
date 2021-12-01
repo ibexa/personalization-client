@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Exporter;
 
-use eZ\Publish\API\Repository\ContentTypeService as ContentTypeServiceInterface;
-use eZ\Publish\API\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\ContentTypeService as ContentTypeServiceInterface;
+use Ibexa\Contracts\Core\Repository\Repository;
 use Ibexa\PersonalizationClient\File\ExportFileGenerator;
 use Ibexa\PersonalizationClient\Helper\ContentHelper;
 use Ibexa\PersonalizationClient\Service\ContentServiceInterface;
@@ -24,19 +24,19 @@ final class Exporter implements ExporterInterface
 {
     private const API_ENDPOINT_URL = '%s/api/ezp/v2/ez_recommendation/v1/exportDownload/%s';
 
-    /** @var \eZ\Publish\API\Repository\Repository */
+    /** @var \Ibexa\Contracts\Core\Repository\Repository */
     private $repository;
 
-    /** @var \EzSystems\EzRecommendationClient\File\ExportFileGenerator */
+    /** @var \Ibexa\PersonalizationClient\File\ExportFileGenerator */
     private $exportFileGenerator;
 
-    /** @var \eZ\Publish\API\Repository\ContentTypeService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
     private $contentTypeService;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\ContentServiceInterface */
+    /** @var \Ibexa\PersonalizationClient\Service\ContentServiceInterface */
     private $contentService;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentHelper */
     private $contentHelper;
 
     /** @var \Psr\Log\LoggerInterface */
@@ -61,9 +61,9 @@ final class Exporter implements ExporterInterface
     /**
      * {@inheritdoc}
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function run(Parameters $parameters, string $chunkDir, OutputInterface $output): array
     {
@@ -80,9 +80,9 @@ final class Exporter implements ExporterInterface
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function getContentForGivenLanguages(
         int $contentTypeId,
@@ -165,7 +165,7 @@ final class Exporter implements ExporterInterface
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
      */
     private function generateUrlList(int $contentTypeId, string $lang, string $url): array
     {

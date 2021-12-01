@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Config;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 
 abstract class CredentialsResolver implements CredentialsResolverInterface
 {

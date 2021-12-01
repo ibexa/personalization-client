@@ -17,7 +17,7 @@ use Traversable;
 interface ItemListInterface extends Traversable, Countable
 {
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\ItemNotFoundException
+     * @throws \Ibexa\PersonalizationClient\Exception\ItemNotFoundException
      */
     public function get(string $identifier, string $language): ItemInterface;
 
@@ -36,7 +36,7 @@ interface ItemListInterface extends Traversable, Countable
     public function slice(int $offset, ?int $length = null): self;
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\OutOfBoundsException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\OutOfBoundsException
      */
     public function first(): ItemInterface;
 }

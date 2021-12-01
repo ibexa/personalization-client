@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Config;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\Config\CredentialsResolver;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -16,7 +16,7 @@ use Psr\Log\NullLogger;
 
 class CredentialsResolverTest extends TestCase
 {
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolver|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolver|\PHPUnit\Framework\MockObject\MockObject */
     private $credentialsResolverMock;
 
     /** @var \Psr\Log\NullLogger|\PHPUnit\Framework\MockObject\MockObject */

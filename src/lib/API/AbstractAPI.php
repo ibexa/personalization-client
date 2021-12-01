@@ -15,7 +15,7 @@ use Psr\Http\Message\UriInterface;
 
 abstract class AbstractAPI
 {
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface */
     protected $client;
 
     /** @var \GuzzleHttp\Psr7\Uri */

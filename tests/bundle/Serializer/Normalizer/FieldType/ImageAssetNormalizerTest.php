@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\FieldType\ImageAsset\Value;
+use Ibexa\Core\FieldType\ImageAsset\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\ImageAssetNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
@@ -20,7 +20,7 @@ final class ImageAssetNormalizerTest extends AbstractDestinationContentNormalize
     /**
      * @dataProvider provideDataForTestNormalize
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(?int $destinationContentId, ?string $expected, Value $value): void
     {

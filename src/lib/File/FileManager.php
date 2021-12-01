@@ -30,7 +30,7 @@ final class FileManager implements FileManagerInterface
     }
 
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\FileNotFoundException
+     * @throws \Ibexa\PersonalizationClient\Exception\FileNotFoundException
      */
     public function load(string $file): ?string
     {

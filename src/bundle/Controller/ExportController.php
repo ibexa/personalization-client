@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
-use EzSystems\EzPlatformRest\Server\Controller;
+use Ibexa\Rest\Server\Controller;
 use Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface;
 use Ibexa\PersonalizationClient\Exception\ExportInProgressException;
 use Ibexa\PersonalizationClient\File\FileManagerInterface;
@@ -21,13 +21,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class ExportController extends Controller
 {
-    /** @var \EzSystems\EzRecommendationClient\Authentication\AuthenticatorInterface */
+    /** @var \Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface */
     private $authenticator;
 
-    /** @var \EzSystems\EzRecommendationClient\File\FileManagerInterface */
+    /** @var \Ibexa\PersonalizationClient\File\FileManagerInterface */
     private $fileManager;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ExportProcessRunnerHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ExportProcessRunnerHelper */
     private $exportProcessRunner;
 
     /** @var \Psr\Log\LoggerInterface */
@@ -74,7 +74,7 @@ final class ExportController extends Controller
     /**
      * @ParamConverter("export_request_converter")
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\ExportInProgressException
+     * @throws \Ibexa\PersonalizationClient\Exception\ExportInProgressException
      */
     public function exportAction(ExportRequest $request): JsonResponse
     {

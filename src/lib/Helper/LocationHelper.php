@@ -8,16 +8,16 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Helper;
 
-use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
-use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\ContentService as ContentServiceInterface;
+use Ibexa\Contracts\Core\Repository\LocationService as LocationServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 
 final class LocationHelper
 {
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
     public function __construct(
@@ -29,7 +29,7 @@ final class LocationHelper
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\BadStateException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\BadStateException
      */
     public function areLocationsVisible(ContentInfo $contentInfo): bool
     {
@@ -47,8 +47,8 @@ final class LocationHelper
     /**
      * Returns location path string based on $contentId.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getParentLocationPathString(int $contentId): string
     {

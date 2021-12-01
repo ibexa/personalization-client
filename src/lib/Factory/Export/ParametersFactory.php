@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Factory\Export;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
 use Ibexa\PersonalizationClient\API\Notifier;
 use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Ibexa\PersonalizationClient\Exception\CredentialsNotFoundException;
@@ -47,8 +47,8 @@ final class ParametersFactory implements ParametersFactoryInterface
     }
 
     /**
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
-     * @throws \EzSystems\EzRecommendationClient\Exception\InvalidArgumentException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\InvalidArgumentException
      */
     public function create(array $options, string $type): Parameters
     {
@@ -82,8 +82,8 @@ final class ParametersFactory implements ParametersFactoryInterface
      *  host: string,
      * }
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
-     * @throws \EzSystems\EzRecommendationClient\Exception\InvalidArgumentException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\InvalidArgumentException
      */
     private function getExportParameters(array $options): array
     {
@@ -158,7 +158,7 @@ final class ParametersFactory implements ParametersFactoryInterface
      *  siteaccess: string,
      * }
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
      */
     private function getCredentialsAndSiteAccessForSingleConfiguration(array $options): array
     {
@@ -225,7 +225,7 @@ final class ParametersFactory implements ParametersFactoryInterface
             throw new CredentialsNotFoundException($siteAccess);
         }
 
-        /** @var \EzSystems\EzRecommendationClient\Value\Config\EzRecommendationClientCredentials $credentials */
+        /** @var \Ibexa\PersonalizationClient\Value\Config\EzRecommendationClientCredentials $credentials */
         $credentials = $this->credentialsResolver->getCredentials($siteAccess);
         /** @var int $customerId */
         $customerId = $credentials->getCustomerId();
@@ -256,7 +256,7 @@ final class ParametersFactory implements ParametersFactoryInterface
      *  siteaccess: string,
      * }
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
      */
     private function getCredentialsAndSiteAccessForMultiCustomerConfiguration(array $options): array
     {

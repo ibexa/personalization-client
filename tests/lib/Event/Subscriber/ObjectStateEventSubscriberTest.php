@@ -8,13 +8,13 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Events\ObjectState\SetContentStateEvent;
+use Ibexa\Contracts\Core\Repository\Events\ObjectState\SetContentStateEvent;
 use Ibexa\PersonalizationClient\Event\Subscriber\ObjectStateEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ObjectStateEventSubscriberTest extends AbstractCoreEventSubscriberTest
 {
-    /** @var \EzSystems\EzRecommendationClient\Event\Subscriber\ObjectStateEventSubscriber */
+    /** @var \Ibexa\PersonalizationClient\Event\Subscriber\ObjectStateEventSubscriber */
     private $objectStateEventSubscriber;
 
     public function setUp(): void

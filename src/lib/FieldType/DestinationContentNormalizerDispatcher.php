@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\FieldType;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
 
 final class DestinationContentNormalizerDispatcher implements DestinationContentNormalizerDispatcherInterface
 {

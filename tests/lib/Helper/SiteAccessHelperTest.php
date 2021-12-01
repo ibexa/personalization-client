@@ -8,19 +8,19 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Helper;
 
-use eZ\Publish\Core\Base\Exceptions\NotFoundException;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
+use Ibexa\Core\Base\Exceptions\NotFoundException;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\SiteAccess;
+use Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
 use Ibexa\PersonalizationClient\Helper\SiteAccessHelper;
 use PHPUnit\Framework\TestCase;
 
 class SiteAccessHelperTest extends TestCase
 {
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
-    /** @var \eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface|\PHPUnit\Framework\MockObject\MockObject */
     private SiteAccessServiceInterface $siteAccessService;
 
     public function setUp(): void

@@ -13,7 +13,7 @@ use Twig\Extension\RuntimeExtensionInterface;
 
 final class Recommendation implements RuntimeExtensionInterface
 {
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface */
     private $credentialsResolver;
 
     public function __construct(

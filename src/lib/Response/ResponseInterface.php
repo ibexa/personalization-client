@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Response;
 
-use EzSystems\EzPlatformRest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Generator;
 
 interface ResponseInterface
 {

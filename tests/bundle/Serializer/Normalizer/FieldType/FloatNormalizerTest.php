@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\FieldType\Float\Value;
+use Ibexa\Core\FieldType\Float\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\FloatNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
@@ -20,7 +20,7 @@ final class FloatNormalizerTest extends AbstractValueNormalizerTestCase
     /**
      * @dataProvider provideDataForTestNormalize
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(?float $expected, Value $value): void
     {

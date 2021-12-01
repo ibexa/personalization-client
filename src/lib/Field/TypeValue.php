@@ -8,22 +8,22 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Field;
 
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\Content\Field;
-use EzSystems\EzPlatformRichText\eZ\RichText\Converter as RichTextConverterInterface;
-use EzSystems\EzPlatformRichTextBundle\eZ\RichText\Converter\Html5 as XmlHtml5;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Contracts\FieldTypeRichText\RichText\Converter as RichTextConverterInterface;
+use Ibexa\FieldTypeRichText\RichText\Converter\Html5 as XmlHtml5;
 use Ibexa\PersonalizationClient\Helper\ImageHelper;
 use LogicException;
 
 final class TypeValue
 {
-    /** @var \EzSystems\EzRecommendationClient\Helper\ImageHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ImageHelper */
     private $imageHelper;
 
-    /** @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter */
+    /** @var \Ibexa\Contracts\FieldTypeRichText\RichText\Converter */
     private $richHtml5Converter;
 
-    /** @var \EzSystems\EzPlatformRichTextBundle\eZ\RichText\Converter\Html5|null */
+    /** @var \Ibexa\FieldTypeRichText\RichText\Converter\Html5|null */
     private $xmlHtml5Converter;
 
     public function __construct(
@@ -50,7 +50,7 @@ final class TypeValue
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function ezxmltext(Field $field): string
     {

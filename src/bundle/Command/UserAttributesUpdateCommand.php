@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Command;
 
-use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
+use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Event\UpdateUserAPIEvent;
 use Symfony\Component\Console\Command\Command;
@@ -22,7 +22,7 @@ final class UserAttributesUpdateCommand extends Command implements BackwardCompa
     /** @var \Symfony\Component\EventDispatcher\EventDispatcherInterface */
     private $eventDispatcher;
 
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface */
     private $client;
 
     public function __construct(

@@ -8,15 +8,15 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Helper;
 
-use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
-use eZ\Publish\API\Repository\SearchService as SearchServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\Repository\ContentService as ContentServiceInterface;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\LocationService as LocationServiceInterface;
+use Ibexa\Contracts\Core\Repository\SearchService as SearchServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 use Psr\Log\LoggerInterface;
 
@@ -25,19 +25,19 @@ final class ContentHelper
     /** @var \eZ\Publish\Api\Repository\SearchService */
     private $searchService;
 
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentTypeHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentTypeHelper */
     private $contentTypeHelper;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\SiteAccessHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\SiteAccessHelper */
     private $siteAccessHelper;
 
     /** @var \Psr\Log\LoggerInterface */
@@ -64,8 +64,8 @@ final class ContentHelper
     /**
      * Gets languageCodes based on $content.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getLanguageCodes(ContentInfo $contentInfo, ?int $versionNo = null): array
     {
@@ -88,7 +88,7 @@ final class ContentHelper
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getContent(int $contentId, ?array $languages = null, ?int $versionNo = null): ?Content
     {
@@ -102,7 +102,7 @@ final class ContentHelper
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getIncludedContent(int $contentId, ?array $languages = null, ?int $versionNo = null): ?Content
     {
@@ -114,9 +114,9 @@ final class ContentHelper
     /**
      * Returns total amount of content based on ContentType ids.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function countContentItemsByContentTypeId(int $contentTypeId, array $options): ?int
     {
@@ -130,9 +130,9 @@ final class ContentHelper
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getContentItems(int $contentTypeId, array $options): array
     {
@@ -147,8 +147,8 @@ final class ContentHelper
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function getQuery(int $contentTypeId, array $options): Query
     {
@@ -171,8 +171,8 @@ final class ContentHelper
     /**
      * Generates Criterions based on mandatoryId or requested siteAccess.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function generateSubtreeCriteria(?int $customerId, ?string $siteAccess = null): Criterion\LogicalOr
     {

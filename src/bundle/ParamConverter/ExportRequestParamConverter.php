@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\ParamConverter;
 
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
 use Ibexa\PersonalizationClient\Mapper\ExportRequestMapper;
 use Ibexa\PersonalizationClient\Value\ExportRequest;
@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class ExportRequestParamConverter implements ParamConverterInterface
 {
-    /** @var \EzSystems\EzRecommendationClient\Mapper\ExportRequestMapper */
+    /** @var \Ibexa\PersonalizationClient\Mapper\ExportRequestMapper */
     private $exportRequestMapper;
 
     public function __construct(ExportRequestMapper $exportRequestMapper)

@@ -12,7 +12,7 @@ use Ibexa\PersonalizationClient\Generator\ContentListElementGenerator;
 
 abstract class Response implements ResponseInterface
 {
-    /** @var \EzSystems\EzRecommendationClient\Generator\ContentListElementGenerator */
+    /** @var \Ibexa\PersonalizationClient\Generator\ContentListElementGenerator */
     public $contentListElementGenerator;
 
     public function __construct(ContentListElementGenerator $contentListElementGenerator)

@@ -21,7 +21,7 @@ interface DataSourceServiceInterface
     /**
      * Returns ItemInterface based on item type identifier and language.
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\ItemNotFoundException
+     * @throws \Ibexa\PersonalizationClient\Exception\ItemNotFoundException
      */
     public function getItem(string $identifier, string $language): ItemInterface;
 

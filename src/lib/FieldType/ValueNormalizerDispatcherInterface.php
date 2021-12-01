@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\FieldType;
 
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Contracts\Core\FieldType\Value;
 
 /**
  * @internal
@@ -18,7 +18,7 @@ interface ValueNormalizerDispatcherInterface
     /**
      * @return array<scalar|null>|scalar|null
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function dispatch(Value $value);
 

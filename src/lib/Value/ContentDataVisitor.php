@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Value;
 
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
 use Ibexa\PersonalizationClient\Exception\ResponseClassNotImplementedException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -33,7 +33,7 @@ class ContentDataVisitor extends ValueObjectVisitor
     /**
      * @param mixed $data
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\ResponseClassNotImplementedException
+     * @throws \Ibexa\PersonalizationClient\Exception\ResponseClassNotImplementedException
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

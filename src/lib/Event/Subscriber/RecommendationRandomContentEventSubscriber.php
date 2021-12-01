@@ -8,16 +8,16 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\SearchService as SearchServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\Content\LocationQuery;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
-use eZ\Publish\Core\FieldType\TextLine\Value as TextLineValue;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\SPI\FieldType\Value;
-use EzSystems\EzPlatformRichText\eZ\FieldType\RichText\Value as RichTextValue;
+use Ibexa\Contracts\Core\Repository\ContentService as ContentServiceInterface;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\SearchService as SearchServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion;
+use Ibexa\Core\FieldType\TextLine\Value as TextLineValue;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\FieldType\Value;
+use Ibexa\FieldTypeRichText\FieldType\RichText\Value as RichTextValue;
 use Ibexa\PersonalizationClient\Event\RecommendationResponseEvent;
 use Ibexa\PersonalizationClient\Helper\ImageHelper;
 use Ibexa\PersonalizationClient\Request\BasicRecommendationRequest;
@@ -28,24 +28,24 @@ use Symfony\Component\Routing\RouterInterface;
 
 final class RecommendationRandomContentEventSubscriber implements EventSubscriberInterface
 {
-    /** @var \eZ\Publish\API\Repository\SearchService */
+    /** @var \Ibexa\Contracts\Core\Repository\SearchService */
     private $searchService;
 
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     /** @var \Symfony\Component\Routing\RouterInterface */
     private $router;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ImageHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ImageHelper */
     private $imageHelper;
 
     /**
-     * @param \eZ\Publish\API\Repository\ContentService $searchService
-     * @param \eZ\Publish\API\Repository\SearchService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $searchService
+     * @param \Ibexa\Contracts\Core\Repository\SearchService $contentService
      */
     public function __construct(
         SearchServiceInterface $searchService,
@@ -72,9 +72,9 @@ final class RecommendationRandomContentEventSubscriber implements EventSubscribe
     }
 
     /**
-     * @throws NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onRecommendationResponse(RecommendationResponseEvent $event): void
     {
@@ -97,9 +97,9 @@ final class RecommendationRandomContentEventSubscriber implements EventSubscribe
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function getRandomContent(LocationQuery $query, int $limit): array
     {
@@ -122,7 +122,7 @@ final class RecommendationRandomContentEventSubscriber implements EventSubscribe
     }
 
     /**
-     * @return RecommendationItem[]
+     * @return \Ibexa\PersonalizationClient\Value\RecommendationItem[]
      */
     private function getRandomRecommendationItems(array $randomContent): array
     {

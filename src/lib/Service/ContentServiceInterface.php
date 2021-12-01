@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Service;
 
-use eZ\Publish\Core\Repository\Values\Content\Content as CoreContent;
+use Ibexa\Core\Repository\Values\Content\Content as CoreContent;
 use Ibexa\PersonalizationClient\SPI\Content;
 use Ibexa\PersonalizationClient\SPI\Content as ContentOptions;
 use Ibexa\PersonalizationClient\Value\ExportParameters;

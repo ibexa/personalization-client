@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\Checkbox\Value as CheckboxValue;
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Checkbox\Value as CheckboxValue;
+use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
 final class CheckboxNormalizer implements ValueNormalizerInterface

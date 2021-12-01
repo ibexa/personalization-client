@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Listener;
 
-use eZ\Publish\API\Repository\UserService as UserServiceInterface;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Contracts\Core\Repository\UserService as UserServiceInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use GuzzleHttp\Exception\RequestException;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
@@ -32,13 +32,13 @@ final class LoginListener
     /** @var \Symfony\Component\HttpFoundation\Session\SessionInterface */
     private $session;
 
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface */
     private $client;
 
-    /** @var \eZ\Publish\API\Repository\UserService */
+    /** @var \Ibexa\Contracts\Core\Repository\UserService */
     private $userService;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     /** @var \Psr\Log\LoggerInterface|null */

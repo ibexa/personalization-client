@@ -25,10 +25,10 @@ class RecommendationController
     /** @var \Symfony\Component\EventDispatcher\EventDispatcherInterface */
     private $eventDispatcher;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\RecommendationServiceInterface */
+    /** @var \Ibexa\PersonalizationClient\Service\RecommendationServiceInterface */
     private $recommendationService;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface */
     private $credentialsResolver;
 
     /** @var \Twig\Environment */

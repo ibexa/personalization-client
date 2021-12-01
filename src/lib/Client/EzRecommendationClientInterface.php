@@ -22,21 +22,21 @@ use Psr\Http\Message\UriInterface;
 interface EzRecommendationClientInterface
 {
     /**
-     * @return \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface
+     * @return \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface
      */
     public function setCustomerId(?int $customerId = null): self;
 
     public function getCustomerId(): ?int;
 
     /**
-     * @return \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface
+     * @return \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface
      */
     public function setLicenseKey(?string $licenseKey = null): self;
 
     public function getLicenseKey(): ?string;
 
     /**
-     * @return \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface
+     * @return \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface
      */
     public function setUserIdentifier(string $userIdentifier): self;
 

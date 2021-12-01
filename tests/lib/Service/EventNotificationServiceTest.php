@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Service;
 
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 use Ibexa\PersonalizationClient\API\Notifier;
 use Ibexa\PersonalizationClient\Config\ExportCredentialsResolver;
 use Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver;
@@ -21,19 +21,19 @@ use Ibexa\PersonalizationClient\Value\EventNotification;
 
 class EventNotificationServiceTest extends NotificationServiceTest
 {
-    /** @var \EzSystems\EzRecommendationClient\Service\EventNotificationService */
+    /** @var \Ibexa\PersonalizationClient\Service\EventNotificationService */
     private $notificationService;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver|\PHPUnit\Framework\MockObject\MockObject */
     private $credentialsResolverMock;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\ExportCredentialsResolver|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Config\ExportCredentialsResolver|\PHPUnit\Framework\MockObject\MockObject */
     private $exportCredentialsMock;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentHelper|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentHelper|\PHPUnit\Framework\MockObject\MockObject */
     private $contentHelperMock;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentTypeHelper|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentTypeHelper|\PHPUnit\Framework\MockObject\MockObject */
     private $contentTypeHelperMock;
 
     public function setUp(): void

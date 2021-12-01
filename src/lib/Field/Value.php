@@ -9,30 +9,30 @@ declare(strict_types=1);
 namespace Ibexa\PersonalizationClient\Field;
 
 use Exception;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\Content\Field;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\PersonalizationClient\Exception\InvalidRelationException;
 use Ibexa\PersonalizationClient\Mapper\RelationMapper;
 use Psr\Log\LoggerInterface;
 
 final class Value
 {
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
-    /** @var \eZ\Publish\API\Repository\ContentTypeService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
     private $contentTypeService;
 
-    /** @var \EzSystems\EzRecommendationClient\Field\TypeValue */
+    /** @var \Ibexa\PersonalizationClient\Field\TypeValue */
     private $typeValue;
 
     /** @var array */
     private $parameters;
 
-    /** @var \EzSystems\EzRecommendationClient\Mapper\RelationMapper */
+    /** @var \Ibexa\PersonalizationClient\Mapper\RelationMapper */
     private $relationMapper;
 
     /** @var array */
@@ -42,7 +42,7 @@ final class Value
     private $logger;
 
     /**
-     * @param \EzSystems\EzRecommendationClient\Field\TypeValue $typeValue
+     * @param \Ibexa\PersonalizationClient\Field\TypeValue $typeValue
      */
     public function __construct(
         ContentService $contentService,
@@ -63,8 +63,8 @@ final class Value
     /**
      * Returns parsed field value.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getFieldValue(Content $content, string $field, string $language, array $options = []): ?string
     {
@@ -160,8 +160,8 @@ final class Value
      *
      * @param $contentId
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function getImageFieldIdentifier($contentId, string $language, bool $related = false): string
     {

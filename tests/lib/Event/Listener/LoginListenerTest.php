@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Listener;
 
-use eZ\Publish\API\Repository\UserService;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\Repository\UserService;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use GuzzleHttp\Client;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Event\Listener\LoginListener;
@@ -40,16 +40,16 @@ final class LoginListenerTest extends TestCase
     /** @var \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\Session\SessionInterface */
     private $session;
 
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface|\PHPUnit\Framework\MockObject\MockObject */
     private $client;
 
     /** @var \GuzzleHttp\Client|\PHPUnit\Framework\MockObject\MockObject */
     private $guzzleClient;
 
-    /** @var \eZ\Publish\API\Repository\UserService|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\UserService|\PHPUnit\Framework\MockObject\MockObject */
     private $userService;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
     private $configResolver;
 
     /** @var \PHPUnit\Framework\MockObject\MockObject|\Psr\Log\LoggerInterface */
@@ -58,7 +58,7 @@ final class LoginListenerTest extends TestCase
     /** @var \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\Security\Core\Authentication\Token\TokenInterface */
     private $token;
 
-    /** @var \EzSystems\EzRecommendationClient\Event\Listener\LoginListener */
+    /** @var \Ibexa\PersonalizationClient\Event\Listener\LoginListener */
     private $loginListener;
 
     protected function setUp(): void

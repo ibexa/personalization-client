@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\SearchService as SearchServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Exceptions\AuthenticationFailedException;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\SearchService as SearchServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\AuthenticationFailedException;
 use Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface;
 use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
 use Ibexa\PersonalizationClient\Service\ContentServiceInterface;
@@ -27,16 +27,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class ContentController extends RestController
 {
-    /** @var \eZ\Publish\API\Repository\Repository */
+    /** @var \Ibexa\Contracts\Core\Repository\Repository */
     protected $repository;
 
-    /** @var \eZ\Publish\Core\Repository\SearchService */
+    /** @var \Ibexa\Core\Repository\SearchService */
     private $searchService;
 
-    /** @var \EzSystems\EzRecommendationClient\Authentication\AuthenticatorInterface */
+    /** @var \Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface */
     private $authenticator;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\ContentServiceInterface */
+    /** @var \Ibexa\PersonalizationClient\Service\ContentServiceInterface */
     private $contentService;
 
     public function __construct(
@@ -56,7 +56,7 @@ final class ContentController extends RestController
      *
      * @ParamConverter("list_converter")
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function getContentAction(IdList $idList, Request $request): ContentData
     {

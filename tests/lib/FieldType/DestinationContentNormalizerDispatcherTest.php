@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\FieldType;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\Values\Content\Field;
-use eZ\Publish\Core\FieldType\Null\Value as NullValue;
-use eZ\Publish\Core\FieldType\Value;
-use eZ\Publish\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Core\FieldType\Null\Value as NullValue;
+use Ibexa\Core\FieldType\Value;
+use Ibexa\Core\Repository\Values\Content\Content;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\DestinationValueAwareInterface;
 use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher;
 use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcherInterface;
@@ -29,10 +29,10 @@ final class DestinationContentNormalizerDispatcherTest extends TestCase
     /** @var \Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\DestinationValueAwareInterface|\PHPUnit\Framework\MockObject\MockObject */
     private DestinationValueAwareInterface $valueNormalizer;
 
-    /** @var \eZ\Publish\API\Repository\ContentService|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService|\PHPUnit\Framework\MockObject\MockObject */
     private ContentService $contentService;
 
-    /** @var \eZ\Publish\API\Repository\Repository|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\Repository|\PHPUnit\Framework\MockObject\MockObject */
     private Repository $repository;
 
     protected function setUp(): void
@@ -50,7 +50,7 @@ final class DestinationContentNormalizerDispatcherTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testDispatchReturnNormalizedValue(): void
     {
@@ -67,7 +67,7 @@ final class DestinationContentNormalizerDispatcherTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testDispatchReturnNullWhenSupportedNormalizerNotFound(): void
     {

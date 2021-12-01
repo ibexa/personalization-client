@@ -15,13 +15,13 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 class FakeHttpEnvironment implements HttpEnvironmentInterface
 {
-    /** @var \EzSystems\EzRecommendationClient\Factory\RequestFactoryInterface */
+    /** @var \Ibexa\PersonalizationClient\Factory\RequestFactoryInterface */
     private $requestFactory;
 
     /** @var \Symfony\Component\HttpFoundation\RequestStack */
     private $requestStack;
 
-    /** @var \EzSystems\EzRecommendationClient\Factory\TokenFactoryInterface */
+    /** @var \Ibexa\PersonalizationClient\Factory\TokenFactoryInterface */
     private $tokenFactory;
 
     /** @var \Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface */

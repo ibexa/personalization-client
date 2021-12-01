@@ -60,7 +60,7 @@ final class DataSourceTestItemCreator
      *  'limit': int,
      * }> $itemsConfig
      *
-     * @return Traversable<\Ibexa\Contracts\PersonalizationClient\Value\ItemInterface>
+     * @return \Traversable<\Ibexa\Contracts\PersonalizationClient\Value\ItemInterface>
      */
     public function createTestItems(?iterable $itemsConfig = null): Traversable
     {
@@ -374,7 +374,7 @@ final class DataSourceTestItemCreator
      *  'limit': int,
      * }> $testItemsConfig
      *
-     * @return Traversable<\Ibexa\Contracts\PersonalizationClient\Value\ItemInterface>
+     * @return \Traversable<\Ibexa\Contracts\PersonalizationClient\Value\ItemInterface>
      */
     private function createTestItemsForConfig(iterable $testItemsConfig): Traversable
     {

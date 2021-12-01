@@ -38,10 +38,10 @@ final class EzRecommendationClient implements EzRecommendationClientInterface
     /** @var \GuzzleHttp\ClientInterface */
     private $client;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver */
+    /** @var \Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver */
     private $credentialsResolver;
 
-    /** @var \EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory */
+    /** @var \Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory */
     private $eZRecommendationClientApiFactory;
 
     /** @var int|string */

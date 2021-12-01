@@ -8,8 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Helper;
 
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 final class UserHelper
 {

@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Service;
 
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Config\CredentialsResolverInterface;
 use Ibexa\PersonalizationClient\Helper\ContentHelper;
@@ -22,16 +22,16 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class EventNotificationService extends NotificationService
 {
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface */
     private $clientCredentials;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface */
     private $exportCredentials;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentHelper */
     private $contentHelper;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentTypeHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentTypeHelper */
     private $contentTypeHelper;
 
     public function __construct(
@@ -52,8 +52,8 @@ final class EventNotificationService extends NotificationService
 
     /**
      * @throws \Exception
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function sendNotification(string $method, string $action, ContentInfo $contentInfo): void
     {
@@ -92,10 +92,10 @@ final class EventNotificationService extends NotificationService
     }
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\ContentInfo $content
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo $content
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function generateNotificationEvents(
         string $action,

@@ -4,7 +4,7 @@
     (function () {
         window.addEventListener('DOMContentLoaded', (event) => {
             const recommendationItems = document.querySelectorAll('a[data-recommendation-ping-api]');
-            const ezRecommendationClient = new EzRecommendationClient();
+            const ezRecommendationClient = new IbexaPersonalizationClient();
 
             recommendationItems.forEach(item => {
                 item.addEventListener('click', event => {

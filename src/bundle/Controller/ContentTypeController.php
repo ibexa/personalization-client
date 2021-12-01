@@ -8,13 +8,13 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Controller;
 
-use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\SearchService as SearchServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Exceptions\AuthenticationFailedException;
+use Ibexa\Contracts\Core\Repository\LocationService as LocationServiceInterface;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\SearchService as SearchServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\AuthenticationFailedException;
 use Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface;
 use Ibexa\PersonalizationClient\Helper\SiteAccessHelper;
 use Ibexa\PersonalizationClient\Service\ContentServiceInterface;
@@ -30,22 +30,22 @@ final class ContentTypeController extends RestController
 {
     private const PAGE_SIZE = 10;
 
-    /** @var \eZ\Publish\API\Repository\Repository */
+    /** @var \Ibexa\Contracts\Core\Repository\Repository */
     protected $repository;
 
-    /** @var \eZ\Publish\Core\Repository\LocationService */
+    /** @var \Ibexa\Core\Repository\LocationService */
     private $locationService;
 
-    /** @var \eZ\Publish\Core\Repository\SearchService */
+    /** @var \Ibexa\Core\Repository\SearchService */
     private $searchService;
 
-    /** @var \EzSystems\EzRecommendationClient\Authentication\AuthenticatorInterface */
+    /** @var \Ibexa\PersonalizationClient\Authentication\AuthenticatorInterface */
     private $authenticator;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\ContentServiceInterface */
+    /** @var \Ibexa\PersonalizationClient\Service\ContentServiceInterface */
     private $contentService;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\SiteAccessHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\SiteAccessHelper */
     private $siteAccessHelper;
 
     public function __construct(
@@ -69,9 +69,9 @@ final class ContentTypeController extends RestController
      *
      * @ParamConverter("list_converter")
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getContentTypeAction(IdList $idList, Request $request): ContentData
     {
@@ -87,9 +87,9 @@ final class ContentTypeController extends RestController
     /**
      * Returns paged content based on ContentType ids.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function prepareContentByContentTypeIds(array $contentTypeIds, Request $request): array
     {
@@ -114,8 +114,8 @@ final class ContentTypeController extends RestController
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function getQuery(int $contentTypeId, ParameterBag $parameterBag): Query
     {

@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\FieldType\BinaryFile\Value;
+use Ibexa\Core\FieldType\BinaryFile\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\BinaryFileNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 
@@ -20,7 +20,7 @@ final class BinaryFileNormalizerTest extends AbstractValueNormalizerTestCase
     /**
      * @dataProvider provideDataForTestNormalize
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(?string $expected, Value $value): void
     {

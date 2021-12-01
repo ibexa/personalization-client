@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\ParamConverter;
 
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use Ibexa\PersonalizationClient\Exception\InvalidArgumentException;
 use Ibexa\PersonalizationClient\Helper\ParamsConverterHelper;
 use Ibexa\PersonalizationClient\Value\IdList;

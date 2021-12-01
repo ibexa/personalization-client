@@ -8,25 +8,25 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Helper;
 
-use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
-use eZ\Publish\API\Repository\ContentTypeService as ContentTypeServiceInterface;
-use eZ\Publish\API\Repository\Repository as RepositoryInterface;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\Repository\ContentService as ContentServiceInterface;
+use Ibexa\Contracts\Core\Repository\ContentTypeService as ContentTypeServiceInterface;
+use Ibexa\Contracts\Core\Repository\Repository as RepositoryInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 
 final class ContentTypeHelper
 {
-    /** @var \eZ\Publish\API\Repository\ContentTypeService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
     private $contentTypeService;
 
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
-    /** @var \eZ\Publish\API\Repository\Repository */
+    /** @var \Ibexa\Contracts\Core\Repository\Repository */
     private $repository;
 
     public function __construct(
@@ -44,7 +44,7 @@ final class ContentTypeHelper
     /**
      * Returns ContentType ID based on $contentType name.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
      */
     public function getContentTypeId(string $contentType): int
     {
@@ -54,8 +54,8 @@ final class ContentTypeHelper
     /**
      * Returns ContentType identifier based on $contentId.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function getContentTypeIdentifier(int $contentId): string
     {

@@ -23,7 +23,7 @@ abstract class NotificationService
         Notification::CUSTOMER_ID_KEY,
     ];
 
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface */
     protected $client;
 
     /** @var \Psr\Log\LoggerInterface */

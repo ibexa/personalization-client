@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\Relation\Value as RelationValue;
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Relation\Value as RelationValue;
+use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
 use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcherInterface;
 

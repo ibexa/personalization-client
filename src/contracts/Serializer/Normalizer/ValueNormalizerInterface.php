@@ -8,14 +8,14 @@ declare(strict_types=1);
 
 namespace Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer;
 
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Contracts\Core\FieldType\Value;
 
 interface ValueNormalizerInterface
 {
     /**
      * @return array<scalar|null>|scalar|null
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function normalize(Value $value);
 
