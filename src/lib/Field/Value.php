@@ -90,16 +90,16 @@ final class Value
                     if ($relatedContentType->identifier != $mapping['content']) {
                         throw new InvalidRelationException(
                             sprintf(
-                            "Invalid relation: field '%s:%s' (object: %s, field: %s) has improper relation to object '%s' (object: %s) but '%s:%s' expected.",
-                            $contentType->identifier,
-                            $field,
-                            $content->id,
-                            $fieldObj->id,
-                            $relatedContentType->identifier,
-                            $relatedContentId,
-                            $mapping['content'],
-                            $mapping['field']
-                        )
+                                "Invalid relation: field '%s:%s' (object: %s, field: %s) has improper relation to object '%s' (object: %s) but '%s:%s' expected.",
+                                $contentType->identifier,
+                                $field,
+                                $content->id,
+                                $fieldObj->id,
+                                $relatedContentType->identifier,
+                                $relatedContentId,
+                                $mapping['content'],
+                                $mapping['field']
+                            )
                         );
                     }
                     $relatedField = $content->getField($mapping['field'], $language);

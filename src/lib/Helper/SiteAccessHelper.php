@@ -147,8 +147,8 @@ final class SiteAccessHelper
         foreach ($siteAccesses as $siteAccess) {
             $language = current(
                 $this->getLanguageList(
-                !$this->isSiteAccessSameAsSystemDefault($siteAccess) ? $siteAccess : null
-            )
+                    !$this->isSiteAccessSameAsSystemDefault($siteAccess) ? $siteAccess : null
+                )
             );
 
             if ($language) {

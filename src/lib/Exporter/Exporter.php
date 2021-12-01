@@ -89,8 +89,7 @@ final class Exporter implements ExporterInterface
         string $chunkDir,
         Parameters $parameters,
         OutputInterface $output
-    ): array
-    {
+    ): array {
         $contents = [];
 
         foreach ($parameters->languages as $lang) {
@@ -132,8 +131,7 @@ final class Exporter implements ExporterInterface
         string $chunkPath,
         Parameters $parameters,
         OutputInterface $output
-    ): void
-    {
+    ): void {
         $content = $this->repository->sudo(
             function () use ($contentTypeId, $parameters, $output) {
                 return $this->contentService->fetchContent($contentTypeId, $parameters, $output);
