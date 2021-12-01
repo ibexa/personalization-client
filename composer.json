@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": "^7.4",
-        "ibexa/doctrine-dbal-schema": "^4.0@dev",
+        "ibexa/doctrine-schema": "^4.0@dev",
         "ibexa/content-forms": "^4.0@dev",
         "ibexa/core": "^4.0@dev",
         "ibexa/rest": "^4.0@dev",
