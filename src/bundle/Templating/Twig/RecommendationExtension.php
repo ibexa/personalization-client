@@ -16,23 +16,39 @@ use Twig\TwigFunction;
 final class RecommendationExtension extends AbstractExtension
 {
     /**
-     * Returns the name of the extension.
-     */
-    public function getName(): string
-    {
-        return 'ez_recommendation_extension';
-    }
-
-    /**
      * Returns a list of functions to add to the existing list.
      */
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('ez_recommendation_enabled', [Recommendation::class, 'isRecommendationsEnabled']),
-            new TwigFunction('ez_recommendation_track_user', [UserTracking::class, 'trackUser'], [
-                'is_safe' => ['html'],
-            ]),
+            new TwigFunction(
+                'ez_recommendation_enabled',
+                [Recommendation::class, 'isRecommendationsEnabled'],
+                [
+                    'deprecated' => '4.0',
+                    'alternative' => 'ibexa_recommendation_enabled',
+                ]
+            ),
+            new TwigFunction(
+                'ez_recommendation_track_user',
+                [UserTracking::class, 'trackUser'],
+                [
+                    'is_safe' => ['html'],
+                    'deprecated' => '4.0',
+                    'alternative' => 'ibexa_recommendation_track_user',
+                ]
+            ),
+            new TwigFunction(
+                'ibexa_recommendation_enabled',
+                [Recommendation::class, 'isRecommendationsEnabled']
+            ),
+            new TwigFunction(
+                'ibexa_recommendation_track_user',
+                [UserTracking::class, 'trackUser'],
+                [
+                    'is_safe' => ['html'],
+                ]
+            ),
         ];
     }
 }
