@@ -16,11 +16,11 @@ use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher
 
 final class ImageAssetNormalizer implements ValueNormalizerInterface
 {
-    private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizer;
+    private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher;
 
-    public function __construct(DestinationContentNormalizerDispatcherInterface $destinationContentNormalizer)
+    public function __construct(DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher)
     {
-        $this->destinationContentNormalizer = $destinationContentNormalizer;
+        $this->destinationContentNormalizerDispatcher = $destinationContentNormalizerDispatcher;
     }
 
     public function normalize(Value $value): ?string
@@ -31,7 +31,7 @@ final class ImageAssetNormalizer implements ValueNormalizerInterface
 
         $destinationContentId = $value->destinationContentId;
         if (null !== $destinationContentId) {
-            $imageUri = $this->destinationContentNormalizer->dispatch((int) $destinationContentId);
+            $imageUri = $this->destinationContentNormalizerDispatcher->dispatch((int) $destinationContentId);
             if (is_string($imageUri)) {
                 return $imageUri;
             }

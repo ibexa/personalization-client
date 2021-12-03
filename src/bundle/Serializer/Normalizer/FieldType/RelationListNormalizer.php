@@ -16,11 +16,11 @@ use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher
 
 final class RelationListNormalizer implements ValueNormalizerInterface
 {
-    private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizer;
+    private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher;
 
-    public function __construct(DestinationContentNormalizerDispatcherInterface $destinationContentNormalizer)
+    public function __construct(DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher)
     {
-        $this->destinationContentNormalizer = $destinationContentNormalizer;
+        $this->destinationContentNormalizerDispatcher = $destinationContentNormalizerDispatcher;
     }
 
     /**
@@ -34,15 +34,15 @@ final class RelationListNormalizer implements ValueNormalizerInterface
             throw new InvalidArgumentType('$value', RelationListValue::class);
         }
 
-        $fields = [];
+        $values = [];
         foreach ($value->destinationContentIds as $destinationContentId) {
-            $normalizedValue = $this->destinationContentNormalizer->dispatch($destinationContentId);
+            $normalizedValue = $this->destinationContentNormalizerDispatcher->dispatch($destinationContentId);
             if (null !== $normalizedValue) {
-                $fields[] = $normalizedValue;
+                $values[] = $normalizedValue;
             }
         }
 
-        return $fields;
+        return $values;
     }
 
     public function supportsValue(Value $value): bool
