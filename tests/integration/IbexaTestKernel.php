@@ -19,6 +19,7 @@ use EzSystems\EzPlatformRestBundle\EzPlatformRestBundle;
 use EzSystems\EzPlatformRichTextBundle\EzPlatformRichTextBundle;
 use FOS\JsRoutingBundle\FOSJsRoutingBundle;
 use Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle;
+use Ibexa\Bundle\PersonalizationClient\DependencyInjection\IbexaPersonalizationClientExtension;
 use Ibexa\Bundle\PersonalizationClient\IbexaPersonalizationClientBundle;
 use JMS\TranslationBundle\JMSTranslationBundle;
 use Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle;
@@ -156,7 +157,7 @@ final class IbexaTestKernel extends Kernel
 
     private static function prepareRecommendationConfiguration(ContainerBuilder $container): void
     {
-        $container->loadFromExtension('ezrecommendation', [
+        $container->loadFromExtension(IbexaPersonalizationClientExtension::EXTENSION_NAME, [
             'system' => [
                 'default' => [
                     'api' => [

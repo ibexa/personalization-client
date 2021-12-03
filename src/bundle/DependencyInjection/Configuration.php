@@ -27,7 +27,7 @@ class Configuration extends SiteAccessConfiguration
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('ezrecommendation');
+        $treeBuilder = new TreeBuilder(IbexaPersonalizationClientExtension::EXTENSION_NAME);
         $rootNode = $treeBuilder->getRootNode();
 
         $systemNode = $this->generateScopeBaseNode($rootNode);
