@@ -10,6 +10,7 @@ namespace Ibexa\PersonalizationClient\Event\Listener;
 
 use eZ\Publish\API\Repository\UserService as UserServiceInterface;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
 use GuzzleHttp\Exception\RequestException;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
@@ -122,14 +123,11 @@ final class LoginListener
     private function getUser(TokenInterface $authenticationToken): string
     {
         $user = $authenticationToken->getUser();
-
-        if (\is_string($user)) {
-            return $user;
-        } elseif (method_exists($user, 'getAPIUser')) {
+        if ($user instanceof UserInterface) {
             return (string) $user->getAPIUser()->id;
         }
 
-        return (string) $authenticationToken->getUsername();
+        return $authenticationToken->getUserIdentifier();
     }
 }
 
