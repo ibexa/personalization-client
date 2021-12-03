@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 final class AttributeNormalizer implements NormalizerInterface
 {
-    const ATTR_NAME = 'attribute';
+    public const ATTR_NAME = 'attribute';
 
     /**
      * {@inheritdoc}()

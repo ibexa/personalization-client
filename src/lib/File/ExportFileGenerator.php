@@ -8,23 +8,23 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\File;
 
-use EzSystems\EzPlatformRest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\PersonalizationClient\Generator\ContentListElementGenerator;
 use Ibexa\PersonalizationClient\Value\ContentData;
 use Psr\Log\LoggerInterface;
 
 final class ExportFileGenerator
 {
-    /** @var \EzSystems\EzRecommendationClient\File\FileManagerInterface */
+    /** @var \Ibexa\PersonalizationClient\File\FileManagerInterface */
     private $fileManager;
 
     /** @var \Psr\Log\LoggerInterface */
     private $logger;
 
-    /** @var \EzSystems\EzRecommendationClient\Generator\ContentListElementGenerator */
+    /** @var \Ibexa\PersonalizationClient\Generator\ContentListElementGenerator */
     private $contentListElementGenerator;
 
-    /** @var \EzSystems\EzPlatformRest\Output\Generator */
+    /** @var \Ibexa\Contracts\Rest\Output\Generator */
     private $outputGenerator;
 
     public function __construct(

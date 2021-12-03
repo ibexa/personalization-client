@@ -15,14 +15,14 @@ use Psr\Http\Message\ResponseInterface;
 
 class RecommendationService implements RecommendationServiceInterface
 {
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface */
     private $client;
 
-    /** @param \EzSystems\EzRecommendationClient\Service\UserServiceInterface */
+    /** @param \Ibexa\PersonalizationClient\Service\UserServiceInterface */
     private $userService;
 
     /**
-     * @param \EzSystems\EzRecommendationClient\Service\UserServiceInterface $userService
+     * @param \Ibexa\PersonalizationClient\Service\UserServiceInterface $userService
      */
     public function __construct(
         EzRecommendationClientInterface $client,

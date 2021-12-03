@@ -21,7 +21,7 @@ final class GroupItemStrategyDispatcherTest extends AbstractDataSourceTestCase
 {
     private GroupItemStrategyDispatcherInterface $groupItemStrategyDispatcher;
 
-    /** @var \EzSystems\EzRecommendationClient\Strategy\Storage\GroupItemStrategyInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Strategy\Storage\GroupItemStrategyInterface|\PHPUnit\Framework\MockObject\MockObject */
     private GroupItemStrategyInterface $groupByItemTypeAndLanguages;
 
     /** @var \Ibexa\Contracts\PersonalizationClient\Storage\DataSourceInterface|\PHPUnit\Framework\MockObject\MockObject */

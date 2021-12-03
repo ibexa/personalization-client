@@ -9,17 +9,17 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
 use DOMDocument;
-use EzSystems\EzPlatformRichText\eZ\FieldType\RichText\Value;
-use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer;
+use Ibexa\Contracts\FieldTypeRichText\RichText\Converter;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\FieldTypeRichText\FieldType\RichText\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RichTextNormalizer
  */
 final class RichTextNormalizerTest extends AbstractValueNormalizerTestCase
 {
-    /** @var \EzSystems\EzPlatformRichText\eZ\RichText\Converter|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\FieldTypeRichText\RichText\Converter|\PHPUnit\Framework\MockObject\MockObject */
     private Converter $converter;
 
     protected function setUp(): void
@@ -31,7 +31,7 @@ final class RichTextNormalizerTest extends AbstractValueNormalizerTestCase
      * @dataProvider provideDataForTestNormalize
      * @dataProvider provideEmptyDataForTestNormalize
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(
         string $expected,

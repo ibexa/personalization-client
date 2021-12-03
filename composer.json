@@ -14,11 +14,11 @@
     ],
     "require": {
         "php": "^7.4",
-        "ezsystems/doctrine-dbal-schema": "^4.0@dev",
-        "ezsystems/ezplatform-content-forms": "^4.0@dev",
-        "ezsystems/ezplatform-kernel": "^4.0@dev",
-        "ezsystems/ezplatform-rest": "^4.0@dev",
-        "ezsystems/ezplatform-richtext": "^4.0@dev",
+        "ibexa/doctrine-schema": "^4.0@dev",
+        "ibexa/content-forms": "^4.0@dev",
+        "ibexa/core": "^4.0@dev",
+        "ibexa/rest": "^4.0@dev",
+        "ibexa/fieldtype-richtext": "^4.0@dev",
         "guzzlehttp/guzzle": "~6.0",
         "ramsey/uuid": "^3.9",
         "symfony/framework-bundle": "^5.0",
@@ -29,9 +29,8 @@
     "require-dev": {
         "behat/behat": "^3.7",
         "dg/bypass-finals": "^1.1",
-        "ezsystems/ezplatform-code-style": "^0.4",
-        "ezsystems/ezplatform-core": "^4.0@dev",
-        "ezsystems/ezplatform-http-cache": "^4.0@dev",
+        "ibexa/code-style": "^1.0",
+        "ibexa/http-cache": "^4.0@dev",
         "friends-of-behat/mink-extension": "^2.4",
         "friendsofsymfony/jsrouting-bundle": "^2.7",
         "phpstan/extension-installer": "^1.1",
@@ -57,9 +56,9 @@
         }
     },
     "scripts": {
-        "fix-cs": "php-cs-fixer fix -v --config=.php_cs --show-progress=estimating",
+        "fix-cs": "php-cs-fixer fix --config=.php-cs-fixer.php -v --show-progress=dots",
         "phpstan": "phpstan analyse -c phpstan.neon",
-        "check-cs": "php-cs-fixer fix -v --diff --config=.php_cs --dry-run --show-progress=estimating",
+        "check-cs": "php-cs-fixer fix --diff --config=.php_cs --dry-run -v --show-progress=dots",
         "test": "phpunit -vc phpunit.xml"
     },
     "extra": {

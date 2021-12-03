@@ -8,19 +8,19 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Helper;
 
-use eZ\Publish\Core\Base\Exceptions\NotFoundException;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess;
-use eZ\Publish\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
+use Ibexa\Core\Base\Exceptions\NotFoundException;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\SiteAccess;
+use Ibexa\Core\MVC\Symfony\SiteAccess\SiteAccessServiceInterface;
 
 /**
  * Provides utility to manipulate siteAccess.
  */
 final class SiteAccessHelper
 {
-    const SYSTEM_DEFAULT_SITE_ACCESS_NAME = 'default';
+    public const SYSTEM_DEFAULT_SITE_ACCESS_NAME = 'default';
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     /** @var array */
@@ -75,7 +75,7 @@ final class SiteAccessHelper
     /**
      * Returns languages based on customerId or siteaccess.
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function getLanguages(int $customerId, ?string $siteAccess): array
     {
@@ -85,7 +85,7 @@ final class SiteAccessHelper
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function getSiteAccessesByCustomerId(?int $customerId): array
     {
@@ -122,7 +122,7 @@ final class SiteAccessHelper
     /**
      * Returns siteAccesses based on customerId, requested siteAccess or default SiteAccessHelper.
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function getSiteAccesses(?int $customerId = null, ?string $siteAccess = null): array
     {
@@ -145,8 +145,10 @@ final class SiteAccessHelper
         $languages = [];
 
         foreach ($siteAccesses as $siteAccess) {
-            $language = current($this->getLanguageList(
-                !$this->isSiteAccessSameAsSystemDefault($siteAccess) ? $siteAccess : null)
+            $language = current(
+                $this->getLanguageList(
+                    !$this->isSiteAccessSameAsSystemDefault($siteAccess) ? $siteAccess : null
+                )
             );
 
             if ($language) {

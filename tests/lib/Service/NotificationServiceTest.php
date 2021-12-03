@@ -14,7 +14,7 @@ use Psr\Log\LoggerInterface;
 
 abstract class NotificationServiceTest extends TestCase
 {
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface|\PHPUnit\Framework\MockObject\MockObject */
     protected $clientMock;
 
     /** @var \Psr\Log\LoggerInterface|\PHPUnit\Framework\MockObject\MockObject */

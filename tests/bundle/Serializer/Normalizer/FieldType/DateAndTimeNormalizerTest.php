@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
 use DateTime;
-use eZ\Publish\Core\FieldType\DateAndTime\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\DateAndTime\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\DateAndTimeNormalizer
@@ -21,7 +21,7 @@ final class DateAndTimeNormalizerTest extends AbstractValueNormalizerTestCase
     /**
      * @dataProvider provideDataForTestNormalize
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(?string $expected, Value $value): void
     {

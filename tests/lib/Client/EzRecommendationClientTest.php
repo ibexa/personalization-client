@@ -24,16 +24,16 @@ use Psr\Log\LoggerInterface;
 
 class EzRecommendationClientTest extends TestCase
 {
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClient */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClient */
     private $client;
 
     /** @var \GuzzleHttp\ClientInterface|\PHPUnit\Framework\MockObject\MockObject */
     private $guzzleClientMock;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Config\CredentialsResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
     private $credentialsResolverMock;
 
-    /** @var \EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory|\PHPUnit\Framework\MockObject\MockObject */
     private $apiFactoryMock;
 
     /** @var \PHPUnit\Framework\MockObject\MockObject|\Psr\Log\LoggerInterface */

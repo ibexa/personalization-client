@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Config\ItemType;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\Config\ItemType\IncludedItemTypeResolver;
 use Ibexa\PersonalizationClient\Config\ItemType\IncludedItemTypeResolverInterface;
 use PHPUnit\Framework\TestCase;
@@ -33,7 +33,7 @@ final class IncludedItemTypeResolverTest extends TestCase
 
     private IncludedItemTypeResolverInterface $itemTypeResolver;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
     private ConfigResolverInterface $configResolver;
 
     /** @var \Psr\Log\LoggerInterface|\PHPUnit\Framework\MockObject\MockObject */

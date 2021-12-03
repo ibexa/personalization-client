@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Command;
 
-use eZ\Bundle\EzPublishCoreBundle\Command\BackwardCompatibleCommand;
+use Ibexa\Bundle\Core\Command\BackwardCompatibleCommand;
 use Ibexa\PersonalizationClient\Export\Input\CommandInputResolverInterface;
 use Ibexa\PersonalizationClient\Factory\Export\ParametersFactoryInterface;
 use Ibexa\PersonalizationClient\Http\HttpEnvironmentInterface;
@@ -80,7 +80,8 @@ final class ExportCommand extends Command implements BackwardCompatibleCommand
             $this->exportService->runExport(
                 $this->exportParametersFactory->create(
                     $this->inputResolver->resolve(
-                        $input, $this->getApplication()
+                        $input,
+                        $this->getApplication()
                     ),
                     ParametersFactoryInterface::COMMAND_TYPE
                 ),

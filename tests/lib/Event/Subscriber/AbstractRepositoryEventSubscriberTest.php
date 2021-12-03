@@ -8,23 +8,23 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\PersonalizationClient\Helper\ContentHelper;
 use Ibexa\PersonalizationClient\Helper\LocationHelper;
 
 abstract class AbstractRepositoryEventSubscriberTest extends AbstractCoreEventSubscriberTest
 {
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\eZ\Publish\API\Repository\ContentService */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Core\Repository\ContentService */
     protected $contentServiceMock;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\eZ\Publish\API\Repository\LocationService */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Core\Repository\LocationService */
     protected $locationServiceMock;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzRecommendationClient\Helper\LocationHelper */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\PersonalizationClient\Helper\LocationHelper */
     protected $locationHelperMock;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzRecommendationClient\Helper\ContentHelper */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\PersonalizationClient\Helper\ContentHelper */
     protected $contentHelperMock;
 
     public function setUp(): void

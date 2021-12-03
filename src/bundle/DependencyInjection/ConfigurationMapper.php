@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\DependencyInjection;
 
-use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ContextualizerInterface;
-use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\HookableConfigurationMapperInterface;
+use Ibexa\Bundle\Core\DependencyInjection\Configuration\SiteAccessAware\ContextualizerInterface;
+use Ibexa\Bundle\Core\DependencyInjection\Configuration\SiteAccessAware\HookableConfigurationMapperInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 
 class ConfigurationMapper implements HookableConfigurationMapperInterface
@@ -102,7 +102,7 @@ class ConfigurationMapper implements HookableConfigurationMapperInterface
             foreach ($settings as $settingKey => $settingValue) {
                 foreach ($settingValue as $parameterKey => $parameterValue) {
                     $contextualizer->setContextualParameter(
-                         Parameters::API_SCOPE . '.' . $settingKey . '.' . $parameterKey,
+                        Parameters::API_SCOPE . '.' . $settingKey . '.' . $parameterKey,
                         $currentScope,
                         $parameterValue
                     );

@@ -9,18 +9,18 @@ declare(strict_types=1);
 namespace Ibexa\Tests\Integration\PersonalizationClient;
 
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
-use eZ\Bundle\EzPublishCoreBundle\EzPublishCoreBundle;
-use eZ\Bundle\EzPublishLegacySearchEngineBundle\EzPublishLegacySearchEngineBundle;
-use eZ\Publish\API\Repository\Tests\LegacySchemaImporter;
-use eZ\Publish\SPI\Tests\Persistence\FixtureImporter;
-use EzSystems\DoctrineSchema\Database\DbPlatform\SqliteDbPlatform;
-use EzSystems\EzPlatformCoreBundle\EzPlatformCoreBundle;
-use EzSystems\EzPlatformRestBundle\EzPlatformRestBundle;
-use EzSystems\EzPlatformRichTextBundle\EzPlatformRichTextBundle;
 use FOS\JsRoutingBundle\FOSJsRoutingBundle;
 use Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle;
+use Ibexa\Bundle\Core\IbexaCoreBundle;
+use Ibexa\Bundle\CoreExtensions\IbexaCoreExtensionsBundle;
+use Ibexa\Bundle\FieldTypeRichText\IbexaFieldTypeRichTextBundle;
 use Ibexa\Bundle\PersonalizationClient\DependencyInjection\IbexaPersonalizationClientExtension;
+use Ibexa\Bundle\LegacySearchEngine\IbexaLegacySearchEngineBundle;
 use Ibexa\Bundle\PersonalizationClient\IbexaPersonalizationClientBundle;
+use Ibexa\Bundle\Rest\IbexaRestBundle;
+use Ibexa\Contracts\Core\Test\Persistence\Fixture\FixtureImporter;
+use Ibexa\DoctrineSchema\Database\DbPlatform\SqliteDbPlatform;
+use Ibexa\Tests\Core\Repository\LegacySchemaImporter;
 use JMS\TranslationBundle\JMSTranslationBundle;
 use Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle;
 use Liip\ImagineBundle\LiipImagineBundle;
@@ -44,11 +44,11 @@ final class IbexaTestKernel extends Kernel
         return [
             new DoctrineBundle(),
             new IbexaPersonalizationClientBundle(),
-            new EzPlatformCoreBundle(),
-            new EzPlatformRestBundle(),
-            new EzPlatformRichTextBundle(),
-            new EzPublishCoreBundle(),
-            new EzPublishLegacySearchEngineBundle(),
+            new IbexaCoreExtensionsBundle(),
+            new IbexaRestBundle(),
+            new IbexaFieldTypeRichTextBundle(),
+            new IbexaCoreBundle(),
+            new IbexaLegacySearchEngineBundle(),
             new FOSJsRoutingBundle(),
             new FrameworkBundle(),
             new HautelookTemplatedUriBundle(),

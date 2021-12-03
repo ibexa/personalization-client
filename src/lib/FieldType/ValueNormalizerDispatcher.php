@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\FieldType;
 
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\PersonalizationClient\Exception\ValueNormalizerNotFoundException;
 
 final class ValueNormalizerDispatcher implements ValueNormalizerDispatcherInterface

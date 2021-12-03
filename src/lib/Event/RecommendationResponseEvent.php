@@ -16,7 +16,7 @@ final class RecommendationResponseEvent extends Event
     /** @var \Psr\Http\Message\ResponseInterface|null */
     private $parameterBag;
 
-    /** @var \EzSystems\EzRecommendationClient\Value\RecommendationItem[] */
+    /** @var \Ibexa\PersonalizationClient\Value\RecommendationItem[] */
     private $recommendationItems;
 
     public function __construct(ParameterBag $parameterBag)
@@ -35,7 +35,7 @@ final class RecommendationResponseEvent extends Event
     }
 
     /**
-     * @return \EzSystems\EzRecommendationClient\Value\RecommendationItem[]|null
+     * @return \Ibexa\PersonalizationClient\Value\RecommendationItem[]|null
      */
     public function getRecommendationItems(): ?array
     {

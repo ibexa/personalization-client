@@ -19,7 +19,7 @@ class User
     private $userId;
 
     /**
-     * @param \EzSystems\EzRecommendationClient\Value\Output\Attribute[] $attributes
+     * @param \Ibexa\PersonalizationClient\Value\Output\Attribute[] $attributes
      */
     public function __construct(string $userId, array $attributes = [])
     {
@@ -30,7 +30,7 @@ class User
     }
 
     /**
-     * @return \EzSystems\EzRecommendationClient\Value\Output\Attribute[]
+     * @return \Ibexa\PersonalizationClient\Value\Output\Attribute[]
      */
     public function getAttributes(): array
     {

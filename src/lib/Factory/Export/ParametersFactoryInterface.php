@@ -26,7 +26,7 @@ interface ParametersFactoryInterface
      *  host: ?string,
      * } $options
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\MissingExportParameterException
+     * @throws \Ibexa\PersonalizationClient\Exception\MissingExportParameterException
      */
     public function create(array $options, string $type): Parameters;
 }

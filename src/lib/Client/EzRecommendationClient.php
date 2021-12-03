@@ -38,10 +38,10 @@ final class EzRecommendationClient implements EzRecommendationClientInterface
     /** @var \GuzzleHttp\ClientInterface */
     private $client;
 
-    /** @var \EzSystems\EzRecommendationClient\Config\EzRecommendationClientCredentialsResolver */
+    /** @var \Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver */
     private $credentialsResolver;
 
-    /** @var \EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory */
+    /** @var \Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory */
     private $eZRecommendationClientApiFactory;
 
     /** @var int|string */
@@ -156,8 +156,12 @@ final class EzRecommendationClient implements EzRecommendationClientInterface
             $this->logger->error(
                 sprintf(
                     self::ERROR_MESSAGE . 'Error while sending data: %s %s %s %s',
-                    $exception->getMessage(), $exception->getCode(), $exception->getFile(), $exception->getLine()
-                ));
+                    $exception->getMessage(),
+                    $exception->getCode(),
+                    $exception->getFile(),
+                    $exception->getLine()
+                )
+            );
 
             throw new BadResponseException(
                 $exception->getMessage(),

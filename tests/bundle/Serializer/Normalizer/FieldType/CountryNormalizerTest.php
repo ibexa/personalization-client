@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\FieldType\Country\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\CountryNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\Country\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\CountryNormalizer
@@ -22,7 +22,7 @@ final class CountryNormalizerTest extends AbstractValueNormalizerTestCase
      *
      * @param array<string> $expected
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(array $expected, Value $value): void
     {

@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\FieldType;
 
-use eZ\Publish\Core\FieldType\Null\Value as NullValue;
-use eZ\Publish\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\Null\Value as NullValue;
+use Ibexa\Core\FieldType\Value;
 use Ibexa\PersonalizationClient\Exception\ValueNormalizerNotFoundException;
 use Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcher;
 use Ibexa\PersonalizationClient\FieldType\ValueNormalizerDispatcherInterface;
@@ -65,7 +65,7 @@ final class ValueNormalizerDispatcherTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testThrowValueNormalizerNotFoundException(): void
     {

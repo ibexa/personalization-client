@@ -16,7 +16,7 @@ use Ibexa\PersonalizationClient\Value\ExportNotification;
 
 class ExportNotificationServiceTest extends NotificationServiceTest
 {
-    /** @var \EzSystems\EzRecommendationClient\Service\ExportNotificationService */
+    /** @var \Ibexa\PersonalizationClient\Service\ExportNotificationService */
     private $notificationService;
 
     /** @var array<array<string, array<string, array<string>|string>>> */

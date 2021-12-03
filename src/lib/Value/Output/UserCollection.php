@@ -12,11 +12,11 @@ use Webmozart\Assert\Assert;
 
 class UserCollection
 {
-    /** @var \EzSystems\EzRecommendationClient\Value\Output\User[] */
+    /** @var \Ibexa\PersonalizationClient\Value\Output\User[] */
     private $users = [];
 
     /**
-     * @param \EzSystems\EzRecommendationClient\Value\Output\User[] $users
+     * @param \Ibexa\PersonalizationClient\Value\Output\User[] $users
      */
     public function __construct(array $users = [])
     {
@@ -25,7 +25,7 @@ class UserCollection
     }
 
     /**
-     * @return \EzSystems\EzRecommendationClient\Value\Output\User[]
+     * @return \Ibexa\PersonalizationClient\Value\Output\User[]
      */
     public function getUsers(): array
     {

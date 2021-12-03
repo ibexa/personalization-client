@@ -8,8 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Exception;
 
-use eZ\Publish\SPI\FieldType\Value;
-use EzSystems\EzRecommendationClient\Exception\EzRecommendationException;
+use Ibexa\Contracts\Core\FieldType\Value;
 use RuntimeException;
 use Throwable;
 

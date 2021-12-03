@@ -8,18 +8,18 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Events\Content\CopyContentEvent;
-use eZ\Publish\API\Repository\Events\Content\DeleteContentEvent;
-use eZ\Publish\API\Repository\Events\Content\HideContentEvent;
-use eZ\Publish\API\Repository\Events\Content\PublishVersionEvent;
-use eZ\Publish\API\Repository\Events\Content\RevealContentEvent;
-use eZ\Publish\API\Repository\Events\Content\UpdateContentMetadataEvent;
+use Ibexa\Contracts\Core\Repository\Events\Content\CopyContentEvent;
+use Ibexa\Contracts\Core\Repository\Events\Content\DeleteContentEvent;
+use Ibexa\Contracts\Core\Repository\Events\Content\HideContentEvent;
+use Ibexa\Contracts\Core\Repository\Events\Content\PublishVersionEvent;
+use Ibexa\Contracts\Core\Repository\Events\Content\RevealContentEvent;
+use Ibexa\Contracts\Core\Repository\Events\Content\UpdateContentMetadataEvent;
 use Ibexa\PersonalizationClient\Event\Subscriber\ContentEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ContentEventSubscriberTest extends AbstractCoreEventSubscriberTest
 {
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzRecommendationClient\Event\Subscriber\ContentEventSubscriber */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\PersonalizationClient\Event\Subscriber\ContentEventSubscriber */
     private $contentEventSubscriber;
 
     public function setUp(): void

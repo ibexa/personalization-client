@@ -8,25 +8,25 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\ContentService as ContentServiceInterface;
-use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\ContentService as ContentServiceInterface;
+use Ibexa\Contracts\Core\Repository\LocationService as LocationServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\PersonalizationClient\Helper\ContentHelper;
 use Ibexa\PersonalizationClient\Helper\LocationHelper;
 use Ibexa\PersonalizationClient\Service\NotificationService;
 
 abstract class AbstractRepositoryEventSubscriber extends AbstractCoreEventSubscriber
 {
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     protected $contentService;
 
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     protected $locationService;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\LocationHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\LocationHelper */
     protected $locationHelper;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentHelper */
     protected $contentHelper;
 
     public function __construct(
@@ -44,17 +44,19 @@ abstract class AbstractRepositoryEventSubscriber extends AbstractCoreEventSubscr
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     protected function updateLocationSubtree(Location $location, string $method, string $action): void
     {
         $subtree = $this->locationService->loadLocationChildren($location);
 
-        /** @var \eZ\Publish\API\Repository\Values\Content\Location $content */
+        /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Location $content */
         foreach ($subtree as $content) {
             $this->notificationService->sendNotification(
-                $method, $action, $content->getContentInfo()
+                $method,
+                $action,
+                $content->getContentInfo()
             );
         }
     }

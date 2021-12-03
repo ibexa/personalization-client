@@ -15,10 +15,10 @@ use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundE
 
 final class UserService implements UserServiceInterface
 {
-    /** @var \EzSystems\EzRecommendationClient\Helper\UserHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\UserHelper */
     private $userHelper;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\SessionHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\SessionHelper */
     private $sessionHelper;
 
     public function __construct(UserHelper $userHelper, SessionHelper $sessionHelper)

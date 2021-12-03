@@ -12,7 +12,7 @@ use Ibexa\PersonalizationClient\API\AbstractAPI;
 
 class APIEndPointClassTest extends AbstractAPI
 {
-    const API_NAME = 'api-test';
+    public const API_NAME = 'api-test';
 }
 
 class_alias(APIEndPointClassTest::class, 'EzSystems\EzRecommendationClient\Tests\API\APIEndPointClassTest');

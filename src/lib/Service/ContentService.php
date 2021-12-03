@@ -8,14 +8,14 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Service;
 
-use eZ\Publish\API\Repository\ContentService as APIContentServiceInterface;
-use eZ\Publish\API\Repository\ContentTypeService as ContentTypeServiceInterface;
-use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
-use eZ\Publish\API\Repository\LocationService as LocationServiceInterface;
-use eZ\Publish\API\Repository\Values\Content\Content as APIContent;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
-use eZ\Publish\Core\Repository\Values\Content\Content as CoreContent;
+use Ibexa\Contracts\Core\Repository\ContentService as APIContentServiceInterface;
+use Ibexa\Contracts\Core\Repository\ContentTypeService as ContentTypeServiceInterface;
+use Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException;
+use Ibexa\Contracts\Core\Repository\LocationService as LocationServiceInterface;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content as APIContent;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType as APIContentType;
+use Ibexa\Core\Repository\Values\Content\Content as CoreContent;
 use Ibexa\PersonalizationClient\Field\Value;
 use Ibexa\PersonalizationClient\Helper\ContentHelper;
 use Ibexa\PersonalizationClient\SPI\Content as ContentOptions;
@@ -27,22 +27,22 @@ use Symfony\Component\Routing\RouterInterface;
 
 final class ContentService implements ContentServiceInterface
 {
-    /** @var \eZ\Publish\API\Repository\ContentService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
     private $contentService;
 
-    /** @var \eZ\Publish\API\Repository\ContentTypeService */
+    /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
     private $contentTypeService;
 
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
     /** @var \Symfony\Component\Routing\RouterInterface */
     private $router;
 
-    /** @var \EzSystems\EzRecommendationClient\Helper\ContentHelper */
+    /** @var \Ibexa\PersonalizationClient\Helper\ContentHelper */
     private $contentHelper;
 
-    /** @var \EzSystems\EzRecommendationClient\Field\Value */
+    /** @var \Ibexa\PersonalizationClient\Field\Value */
     private $value;
 
     /** @var int */
@@ -74,9 +74,9 @@ final class ContentService implements ContentServiceInterface
     /**
      * {@inheritdoc}
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function fetchContent(int $contentTypeId, ExportParameters $parameters, OutputInterface $output): array
     {
@@ -100,9 +100,9 @@ final class ContentService implements ContentServiceInterface
     /**
      * {@inheritdoc}
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function fetchContentItems(int $contentTypeId, ExportParameters $parameters, OutputInterface $output): array
     {
@@ -119,8 +119,8 @@ final class ContentService implements ContentServiceInterface
     /**
      * {@inheritdoc}
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function prepareContent(array $data, ContentOptions $options, ?OutputInterface $output = null): array
     {
@@ -131,7 +131,7 @@ final class ContentService implements ContentServiceInterface
             $progress = new ProgressBar($output, \count($items));
             $progress->start();
 
-            /** @var \eZ\Publish\Core\Repository\Values\Content\Content $contentValue */
+            /** @var \Ibexa\Core\Repository\Values\Content\Content $contentValue */
             foreach ($items as $contentValue) {
                 $contentValue = $contentValue->valueObject;
                 $content[$contentTypeId][$contentValue->id] = $this->setContent($contentValue, $options);
@@ -148,9 +148,9 @@ final class ContentService implements ContentServiceInterface
     /**
      * {@inheritdoc}
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
-     * @throws \eZ\Publish\API\Repository\Exceptions\BadStateException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\BadStateException
      */
     public function setContent(CoreContent $content, ContentOptions $options): array
     {
@@ -187,7 +187,7 @@ final class ContentService implements ContentServiceInterface
     /**
      * @return array<string>
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\BadStateException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\BadStateException
      */
     private function getCategoryPaths(ContentInfo $contentInfo): array
     {
@@ -202,8 +202,8 @@ final class ContentService implements ContentServiceInterface
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function setFields(
         CoreContent $content,
@@ -225,7 +225,7 @@ final class ContentService implements ContentServiceInterface
     /**
      * Returns author of the content.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
      */
     private function getAuthor(APIContent $contentValue, APIContentType $contentType): string
     {

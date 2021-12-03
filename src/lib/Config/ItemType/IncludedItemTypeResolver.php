@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Config\ItemType;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzRecommendationClient\Value\Parameters as ConfigParameters;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\PersonalizationClient\Value\Parameters as ConfigParameters;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;

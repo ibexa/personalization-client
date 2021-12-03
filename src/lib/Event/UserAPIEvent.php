@@ -13,7 +13,7 @@ use Symfony\Contracts\EventDispatcher\Event;
 
 abstract class UserAPIEvent extends Event
 {
-    /** @var \EzSystems\EzRecommendationClient\SPI\UserAPIRequest */
+    /** @var \Ibexa\PersonalizationClient\SPI\UserAPIRequest */
     private $request;
 
     public function getUserAPIRequest(): ?UserAPIRequest

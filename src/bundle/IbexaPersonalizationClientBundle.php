@@ -15,11 +15,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class IbexaPersonalizationClientBundle extends Bundle
 {
-    /** @var \EzSystems\EzRecommendationClientBundle\DependencyInjection\EzRecommendationClientExtension */
+    /** @var \Ibexa\Bundle\PersonalizationClient\DependencyInjection\IbexaPersonalizationClientExtension */
     protected $extension;
 
     /**
-     * @return \EzSystems\EzRecommendationClientBundle\DependencyInjection\EzRecommendationClientExtension
+     * @return \Ibexa\Bundle\PersonalizationClient\DependencyInjection\IbexaPersonalizationClientExtension
      */
     public function getContainerExtension()
     {

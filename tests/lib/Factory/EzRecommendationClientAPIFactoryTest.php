@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Factory;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\API\AllowedAPI;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Exception\BadAPICallException;
@@ -20,16 +20,16 @@ use PHPUnit\Framework\TestCase;
 
 class EzRecommendationClientAPIFactoryTest extends TestCase
 {
-    /** @var \EzSystems\EzRecommendationClient\Factory\EzRecommendationClientAPIFactory */
+    /** @var \Ibexa\PersonalizationClient\Factory\EzRecommendationClientAPIFactory */
     private $apiFactory;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject */
     private $configResolverMock;
 
-    /** @var \EzSystems\EzRecommendationClient\API\AllowedAPI|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\API\AllowedAPI|\PHPUnit\Framework\MockObject\MockObject */
     private $allowedAPI;
 
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface|\PHPUnit\Framework\MockObject\MockObject */
     private $clientMock;
 
     public function setUp(): void

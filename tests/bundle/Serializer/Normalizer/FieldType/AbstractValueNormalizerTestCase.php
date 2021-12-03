@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\Null\Value as NullValue;
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Null\Value as NullValue;
 use PHPUnit\Framework\TestCase;
 
 abstract class AbstractValueNormalizerTestCase extends TestCase
@@ -29,7 +29,7 @@ abstract class AbstractValueNormalizerTestCase extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     protected function testThrowExceptionWhenValueIsInvalidType(): void
     {
@@ -47,7 +47,7 @@ abstract class AbstractValueNormalizerTestCase extends TestCase
     /**
      * @param mixed $expected
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     protected function testNormalize($expected, Value $value): void
     {

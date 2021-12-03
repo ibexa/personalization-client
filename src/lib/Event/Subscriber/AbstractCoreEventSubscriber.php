@@ -14,7 +14,7 @@ abstract class AbstractCoreEventSubscriber
 {
     protected const EVENT_PRIORITY = 10;
 
-    /** @var \EzSystems\EzRecommendationClient\Service\EventNotificationService */
+    /** @var \Ibexa\PersonalizationClient\Service\EventNotificationService */
     protected $notificationService;
 
     public function __construct(NotificationService $notificationService)

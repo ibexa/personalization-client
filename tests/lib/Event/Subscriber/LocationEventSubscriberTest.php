@@ -8,18 +8,18 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Events\Location\CopySubtreeEvent;
-use eZ\Publish\API\Repository\Events\Location\CreateLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\HideLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\MoveSubtreeEvent;
-use eZ\Publish\API\Repository\Events\Location\SwapLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\UnhideLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\UpdateLocationEvent;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\LocationList;
-use eZ\Publish\Core\Repository\Values\Content\Content;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\Core\Repository\Values\Content\VersionInfo;
+use Ibexa\Contracts\Core\Repository\Events\Location\CopySubtreeEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\CreateLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\HideLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\MoveSubtreeEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\SwapLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\UnhideLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\UpdateLocationEvent;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationList;
+use Ibexa\Core\Repository\Values\Content\Content;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Core\Repository\Values\Content\VersionInfo;
 use Ibexa\PersonalizationClient\Event\Subscriber\LocationEventSubscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -29,19 +29,19 @@ class LocationEventSubscriberTest extends AbstractRepositoryEventSubscriberTest
 
     private const CONTENT_TYPE_ID = 2;
 
-    /** @var \EzSystems\EzRecommendationClient\Event\Subscriber\LocationEventSubscriber */
+    /** @var \Ibexa\PersonalizationClient\Event\Subscriber\LocationEventSubscriber */
     private $locationEventSubscriber;
 
-    /** @var \eZ\Publish\Core\Repository\Values\Content\Location */
+    /** @var \Ibexa\Core\Repository\Values\Content\Location */
     private $location1;
 
-    /** @var \eZ\Publish\Core\Repository\Values\Content\Location */
+    /** @var \Ibexa\Core\Repository\Values\Content\Location */
     private $location2;
 
-    /** @var \eZ\Publish\API\Repository\Values\Content\LocationList */
+    /** @var \Ibexa\Contracts\Core\Repository\Values\Content\LocationList */
     private $emptyLocationChildren;
 
-    /** @var \eZ\Publish\API\Repository\Values\Content\LocationList */
+    /** @var \Ibexa\Contracts\Core\Repository\Values\Content\LocationList */
     private $locationChildren;
 
     public function setUp(): void

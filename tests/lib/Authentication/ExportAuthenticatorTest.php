@@ -23,10 +23,10 @@ class ExportAuthenticatorTest extends TestCase
     /** @var \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\RequestStack */
     private $requestStack;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzRecommendationClient\File\FileManagerInterface */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\PersonalizationClient\File\FileManagerInterface */
     private $fileManager;
 
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzRecommendationClient\Config\CredentialsResolverInterface */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\PersonalizationClient\Config\CredentialsResolverInterface */
     private $credentialsResolverMock;
 
     public function setUp(): void
@@ -125,7 +125,7 @@ class ExportAuthenticatorTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function testAuthenticateByFile()
     {
@@ -159,7 +159,7 @@ class ExportAuthenticatorTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function testAuthenticateByFileWithWrongCredenrials()
     {
@@ -193,7 +193,7 @@ class ExportAuthenticatorTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function testAuthenticateByFileWithWrongFile()
     {
@@ -226,7 +226,7 @@ class ExportAuthenticatorTest extends TestCase
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\NotFoundException
+     * @throws \Ibexa\Core\Base\Exceptions\NotFoundException
      */
     public function testAuthenticateByFileWithRealFile()
     {

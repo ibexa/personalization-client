@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\Author\Value as AuthorValue;
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Contracts\Core\FieldType\Value;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\Author\Value as AuthorValue;
 
 final class AuthorNormalizer implements ValueNormalizerInterface
 {
@@ -26,7 +26,7 @@ final class AuthorNormalizer implements ValueNormalizerInterface
 
         $authors = [];
 
-        /** @var \eZ\Publish\Core\FieldType\Author\Author $author */
+        /** @var \Ibexa\Core\FieldType\Author\Author $author */
         foreach ($value->authors as $author) {
             $authors[] = $author->name;
         }

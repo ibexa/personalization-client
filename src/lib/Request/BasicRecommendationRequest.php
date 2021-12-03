@@ -12,16 +12,16 @@ use Ibexa\PersonalizationClient\SPI\RecommendationRequest;
 
 final class BasicRecommendationRequest extends RecommendationRequest
 {
-    const LIMIT_KEY = 'limit';
-    const CONTEXT_ITEMS_KEY = 'contextItems';
-    const CONTENT_TYPE_KEY = 'contentType';
-    const OUTPUT_TYPE_ID_KEY = 'outputTypeId';
-    const CATEGORY_PATH_KEY = 'categoryPath';
-    const LANGUAGE_KEY = 'language';
-    const ATTRIBUTES_KEY = 'attributes';
-    const FILTERS_KEY = 'filters';
-    const USE_CONTEXT_CATEGORY_PATH_KEY = 'usecontextcategorypath';
-    const RECOMMEND_CATEGORY_KEY = 'recommendCategory';
+    public const LIMIT_KEY = 'limit';
+    public const CONTEXT_ITEMS_KEY = 'contextItems';
+    public const CONTENT_TYPE_KEY = 'contentType';
+    public const OUTPUT_TYPE_ID_KEY = 'outputTypeId';
+    public const CATEGORY_PATH_KEY = 'categoryPath';
+    public const LANGUAGE_KEY = 'language';
+    public const ATTRIBUTES_KEY = 'attributes';
+    public const FILTERS_KEY = 'filters';
+    public const USE_CONTEXT_CATEGORY_PATH_KEY = 'usecontextcategorypath';
+    public const RECOMMEND_CATEGORY_KEY = 'recommendCategory';
 
     /** @var int */
     public $limit;

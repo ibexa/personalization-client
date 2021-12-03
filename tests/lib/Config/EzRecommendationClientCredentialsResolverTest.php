@@ -8,14 +8,14 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Config;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\Config\EzRecommendationClientCredentialsResolver;
 use Ibexa\PersonalizationClient\Value\Config\EzRecommendationClientCredentials;
 use PHPUnit\Framework\TestCase;
 
 class EzRecommendationClientCredentialsResolverTest extends TestCase
 {
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     protected function setUp(): void

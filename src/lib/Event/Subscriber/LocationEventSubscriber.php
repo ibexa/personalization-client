@@ -8,15 +8,15 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Events\Location\CopySubtreeEvent;
-use eZ\Publish\API\Repository\Events\Location\CreateLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\HideLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\MoveSubtreeEvent;
-use eZ\Publish\API\Repository\Events\Location\SwapLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\UnhideLocationEvent;
-use eZ\Publish\API\Repository\Events\Location\UpdateLocationEvent;
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Events\Location\CopySubtreeEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\CreateLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\HideLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\MoveSubtreeEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\SwapLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\UnhideLocationEvent;
+use Ibexa\Contracts\Core\Repository\Events\Location\UpdateLocationEvent;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\PersonalizationClient\Value\EventNotification;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -39,8 +39,8 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onCopySubtree(CopySubtreeEvent $event): void
     {
@@ -52,8 +52,8 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onCreateLocation(CreateLocationEvent $event): void
     {
@@ -65,9 +65,9 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\BadStateException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\BadStateException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onHideLocation(HideLocationEvent $event): void
     {
@@ -75,8 +75,8 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onMoveSubtree(MoveSubtreeEvent $event): void
     {
@@ -88,8 +88,8 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onSwapLocation(SwapLocationEvent $event): void
     {
@@ -100,9 +100,9 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\BadStateException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\BadStateException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onUnhideLocation(UnhideLocationEvent $event): void
     {
@@ -114,8 +114,8 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function onUpdateLocation(UpdateLocationEvent $event): void
     {
@@ -127,15 +127,15 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\BadStateException
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\BadStateException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function hideLocation(Location $location, bool $isChild = false): void
     {
         $children = $this->locationService->loadLocationChildren($location)->locations;
 
-        /** @var \eZ\Publish\API\Repository\Values\Content\Location $child */
+        /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Location $child */
         foreach ($children as $child) {
             $this->hideLocation($child, true);
         }
@@ -153,19 +153,21 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
         }
 
         $this->notificationService->sendNotification(
-            __METHOD__, EventNotification::ACTION_DELETE, $content->contentInfo
+            __METHOD__,
+            EventNotification::ACTION_DELETE,
+            $content->contentInfo
         );
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function updateLocationWithChildren(Location $location, string $method, string $action): void
     {
         $children = $this->locationService->loadLocationChildren($location)->locations;
 
-        /** @var \eZ\Publish\API\Repository\Values\Content\Location $child */
+        /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Location $child */
         foreach ($children as $child) {
             $this->updateLocationWithChildren($child, $method, $action);
         }
@@ -179,15 +181,17 @@ final class LocationEventSubscriber extends AbstractRepositoryEventSubscriber im
         }
 
         $this->notificationService->sendNotification(
-            $method, $action, $content->contentInfo
+            $method,
+            $action,
+            $content->contentInfo
         );
     }
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Location[]
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Location[]
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     private function swapLocation(array $locations): void
     {

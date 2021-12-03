@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType;
 
-use eZ\Publish\Core\FieldType\Relation\Value;
 use Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RelationNormalizer;
 use Ibexa\Contracts\PersonalizationClient\Serializer\Normalizer\ValueNormalizerInterface;
+use Ibexa\Core\FieldType\Relation\Value;
 
 /**
  * @covers \Ibexa\Bundle\PersonalizationClient\Serializer\Normalizer\FieldType\RelationNormalizer
@@ -20,7 +20,7 @@ final class RelationNormalizerTest extends AbstractDestinationContentNormalizerT
     /**
      * @dataProvider provideDataForTestNormalize
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      */
     public function testNormalizer(?int $destinationContentId, ?string $expected, Value $value): void
     {

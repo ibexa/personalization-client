@@ -8,26 +8,26 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Event\Subscriber;
 
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Repository\Values\Content\Content;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\Core\Repository\Values\Content\VersionInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content\Content;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Core\Repository\Values\Content\VersionInfo;
 use Ibexa\PersonalizationClient\Service\EventNotificationService;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 abstract class AbstractCoreEventSubscriberTest extends TestCase
 {
-    /** @var \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzRecommendationClient\Service\EventNotificationService */
+    /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\PersonalizationClient\Service\EventNotificationService */
     protected $notificationServiceMock;
 
-    /** @var \eZ\Publish\API\Repository\Values\Content\ContentInfo */
+    /** @var \Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo */
     protected $contentInfo;
 
-    /** @var \eZ\Publish\Core\Repository\Values\Content\Location */
+    /** @var \Ibexa\Core\Repository\Values\Content\Location */
     protected $location;
 
-    /** @var \eZ\Publish\Core\Repository\Values\Content\Content */
+    /** @var \Ibexa\Core\Repository\Values\Content\Content */
     protected $content;
 
     public function setUp(): void

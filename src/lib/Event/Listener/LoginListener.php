@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Listener;
 
-use eZ\Publish\API\Repository\UserService as UserServiceInterface;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface;
 use GuzzleHttp\Exception\RequestException;
+use Ibexa\Contracts\Core\Repository\UserService as UserServiceInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 use Ibexa\PersonalizationClient\Value\Session as RecommendationSession;
@@ -32,13 +32,13 @@ final class LoginListener
     /** @var \Symfony\Component\HttpFoundation\Session\SessionInterface */
     private $session;
 
-    /** @var \EzSystems\EzRecommendationClient\Client\EzRecommendationClientInterface */
+    /** @var \Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface */
     private $client;
 
-    /** @var \eZ\Publish\API\Repository\UserService */
+    /** @var \Ibexa\Contracts\Core\Repository\UserService */
     private $userService;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     /** @var \Psr\Log\LoggerInterface|null */
@@ -82,7 +82,8 @@ final class LoginListener
             $event->getRequest()->cookies->set(RecommendationSession::RECOMMENDATION_SESSION_KEY, $this->session->getId());
         }
 
-        $notificationUri = sprintf($this->getNotificationEndpoint() . '%s/%s/%s',
+        $notificationUri = sprintf(
+            $this->getNotificationEndpoint() . '%s/%s/%s',
             'login',
             $event->getRequest()->cookies->get(RecommendationSession::RECOMMENDATION_SESSION_KEY),
             $this->getUser($event->getAuthenticationToken())

@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Factory;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\PersonalizationClient\API\AbstractAPI;
 use Ibexa\PersonalizationClient\API\AllowedAPI;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
@@ -18,10 +18,10 @@ use Ibexa\PersonalizationClient\Value\Parameters;
 
 final class EzRecommendationClientAPIFactory extends AbstractEzRecommendationClientAPIFactory
 {
-    /** @var \EzSystems\EzRecommendationClient\API\AllowedAPI */
+    /** @var \Ibexa\PersonalizationClient\API\AllowedAPI */
     private $allowedAPI;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     public function __construct(AllowedAPI $allowedApi, ConfigResolverInterface $configResolver)
@@ -33,8 +33,8 @@ final class EzRecommendationClientAPIFactory extends AbstractEzRecommendationCli
     /**
      * {@inheritdoc}
      *
-     * @throws \EzSystems\EzRecommendationClient\Exception\InvalidArgumentException
-     * @throws \EzSystems\EzRecommendationClient\Exception\BadAPICallException
+     * @throws \Ibexa\PersonalizationClient\Exception\InvalidArgumentException
+     * @throws \Ibexa\PersonalizationClient\Exception\BadAPICallException
      */
     public function buildAPI(string $name, EzRecommendationClientInterface $client): AbstractAPI
     {

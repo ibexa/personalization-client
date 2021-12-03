@@ -14,7 +14,7 @@ use Webmozart\Assert\Assert;
 
 final class GenerateUserCollectionDataEvent extends Event
 {
-    /** @var \EzSystems\EzRecommendationClient\Value\Output\UserCollection */
+    /** @var \Ibexa\PersonalizationClient\Value\Output\UserCollection */
     private $userCollection;
 
     /** @var string */
