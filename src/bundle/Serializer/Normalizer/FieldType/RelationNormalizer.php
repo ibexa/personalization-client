@@ -16,11 +16,11 @@ use Ibexa\PersonalizationClient\FieldType\DestinationContentNormalizerDispatcher
 
 final class RelationNormalizer implements ValueNormalizerInterface
 {
-    private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizer;
+    private DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher;
 
-    public function __construct(DestinationContentNormalizerDispatcherInterface $destinationContentNormalizer)
+    public function __construct(DestinationContentNormalizerDispatcherInterface $destinationContentNormalizerDispatcher)
     {
-        $this->destinationContentNormalizer = $destinationContentNormalizer;
+        $this->destinationContentNormalizerDispatcher = $destinationContentNormalizerDispatcher;
     }
 
     public function normalize(Value $value)
@@ -31,7 +31,7 @@ final class RelationNormalizer implements ValueNormalizerInterface
 
         $destinationContentId = $value->destinationContentId;
         if (null !== $destinationContentId) {
-            return $this->destinationContentNormalizer->dispatch((int) $destinationContentId);
+            return $this->destinationContentNormalizerDispatcher->dispatch((int) $destinationContentId);
         }
 
         return null;
