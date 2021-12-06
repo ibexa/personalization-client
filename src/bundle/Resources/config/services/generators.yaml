@@ -10,10 +10,10 @@ services:
         '@Ibexa\PersonalizationClient\Generator\ItemList\ItemListOutputGenerator'
 
     Ibexa\PersonalizationClient\Generator\File\ExportFileGenerator:
-        tags:
-            - { name: monolog.logger, channel: ibexa-recommendation }
         arguments:
             $outputGenerator: '@ezpublish_rest.output.generator.json'
+        tags:
+            - { name: monolog.logger, channel: ibexa-recommendation }            
 
     Ibexa\PersonalizationClient\Generator\File\ExportFileGeneratorInterface:
         '@Ibexa\PersonalizationClient\Generator\File\ExportFileGenerator'
