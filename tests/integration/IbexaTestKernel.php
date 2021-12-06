@@ -12,7 +12,6 @@ use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use FOS\JsRoutingBundle\FOSJsRoutingBundle;
 use Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle;
 use Ibexa\Bundle\Core\IbexaCoreBundle;
-use Ibexa\Bundle\CoreExtensions\IbexaCoreExtensionsBundle;
 use Ibexa\Bundle\FieldTypeRichText\IbexaFieldTypeRichTextBundle;
 use Ibexa\Bundle\LegacySearchEngine\IbexaLegacySearchEngineBundle;
 use Ibexa\Bundle\PersonalizationClient\DependencyInjection\IbexaPersonalizationClientExtension;
@@ -44,7 +43,6 @@ final class IbexaTestKernel extends Kernel
         return [
             new DoctrineBundle(),
             new IbexaPersonalizationClientBundle(),
-            new IbexaCoreExtensionsBundle(),
             new IbexaRestBundle(),
             new IbexaFieldTypeRichTextBundle(),
             new IbexaCoreBundle(),
@@ -78,7 +76,7 @@ final class IbexaTestKernel extends Kernel
     {
         $container->setParameter('io_root_dir', '');
         $container->setParameter('kernel.secret', 'secret');
-        $container->loadFromExtension('ezplatform', [
+        $container->loadFromExtension('ibexa', [
             'siteaccess' => [
                 'default_siteaccess' => 'first_siteaccess',
                 'list' => ['first_siteaccess', 'second_siteaccess'],
