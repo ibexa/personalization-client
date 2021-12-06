@@ -8,17 +8,17 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\PersonalizationClient\Generator\ItemList;
 
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Generator\Json;
+use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\PersonalizationClient\Generator\ItemList\ItemListOutputGenerator;
 use Ibexa\PersonalizationClient\Generator\ItemList\ItemListOutputGeneratorInterface;
+use Ibexa\Rest\Output\Generator\Json;
 use Ibexa\Tests\PersonalizationClient\Storage\AbstractDataSourceTestCase;
 
 final class ItemListOutputGeneratorTest extends AbstractDataSourceTestCase
 {
     private ItemListOutputGeneratorInterface $itemListElementGenerator;
 
-    /** @var \EzSystems\EzPlatformRest\Output\Generator\Json|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Rest\Output\Generator\Json|\PHPUnit\Framework\MockObject\MockObject */
     private Generator $outputGenerator;
 
     protected function setUp(): void
