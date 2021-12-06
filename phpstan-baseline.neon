@@ -21,7 +21,7 @@ parameters:
 			path: src/bundle/Controller/ContentController.php
 
 		-
-			message: "#^Property Ibexa\\\\Bundle\\\\PersonalizationClient\\\\Controller\\\\ContentController\\:\\:\\$searchService \\(eZ\\\\Publish\\\\Core\\\\Repository\\\\SearchService\\) does not accept eZ\\\\Publish\\\\API\\\\Repository\\\\SearchService\\.$#"
+			message: "#^Property Ibexa\\\\Bundle\\\\PersonalizationClient\\\\Controller\\\\ContentController\\:\\:\\$searchService \\(Ibexa\\\\Core\\\\Repository\\\\SearchService\\) does not accept Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\SearchService\\.$#"
 			count: 1
 			path: src/bundle/Controller/ContentController.php
 
@@ -46,12 +46,12 @@ parameters:
 			path: src/bundle/Controller/ContentTypeController.php
 
 		-
-			message: "#^Property Ibexa\\\\Bundle\\\\PersonalizationClient\\\\Controller\\\\ContentTypeController\\:\\:\\$locationService \\(eZ\\\\Publish\\\\Core\\\\Repository\\\\LocationService\\) does not accept eZ\\\\Publish\\\\API\\\\Repository\\\\LocationService\\.$#"
+			message: "#^Property Ibexa\\\\Bundle\\\\PersonalizationClient\\\\Controller\\\\ContentTypeController\\:\\:\\$locationService \\(Ibexa\\\\Core\\\\Repository\\\\LocationService\\) does not accept Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\LocationService\\.$#"
 			count: 1
 			path: src/bundle/Controller/ContentTypeController.php
 
 		-
-			message: "#^Property Ibexa\\\\Bundle\\\\PersonalizationClient\\\\Controller\\\\ContentTypeController\\:\\:\\$searchService \\(eZ\\\\Publish\\\\Core\\\\Repository\\\\SearchService\\) does not accept eZ\\\\Publish\\\\API\\\\Repository\\\\SearchService\\.$#"
+			message: "#^Property Ibexa\\\\Bundle\\\\PersonalizationClient\\\\Controller\\\\ContentTypeController\\:\\:\\$searchService \\(Ibexa\\\\Core\\\\Repository\\\\SearchService\\) does not accept Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\SearchService\\.$#"
 			count: 1
 			path: src/bundle/Controller/ContentTypeController.php
 
@@ -91,7 +91,7 @@ parameters:
 			path: src/bundle/DependencyInjection/Configuration.php
 
 		-
-			message: "#^Parameter \\#1 \\$rootNode of method eZ\\\\Bundle\\\\EzPublishCoreBundle\\\\DependencyInjection\\\\Configuration\\\\SiteAccessAware\\\\Configuration\\:\\:generateScopeBaseNode\\(\\) expects Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition, Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition given\\.$#"
+			message: "#^Parameter \\#1 \\$rootNode of method Ibexa\\\\Bundle\\\\Core\\\\DependencyInjection\\\\Configuration\\\\SiteAccessAware\\\\Configuration\\:\\:generateScopeBaseNode\\(\\) expects Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\ArrayNodeDefinition, Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition given\\.$#"
 			count: 1
 			path: src/bundle/DependencyInjection/Configuration.php
 
@@ -346,7 +346,7 @@ parameters:
 			path: src/lib/Event/Subscriber/LocationEventSubscriber.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\\\eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Location\\[\\]\\)\\: Unexpected token \"\\\\n     \\*\", expected variable at offset 70$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\\\Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Location\\[\\]\\)\\: Unexpected token \"\\\\n     \\*\", expected variable at offset 76$#"
 			count: 1
 			path: src/lib/Event/Subscriber/LocationEventSubscriber.php
 
@@ -361,17 +361,17 @@ parameters:
 			path: src/lib/Event/Subscriber/RecommendationEventSubscriber.php
 
 		-
-			message: "#^Parameter \\#1 \\$posixLocale of method eZ\\\\Publish\\\\Core\\\\MVC\\\\Symfony\\\\Locale\\\\LocaleConverterInterface\\:\\:convertToEz\\(\\) expects string, string\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$posixLocale of method Ibexa\\\\Core\\\\MVC\\\\Symfony\\\\Locale\\\\LocaleConverterInterface\\:\\:convertToEz\\(\\) expects string, string\\|null given\\.$#"
 			count: 1
 			path: src/lib/Event/Subscriber/RecommendationEventSubscriber.php
 
 		-
-			message: "#^Access to an undefined property eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\ValueObject\\:\\:\\$contentInfo\\.$#"
+			message: "#^Access to an undefined property Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\ValueObject\\:\\:\\$contentInfo\\.$#"
 			count: 1
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
 		-
-			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Event\\\\Subscriber\\\\RecommendationRandomContentEventSubscriber\\:\\:getFieldValue\\(\\) should return eZ\\\\Publish\\\\SPI\\\\FieldType\\\\Value but returns eZ\\\\Publish\\\\SPI\\\\FieldType\\\\Value\\|null\\.$#"
+			message: "#^Method Ibexa\\\\PersonalizationClient\\\\Event\\\\Subscriber\\\\RecommendationRandomContentEventSubscriber\\:\\:getFieldValue\\(\\) should return Ibexa\\\\Contracts\\\\Core\\\\FieldType\\\\Value but returns Ibexa\\\\Contracts\\\\Core\\\\FieldType\\\\Value\\|null\\.$#"
 			count: 1
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
@@ -401,12 +401,12 @@ parameters:
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
 		-
-			message: "#^PHPDoc tag @param for parameter \\$contentService with type eZ\\\\Publish\\\\API\\\\Repository\\\\SearchService is not subtype of native type eZ\\\\Publish\\\\API\\\\Repository\\\\ContentService\\.$#"
+			message: "#^PHPDoc tag @param for parameter \\$contentService with type Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\SearchService is not subtype of native type Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\ContentService\\.$#"
 			count: 1
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
 		-
-			message: "#^PHPDoc tag @param for parameter \\$searchService with type eZ\\\\Publish\\\\API\\\\Repository\\\\ContentService is not subtype of native type eZ\\\\Publish\\\\API\\\\Repository\\\\SearchService\\.$#"
+			message: "#^PHPDoc tag @param for parameter \\$searchService with type Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\ContentService is not subtype of native type Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\SearchService\\.$#"
 			count: 1
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
@@ -416,7 +416,7 @@ parameters:
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
 		-
-			message: "#^Parameter \\#1 \\$field of method Ibexa\\\\PersonalizationClient\\\\Helper\\\\ImageHelper\\:\\:getImageUrl\\(\\) expects eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Field, eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Field\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$field of method Ibexa\\\\PersonalizationClient\\\\Helper\\\\ImageHelper\\:\\:getImageUrl\\(\\) expects Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Field, Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Field\\|null given\\.$#"
 			count: 1
 			path: src/lib/Event/Subscriber/RecommendationRandomContentEventSubscriber.php
 
@@ -566,7 +566,7 @@ parameters:
 			path: src/lib/Field/TypeValue.php
 
 		-
-			message: "#^Cannot call method convert\\(\\) on EzSystems\\\\EzPlatformRichTextBundle\\\\eZ\\\\RichText\\\\Converter\\\\Html5\\|null\\.$#"
+			message: "#^Cannot call method convert\\(\\) on Ibexa\\\\FieldTypeRichText\\\\RichText\\\\Converter\\\\Html5\\|null\\.$#"
 			count: 1
 			path: src/lib/Field/TypeValue.php
 
@@ -586,12 +586,12 @@ parameters:
 			path: src/lib/Field/TypeValue.php
 
 		-
-			message: "#^Cannot access property \\$fieldDefIdentifier on eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Field\\|null\\.$#"
+			message: "#^Cannot access property \\$fieldDefIdentifier on Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Field\\|null\\.$#"
 			count: 1
 			path: src/lib/Field/Value.php
 
 		-
-			message: "#^Cannot access property \\$id on eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Field\\|null\\.$#"
+			message: "#^Cannot access property \\$id on Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Field\\|null\\.$#"
 			count: 1
 			path: src/lib/Field/Value.php
 
@@ -676,12 +676,7 @@ parameters:
 			path: src/lib/Generator/ContentListElementGenerator.php
 
 		-
-			message: "#^Cannot access property \\$contentInfo on eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Content\\|null\\.$#"
-			count: 1
-			path: src/lib/Helper/ContentHelper.php
-
-		-
-			message: "#^Interface eZ\\\\Publish\\\\API\\\\Repository\\\\SearchService referenced with incorrect case\\: eZ\\\\Publish\\\\Api\\\\Repository\\\\SearchService\\.$#"
+			message: "#^Cannot access property \\$contentInfo on Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Content\\|null\\.$#"
 			count: 1
 			path: src/lib/Helper/ContentHelper.php
 
@@ -746,7 +741,7 @@ parameters:
 			path: src/lib/Helper/ImageHelper.php
 
 		-
-			message: "#^Parameter \\#1 \\$locationId of method eZ\\\\Publish\\\\API\\\\Repository\\\\LocationService\\:\\:loadLocation\\(\\) expects int, int\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$locationId of method Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\LocationService\\:\\:loadLocation\\(\\) expects int, int\\|null given\\.$#"
 			count: 1
 			path: src/lib/Helper/LocationHelper.php
 
@@ -936,12 +931,12 @@ parameters:
 			path: src/lib/SPI/Request.php
 
 		-
-			message: "#^Access to an undefined property Ibexa\\\\PersonalizationClient\\\\SPI\\\\Content\\:\\:\\$siteaccess\\.$#"
+			message: "#^Access to an undefined property Ibexa\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Content\\:\\:\\$valueObject\\.$#"
 			count: 1
 			path: src/lib/Service/ContentService.php
 
 		-
-			message: "#^Access to an undefined property eZ\\\\Publish\\\\Core\\\\Repository\\\\Values\\\\Content\\\\Content\\:\\:\\$valueObject\\.$#"
+			message: "#^Access to an undefined property Ibexa\\\\PersonalizationClient\\\\SPI\\\\Content\\:\\:\\$siteaccess\\.$#"
 			count: 1
 			path: src/lib/Service/ContentService.php
 
@@ -996,7 +991,7 @@ parameters:
 			path: src/lib/Service/ContentService.php
 
 		-
-			message: "#^Parameter \\#1 \\$locationId of method eZ\\\\Publish\\\\API\\\\Repository\\\\LocationService\\:\\:loadLocation\\(\\) expects int, int\\|null given\\.$#"
+			message: "#^Parameter \\#1 \\$locationId of method Ibexa\\\\Contracts\\\\Core\\\\Repository\\\\LocationService\\:\\:loadLocation\\(\\) expects int, int\\|null given\\.$#"
 			count: 1
 			path: src/lib/Service/ContentService.php
 
@@ -1111,7 +1106,7 @@ parameters:
 			path: src/lib/Service/RecommendationService.php
 
 		-
-			message: "#^PHPDoc tag @param has invalid value \\(\\\\EzSystems\\\\EzRecommendationClient\\\\Service\\\\UserServiceInterface\\)\\: Unexpected token \"\\*/\", expected variable at offset 74$#"
+			message: "#^PHPDoc tag @param has invalid value \\(\\\\Ibexa\\\\PersonalizationClient\\\\Service\\\\UserServiceInterface\\)\\: Unexpected token \"\\*/\", expected variable at offset 69$#"
 			count: 1
 			path: src/lib/Service/RecommendationService.php
 
