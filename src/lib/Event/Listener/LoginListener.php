@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Event\Listener;
 
-use Ibexa\Core\MVC\Symfony\Security\UserInterface;
 use GuzzleHttp\Exception\RequestException;
 use Ibexa\Contracts\Core\Repository\UserService as UserServiceInterface;
 use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface;
 use Ibexa\PersonalizationClient\Client\EzRecommendationClientInterface;
 use Ibexa\PersonalizationClient\Value\Parameters;
 use Ibexa\PersonalizationClient\Value\Session as RecommendationSession;
