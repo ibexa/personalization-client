@@ -53,7 +53,7 @@ final class RichTextNormalizerTest extends AbstractValueNormalizerTestCase
      *  string,
      *  DOMDocument,
      *  DOMDocument,
-     *  \EzSystems\EzPlatformRichText\eZ\FieldType\RichText\Value
+     *  \Ibexa\FieldTypeRichText\FieldType\RichText\Value
      * }>
      */
     public function provideDataForTestNormalize(): iterable
@@ -92,7 +92,7 @@ final class RichTextNormalizerTest extends AbstractValueNormalizerTestCase
      *  string,
      *  DOMDocument,
      *  DOMDocument,
-     *  \EzSystems\EzPlatformRichText\eZ\FieldType\RichText\Value
+     *  \Ibexa\FieldTypeRichText\FieldType\RichText\Value
      * }>
      */
     public function provideEmptyDataForTestNormalize(): iterable

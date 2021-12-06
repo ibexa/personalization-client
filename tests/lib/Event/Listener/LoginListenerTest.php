@@ -24,7 +24,7 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
 /**
- * @covers \EzSystems\EzRecommendationClient\Event\Listener\LoginListener
+ * @covers \Ibexa\PersonalizationClient\Event\Listener\LoginListener
  */
 final class LoginListenerTest extends TestCase
 {
