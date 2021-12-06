@@ -10,10 +10,16 @@ namespace Ibexa\PersonalizationClient\Exporter;
 
 use Ibexa\Contracts\Core\Repository\ContentTypeService as ContentTypeServiceInterface;
 use Ibexa\Contracts\Core\Repository\Repository;
-use Ibexa\PersonalizationClient\File\ExportFileGenerator;
+use Ibexa\Contracts\PersonalizationClient\Value\ItemListInterface;
+use Ibexa\PersonalizationClient\Content\DataResolverInterface;
+use Ibexa\PersonalizationClient\Generator\File\ExportFileGeneratorInterface;
 use Ibexa\PersonalizationClient\Helper\ContentHelper;
 use Ibexa\PersonalizationClient\Service\ContentServiceInterface;
+use Ibexa\PersonalizationClient\Value\Export\FileSettings;
 use Ibexa\PersonalizationClient\Value\Export\Parameters;
+use Ibexa\PersonalizationClient\Value\Storage\Item;
+use Ibexa\PersonalizationClient\Value\Storage\ItemList;
+use Ibexa\PersonalizationClient\Value\Storage\ItemType;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -27,7 +33,7 @@ final class Exporter implements ExporterInterface
     /** @var \Ibexa\Contracts\Core\Repository\Repository */
     private $repository;
 
-    /** @var \Ibexa\PersonalizationClient\File\ExportFileGenerator */
+    /** @var \Ibexa\PersonalizationClient\Generator\File\ExportFileGeneratorInterface */
     private $exportFileGenerator;
 
     /** @var \Ibexa\Contracts\Core\Repository\ContentTypeService */
@@ -39,15 +45,19 @@ final class Exporter implements ExporterInterface
     /** @var \Ibexa\PersonalizationClient\Helper\ContentHelper */
     private $contentHelper;
 
+    /** @var \Ibexa\PersonalizationClient\Content\DataResolverInterface */
+    private $dataResolver;
+
     /** @var \Psr\Log\LoggerInterface */
     private $logger;
 
     public function __construct(
         Repository $repository,
-        ExportFileGenerator $exportFileGenerator,
+        ExportFileGeneratorInterface $exportFileGenerator,
         ContentTypeServiceInterface $contentTypeService,
         ContentServiceInterface $contentService,
         ContentHelper $contentHelper,
+        DataResolverInterface $dataResolver,
         LoggerInterface $logger
     ) {
         $this->repository = $repository;
@@ -55,6 +65,7 @@ final class Exporter implements ExporterInterface
         $this->contentTypeService = $contentTypeService;
         $this->contentService = $contentService;
         $this->contentHelper = $contentHelper;
+        $this->dataResolver = $dataResolver;
         $this->logger = $logger;
     }
 
@@ -93,8 +104,6 @@ final class Exporter implements ExporterInterface
         $contents = [];
 
         foreach ($parameters->languages as $lang) {
-            $parameters->lang = $lang;
-
             $options = [
                 'lang' => $lang,
                 'languages' => $parameters->getLanguages(),
@@ -104,20 +113,18 @@ final class Exporter implements ExporterInterface
             ];
             $count = $this->contentHelper->countContentItemsByContentTypeId($contentTypeId, $options);
 
-            $info = sprintf('Fetching %s items of contentTypeId %s (language: %s)', $count, $contentTypeId, $parameters->lang);
+            $info = sprintf('Fetching %s items of contentTypeId %s (language: %s)', $count, $contentTypeId, $lang);
             $output->writeln($info);
             $this->logger->info($info);
 
             for ($i = 1; $i <= ceil($count / $parameters->pageSize); ++$i) {
                 $filename = sprintf('%d_%s_%d', $contentTypeId, $lang, $i);
                 $chunkPath = $chunkDir . $filename;
-                $parameters->page = $i;
-
-                $this->generateFileForContentType($contentTypeId, $chunkPath, $parameters, $output);
+                $this->generateFileForContentType($contentTypeId, $chunkPath, $lang, $i, $parameters, $output);
 
                 $contents[$lang] = $this->generateUrlList(
                     $contentTypeId,
-                    $parameters->lang,
+                    $lang,
                     $this->generateUrl($parameters->host, $chunkPath, $output)
                 );
             }
@@ -129,25 +136,51 @@ final class Exporter implements ExporterInterface
     private function generateFileForContentType(
         int $contentTypeId,
         string $chunkPath,
+        string $language,
+        int $page,
         Parameters $parameters,
         OutputInterface $output
     ): void {
-        $content = $this->repository->sudo(
+        $contentList = $this->repository->sudo(
             function () use ($contentTypeId, $parameters, $output) {
                 return $this->contentService->fetchContent($contentTypeId, $parameters, $output);
             }
         );
 
+        $fileSettings = new FileSettings(
+            $this->getItems($contentList),
+            (string) $contentTypeId,
+            $language,
+            $page,
+            $chunkPath
+        );
+
         $output->writeln(sprintf(
             'Generating file for contentTypeId: %s, language: %s, chunk: #%s',
             $contentTypeId,
-            $parameters->lang,
-            $parameters->page
+            $language,
+            $page,
         ));
 
-        $this->exportFileGenerator->generateFile($content, $chunkPath, $parameters->getProperties());
+        $this->exportFileGenerator->generate($fileSettings);
+    }
 
-        unset($content);
+    /**
+     * @param iterable<\eZ\Publish\API\Repository\Values\Content\Content> $contentList
+     */
+    private function getItems(iterable $contentList): ItemListInterface
+    {
+        $itemList = [];
+        foreach ($contentList as $content) {
+            $itemList[] = new Item(
+                (string)$content->id,
+                ItemType::fromContentType($content->getContentType()),
+                $content->contentInfo->getMainLanguage()->languageCode,
+                $this->dataResolver->resolve($content)
+            );
+        }
+
+        return new ItemList($itemList);
     }
 
     private function generateUrl(string $host, string $chunkPath, OutputInterface $output): string

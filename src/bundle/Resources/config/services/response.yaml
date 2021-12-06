@@ -4,9 +4,9 @@ services:
         autoconfigure: true
         public: false
 
-    Ibexa\PersonalizationClient\Response\:
-        resource: '../../../../src/lib/Response/*'
-
-    Ibexa\PersonalizationClient\Response\HttpResponse:
+    Ibexa\PersonalizationClient\Response\ItemListResponse:
         tags:
-            - { name: ezrecommendation.rest.response_type, type: http }
+            - { name: ibexa.personalization.rest.response_type, type: http }
+
+    Ibexa\PersonalizationClient\Response\ResponseInterface:
+        '@Ibexa\PersonalizationClient\Response\ItemListResponse'
