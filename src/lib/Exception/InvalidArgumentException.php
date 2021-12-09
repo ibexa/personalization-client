@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Exception;
 
-class InvalidArgumentException extends \Exception implements EzRecommendationException
+use Exception;
+
+class InvalidArgumentException extends Exception implements EzRecommendationException
 {
     public function __construct($message, ?Exception $previous = null)
     {

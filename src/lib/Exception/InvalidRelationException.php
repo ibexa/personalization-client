@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\PersonalizationClient\Exception;
 
+use Exception;
+
 class InvalidRelationException extends InvalidArgumentException
 {
     public function __construct($message, ?Exception $previous = null)
